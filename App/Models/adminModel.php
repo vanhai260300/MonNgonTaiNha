@@ -76,4 +76,22 @@ class adminModel extends \Core\Model
         }
         return $result;
     }
+    public static function updateAdmin($id,$fullname,$username)
+    {
+        $db = static::getDB();
+        try {
+            if ($fullname == '' || $username == '')
+                return 0;
+            else {
+                $stmt = $db->prepare('UPDATE quantrivien SET TenAdmin = ?, TenDangNhap = ? WHERE IDAdmin = ?');
+                if($stmt->execute([$fullname,$username,$id])) 
+                    return 1;
+                else {
+                    return 0;
+                }   
+            }
+        } catch (Exception $e) { return 0; }
+        
+        
+    }
 }

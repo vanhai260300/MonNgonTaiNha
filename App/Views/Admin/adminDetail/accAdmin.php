@@ -29,14 +29,14 @@
                             </svg>
                             <div>
                                 Thêm tài khoản thất bại.
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 <?php } else { ?>
                     <div id="alertBox2" class="hide">
-                        <div  class="alert d-flex alert-success align-items-center" role="alert">
+                        <div class="alert d-flex alert-success align-items-center" role="alert">
                             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                                 <use xlink:href="#check-circle-fill" />
                             </svg>
@@ -45,9 +45,29 @@
                             </div>
                         </div>
                     </div>
-                    
+
             <?php }
             } ?>
+            <div id="alertBox3" class="di-hide">
+                <div class="alert d-flex alert-success align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                        <use xlink:href="#check-circle-fill" />
+                    </svg>
+                    <div>
+                        Cập nhật khoản thành công.
+                    </div>
+                </div>
+            </div>
+            <div id="alertBox4" class="di-hide">
+                <div id="alertBox" class="alert d-flex alert-primary align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                        <use xlink:href="#info-fill" />
+                    </svg>
+                    <div>
+                        Thêm tài khoản thất bại.
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="card mb-4">
             <div class="card-header">
@@ -83,12 +103,12 @@
                     <tbody>
                         <?php foreach ($args['getAllAd'] as $key => $value) { ?>
                             <tr>
-                                <td ><?php echo $value['IDAdmin']; ?></td>
+                                <td><?php echo $value['IDAdmin']; ?></td>
                                 <td><?php echo $value['TenAdmin']; ?></td>
                                 <td><?php echo $value['TenDangNhap']; ?></td>
                                 <td><?php echo $value['MatKhau']; ?></td>
                                 <td class="actions">
-                                    <a href="" onclick="getRowTable()" title="Sửa" data-bs-toggle="modal" data-bs-target="#myModalUpdate"><i class="fas fa-edit button"></i></a>
+                                    <a href="" title="Sửa" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDAdmin']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
                                     <a class="bt-delete-red" href="" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
@@ -152,20 +172,26 @@
 
                 <!-- Modal body -->
                 <div class="modal-body ">
-                    <form action="/DoAn1/public/admin/insertAdmin" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <!-- action="/DoAn1/public/admin/updatetAdmin" -->
+                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3 "><label for="id-ud" class=" form-control-label">ID</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="id-ud" name="id-ud" readonly class="form-control"></div>
+                        </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3 "><label for="fullname-ud" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"><small class="text-danger" id="fullnameNN"></small></div>
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="username-ud" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN"></small></div>
                         </div>
-                        
+
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <input href="" type="submit" class="btn btn-primary" name="bt-save" value="Lưu">
+                            <button onclick="saveUpdate()" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" data-bs-dismiss="modal">Lưu</button>
+                            <!-- <input href="" type="submit" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" value="Lưu"> -->
                         </div>
 
                     </form>

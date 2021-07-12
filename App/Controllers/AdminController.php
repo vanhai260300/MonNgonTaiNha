@@ -49,4 +49,11 @@ class AdminController extends AdBaseController
             $insertAdmin = adminModel::insertAdmin($fullName, $username, $password, $repassword);
             return $insertAdmin;   
     }
+    public function updateAdminAction()
+    {
+        $id = $_POST['id'];
+        $fullName = $_POST['fullname'];
+        $username = $_POST['username'];
+        echo adminModel::updateAdmin($id, $fullName, $username);
+    }
 }

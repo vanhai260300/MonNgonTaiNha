@@ -11260,3 +11260,6 @@ body {
 .hide {
   display: none !important;
 }
+.di-hide {
+  display: none;
+}

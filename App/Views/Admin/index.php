@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>ADMIN MON NGON</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="/DoAn1/public/asset_admin/css/styles.css?v=1.4" rel="stylesheet" />
+        <link href="/DoAn1/public/asset_admin/css/styles.css?v=1.5" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
