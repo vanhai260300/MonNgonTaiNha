@@ -83,12 +83,12 @@
                     <tbody>
                         <?php foreach ($args['getAllAd'] as $key => $value) { ?>
                             <tr>
-                                <td><?php echo $value['IDAdmin']; ?></td>
+                                <td ><?php echo $value['IDAdmin']; ?></td>
                                 <td><?php echo $value['TenAdmin']; ?></td>
                                 <td><?php echo $value['TenDangNhap']; ?></td>
                                 <td><?php echo $value['MatKhau']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" data-bs-toggle="modal" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a href="" onclick="getRowTable()" title="Sửa" data-bs-toggle="modal" data-bs-target="#myModalUpdate"><i class="fas fa-edit button"></i></a>
                                     <a class="bt-delete-red" href="" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
@@ -154,21 +154,14 @@
                 <div class="modal-body ">
                     <form action="/DoAn1/public/admin/insertAdmin" method="post" enctype="multipart/form-data" class="form-horizontal">
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3 "><label for="fullname" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên" class="form-control"></div>
+                            <div class="col  col-md-3 "><label for="fullname-ud" class=" form-control-label">Họ tên</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"></div>
                         </div>
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="username" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" class="form-control"></div>
+                            <div class="col  col-md-3"><label for="username-ud" class=" form-control-label">Tên đăng nhập</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"></div>
                         </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="password" class=" form-control-label">Mật khẩu</label></div>
-                            <div class="col-12 col-md-9"><input type="password" id="password" name="password" placeholder="Nhập mật khẩu" class="form-control"></div>
-                        </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="repassword-ud" class=" form-control-label">Nhập lại mật khẩu</label></div>
-                            <div class="col-12 col-md-9"><input type="password" id="repassword-ud" name="repassword-ud" placeholder="Nhập lại mât khẩu" class="form-control"></div>
-                        </div>
+                        
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
