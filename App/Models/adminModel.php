@@ -21,7 +21,7 @@ class adminModel extends \Core\Model
     public static function getAll()
     {
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM quantrivien');
+        $stmt = $db->query('SELECT * FROM quantrivien ORDER BY IDAdmin DESC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public static function login($username, $password)

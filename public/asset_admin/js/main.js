@@ -11,7 +11,8 @@ $(document).ready(function(){
           fullname: td.get(1).innerText,
           username: td.get(2).innerText
         };
-        console.log(result);
+        console.log(result.username);
+        sessionStorage.setItem("username",result.username);
         $('#id-ud').val(result.id);
         $('#fullname-ud').val(result.fullname);
         $('#username-ud').val(result.username);
@@ -36,7 +37,7 @@ function saveUpdate(){
   responsive = '';
   $.post('updateAdmin',{id:id , fullname:fullname, username:username}, function(re){
     responsive = JSON.parse(re);
-    console.log('OKNha'+responsive);
+    console.log('OKNha '+responsive);
     if (responsive == 1)
     {
       result = 1;
@@ -58,10 +59,36 @@ function notNull()
   {
     $('#fullnameNN').text("* Không được để trống.");
   } else $('#fullnameNN').text("");
+  
+}
+function checkUserName()
+{
   if ($('#username-ud').val() == "")
   {
     $('#usernameNN').text("* Không được để trống.");
-  } else $('#usernameNN').text("");
+  } else 
+  {
+    //console.log(result.username);
+    var user = sessionStorage.getItem("username");
+    username = $('#username-ud').val();
+    console.log("UN cũ "+user);
+    console.log("UN mới "+username);
+    if (username == user)
+    {
+      $('#usernameNN').text("");
+    } else {
+      $.post('checkUsername',{username: username}, function(e)
+      {
+        responsive = JSON.parse(e);
+        console.log(responsive);
+        if (responsive == 1 )
+        {
+          $('#usernameNN').text("Tên đăng nhập đã tồn tại.");
+        } else { $('#usernameNN').html("<p class = 'text-success' >Tên đăng nhập hợp lệ.</p>"); }
+      });
+    }
+    
+    
+  }
 }
-
 

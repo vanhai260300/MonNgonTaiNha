@@ -184,7 +184,7 @@
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="username-ud" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN"></small></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN"></small></div>
                         </div>
 
                         <!-- Modal footer -->
@@ -193,7 +193,6 @@
                             <button onclick="saveUpdate()" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" data-bs-dismiss="modal">Lưu</button>
                             <!-- <input href="" type="submit" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" value="Lưu"> -->
                         </div>
-
                     </form>
                 </div>
             </div>

@@ -27,12 +27,6 @@ class AdminController extends AdBaseController
         $getAllAd = adminModel::getAll();
         if(isset($_POST['bt-save']))
         {
-            // $fullName = $_POST['fullname'];
-            // $username = $_POST['username'];
-            // $password = $_POST['password'];
-            // $repassword = $_POST['repassword'];
-            // $insertAdmin = adminModel::insertAdmin($fullName, $username, $password, $repassword);
-            // $kq = "Thêm tài khoản thành công.";
             $res = $this->insertAdminAction();
             $getAllAd = adminModel::getAll();
             View::render('Admin/index.php', ['page' => 'accAdmin', 'getAllAd' => $getAllAd, 'kq' => $res]);
@@ -55,5 +49,10 @@ class AdminController extends AdBaseController
         $fullName = $_POST['fullname'];
         $username = $_POST['username'];
         echo adminModel::updateAdmin($id, $fullName, $username);
+    }
+    public static function checkUsernameAction()
+    {
+        $username = $_POST['username'];
+        echo adminModel::getUserName($username);
     }
 }
