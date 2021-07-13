@@ -19,7 +19,7 @@ class AdBaseController extends \Core\Controller
      */
     public function __construct()
     {
-        if($_SESSION['username'] == null)
+        if(!isset($_SESSION['username']))
         {
             header("location:/DoAn1/public/admin/login");
         }

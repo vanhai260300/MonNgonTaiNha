@@ -12,7 +12,7 @@ $(document).ready(function(){
           username: td.get(2).innerText
         };
         console.log(result.username);
-        sessionStorage.setItem("username",result.username);
+        sessionStorage.setItem("usernametam",result.username);
         $('#id-ud').val(result.id);
         $('#fullname-ud').val(result.fullname);
         $('#username-ud').val(result.username);
@@ -69,7 +69,7 @@ function checkUserName()
   } else 
   {
     //console.log(result.username);
-    var user = sessionStorage.getItem("username");
+    var user = sessionStorage.getItem("usernametam");
     username = $('#username-ud').val();
     console.log("UN cũ "+user);
     console.log("UN mới "+username);

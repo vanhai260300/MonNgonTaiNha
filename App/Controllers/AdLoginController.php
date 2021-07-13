@@ -35,8 +35,9 @@ class AdLoginController extends \Core\Controller
             } else if ($result == 0 ) {
                 $kq = "Mật khẩu không chính xác.";
             } else {
-                $_SESSION['username'] = $username;
+                
                 header("location:/DoAn1/public/admin/accAdmin");
+                $_SESSION['username'] = $username;
                 
             }
             
