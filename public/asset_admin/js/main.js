@@ -91,4 +91,12 @@ function checkUserName()
     
   }
 }
-
+function deleteADmin(id) {
+  if (confirm('bạn có muốn xóa tài khoản:' + id+'?'))
+  {   
+    $.post("deleteAdmin",{id:id},function(e){
+      $('#row_' + id + '').remove();
+    });
+      console.log("Xóa thành công.");
+  } else { console.log("Không xóa.");}
+}

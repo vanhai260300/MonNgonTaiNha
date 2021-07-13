@@ -55,4 +55,9 @@ class AdminController extends AdBaseController
         $username = $_POST['username'];
         echo adminModel::getUserName($username);
     }
+    public static function deleteAdminAction()
+    {
+        $id = $_POST['id'];
+        echo adminModel::deleteAdmin($id);
+    }
 }

@@ -34,7 +34,7 @@ $router->add('/DoAn1/public/Admin/accAdmin', ['controller' => 'AdminController',
 $router->add('/DoAn1/public/Admin/insertAdmin', ['controller' => 'AdminController', 'action' => 'insertAdmin']);
 $router->add('/DoAn1/public/Admin/updateAdmin', ['controller' => 'AdminController', 'action' => 'updateAdmin']);
 $router->add('/DoAn1/public/Admin/checkUsername', ['controller' => 'AdminController', 'action' => 'checkUsername']);
-
+$router->add('/DoAn1/public/Admin/deleteAdmin', ['controller' => 'AdminController', 'action' => 'deleteAdmin']);
 //Admin login
 $router->add('/DoAn1/public/Admin/login', ['controller' => 'AdLoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/Admin/logout', ['controller' => 'AdLoginController', 'action' => 'logout']);

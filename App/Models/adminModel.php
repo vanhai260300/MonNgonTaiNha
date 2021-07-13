@@ -94,4 +94,12 @@ class adminModel extends \Core\Model
         
         
     }
+    public static function deleteAdmin($id) {
+        $db = static::getDB();
+        try {
+            $stmt = $db->prepare("DELETE FROM quantrivien WHERE IDAdmin = ?");
+            return $stmt->execute([$id]);
+        } catch (Exception $e) {return 0;}
+        
+    }
 }
