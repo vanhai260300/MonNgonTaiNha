@@ -35,6 +35,13 @@ $router->add('/DoAn1/public/Admin/insertAdmin', ['controller' => 'AdminControlle
 $router->add('/DoAn1/public/Admin/updateAdmin', ['controller' => 'AdminController', 'action' => 'updateAdmin']);
 $router->add('/DoAn1/public/Admin/checkUsername', ['controller' => 'AdminController', 'action' => 'checkUsername']);
 $router->add('/DoAn1/public/Admin/deleteAdmin', ['controller' => 'AdminController', 'action' => 'deleteAdmin']);
+//Admin / Mon An
+$router->add('/DoAn1/public/Admin/monan', ['controller' => 'AdMonAnController', 'action' => 'index']);
+$router->add('/DoAn1/public/admin/them-MonAn', ['controller' => 'AdMonAnController', 'action' => 'insertMonAn']);
+$router->add('/DoAn1/public/admin/thung-rac', ['controller' => 'AdMonAnController', 'action' => 'trashMonAn']);
+$router->add('/DoAn1/public/admin/deleteMonAn', ['controller' => 'AdMonAnController', 'action' => 'deleteMonAn']);
+$router->add('/DoAn1/public/admin/RestoreMonAn', ['controller' => 'AdMonAnController', 'action' => 'RestoreMonAn']);
+
 //Admin login
 $router->add('/DoAn1/public/Admin/login', ['controller' => 'AdLoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/Admin/logout', ['controller' => 'AdLoginController', 'action' => 'logout']);

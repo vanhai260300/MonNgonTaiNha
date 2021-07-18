@@ -28,7 +28,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-invoice"></i></i></div>
                                 Hóa Đơn ĐH
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/Admin/monan">
                                 <div class="sb-nav-link-icon"><i class="fas fa-utensils"></i></div>
                                 Món Ăn
                             </a>

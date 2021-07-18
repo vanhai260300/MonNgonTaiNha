@@ -3,6 +3,71 @@ $(document).ready(function(){
     $('#alertBox').delay(1000).slideUp(500);
     $('#alertBox2').removeClass('hide');
     $('#alertBox2').delay(1000).slideUp(500);
+    //Check All 
+    var checkAll = $("#checked-all");
+    var checkItem = $('input[name="checkitems[]"]');
+    var btnCheckSubmit = $('.btn-check-submit');
+    var btnCheckSubmitBack = $('.btn-check-submit-back');
+    
+    checkAll.change(function(){
+      var isCheckAll = $(this).prop('checked');
+      console.log(isCheckAll);
+      checkItem.prop('checked', isCheckAll);
+      renderCheckBT();
+      //var checkedItem = $('input[name="checkitems[]"]:checked');
+    })
+    console.log(checkItem.length);
+    checkItem.change(function(){
+      var isCheckAll = checkItem.length === $('input[name="checkitems[]"]:checked').length;
+      //var checkedItem = $('input[name="checkitems[]"]:checked');
+      // console.log(checkedItem);
+      // for (var checked of checkedItem)
+      // {
+      //   console.log(checked.value);
+      // }
+      checkAll.prop('checked', isCheckAll);
+      console.log(isCheckAll);
+      renderCheckBT();
+    })
+    function renderCheckBT(){
+      count = $('input[name="checkitems[]"]:checked').length;
+      if (count > 0){
+        btnCheckSubmit.removeClass("disabled");
+        btnCheckSubmitBack.removeClass("disabled");
+      } else {
+        btnCheckSubmit.addClass("disabled");
+        btnCheckSubmitBack.addClass("disabled");
+      }
+    }
+    btnCheckSubmit.click(function(){
+      var checkedItem = $('input[name="checkitems[]"]:checked');
+      for (var checked of checkedItem)
+      {
+        $.post('deleteMonAn',{allID: checked.value}, function(e){
+          res = JSON.parse(e);
+          console.log(res);
+          $("#countTrash").text(res);
+        });
+        $('#row_' + checked.value + '').remove();
+      }
+      
+      
+    });
+    btnCheckSubmitBack.click(function(){
+      var checkedItem = $('input[name="checkitems[]"]:checked');
+      for (var checked of checkedItem)
+      {
+        $.post('RestoreMonAn',{allID: checked.value}, function(e){
+          res = JSON.parse(e);
+          console.log(res);
+          $("#countTrash").text(res);
+        });
+        $('#row_' + checked.value + '').remove();
+      }
+      
+      
+    });
+    // Tài Khaonr admin
     $('.button').on('click', function() {
         //console.log('Ok');
         let td = $(this).closest('tr').find('td');
@@ -11,7 +76,7 @@ $(document).ready(function(){
           fullname: td.get(1).innerText,
           username: td.get(2).innerText
         };
-        console.log(result.username);
+        console.log(result);
         sessionStorage.setItem("usernametam",result.username);
         $('#id-ud').val(result.id);
         $('#fullname-ud').val(result.fullname);
@@ -23,11 +88,40 @@ $(document).ready(function(){
     });
     // $('#alertBox3').hide();
     // $('#alertBox4').hide();
+    //Món Ăn
+    $('.button-ma').on('click', function() {
+      //console.log('Ok');
+      let td = $(this).closest('tr').find('td');
+      let result = {
+        id: td.get(0).innerText,
+        tenmon: td.get(1).innerText,
+        maDM: td.get(2).innerText,
+        maCH: td.get(4).innerText,
+        anh1: td.get(6).innerText,
+        anh2: td.get(7).innerText,
+        anh3: td.get(8).innerText,
+        gia: td.get(9).innerText,
+        trangThai: td.get(10).innerText,
+        moTa: td.get(11).innerText,
+      };
+      console.log(result);
+      sessionStorage.setItem("usernametam",result.username);
+      $('#id-ud').val(result.id);
+      $('#tenmon-ud').val(result.tenmon);
+      $('#danhmuc-ud').val(result.maDM);
+      $('#cuahang-ud').val(result.maCH);
+      $('#gia-ud').val(result.gia);
+      $('#anh1-ud').val(result.anh1);
+      $('#anh2-ud').val(result.anh2);
+      $('#anh3-ud').val(result.anh3);
+      $('#mota-ud').val(result.moTa);
+      $('#trangthai-ud').val(result.trangThai);
+  });
     
     
 });
 // $('#bt-save-ud').click(function(){
-  
+// ----------------- Xử lý tài khoản Admin ------------------------------
 // })
 function saveUpdate(){
   //console.log( $('#id-ud').val());
@@ -90,6 +184,23 @@ function checkUserName()
     
     
   }
+  if ($('#username-add').val() == "")
+  {
+    $('#usernameNN-add').text("* Không được để trống.");
+  } else 
+  {
+    username = $('#username-add').val();
+    $.post('checkUsername',{username: username}, function(e)
+      {
+        responsive = JSON.parse(e);
+        console.log(responsive);
+        if (responsive == 1 )
+        {
+          $('#usernameNN-add').text("Tên đăng nhập đã tồn tại.");
+        } else { $('#usernameNN-add').html("<p class = 'text-success mb-0' >Tên đăng nhập hợp lệ.</p>"); }
+      });
+    
+  }
 }
 function deleteADmin(id) {
   if (confirm('bạn có muốn xóa tài khoản:' + id+'?'))
@@ -100,3 +211,14 @@ function deleteADmin(id) {
       console.log("Xóa thành công.");
   } else { console.log("Không xóa.");}
 }
+function checkRepassword(){
+  password = $('#password').val();
+  console.log(password)
+  if ($('#repassword').val() == password)
+  {
+    console.log("ok");
+    $('#passwordNN').html("<p class = 'text-success mb-0' >Mật khẩu hợp lệ.</p>");
+  } else { $('#passwordNN').text("Mật khẩu không khớp."); console.log("NOok");}
+}
+
+// ----------------- Xử lý Món ăn ------------------------------

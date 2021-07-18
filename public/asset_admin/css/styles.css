@@ -11263,3 +11263,14 @@ body {
 .di-hide {
   display: none;
 }
+.bfat{
+  text-align: center;
+}
+.bfat a{
+  padding-right: 0;
+  text-align: center;
+  
+}
+.bfat .dataTable-sorter::before, .bfat .dataTable-sorter::after{
+  display: none;
+}

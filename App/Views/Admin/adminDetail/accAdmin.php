@@ -138,7 +138,7 @@
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="username" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-add" name="username" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN-add"></small></div>
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="password" class=" form-control-label">Mật khẩu</label></div>
@@ -146,7 +146,7 @@
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="repassword" class=" form-control-label">Nhập lại mật khẩu</label></div>
-                            <div class="col-12 col-md-9"><input type="password" id="repassword" name="repassword" placeholder="Nhập lại mât khẩu" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkRepassword();" type="password" id="repassword" name="repassword" placeholder="Nhập lại mât khẩu" class="form-control"><small class="text-danger" id="passwordNN"></small></div>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
