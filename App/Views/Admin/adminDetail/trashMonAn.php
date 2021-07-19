@@ -74,7 +74,7 @@
             <div class="card-header">
                 <div>
                     <i class="fas fa-table me-1"></i>
-                    Quản lý  Món Ăn Đã Xóa
+                    Quản lý Món Ăn Đã Xóa
                 </div>
                 <div>
 
@@ -84,27 +84,28 @@
             <div class="card-body">
                 <table id="datatablesSimple">
                     <div class="container">
-                    <div class="row py-3">
-                        <div class="form-check col-sm-2" style="margin:auto 0;">
-                            <input class="form-check-input" type="checkbox" value="" id="checked-all">
-                            <label class="form-check-label" for="checked-all">
-                                Chọn tất cả
-                            </label>
-                        </div>
-                        <div class="col-sm-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>--Chọn thao tác--</option>
-                                <option value="1">Xóa vĩnh viễn</option>
-                                <option value="2">Khôi phục</option>
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <button class="form-control btn btn-primary btn-check-submit-back disabled">Thực hiện</button>
-                        </div>
+                        <div class="row py-3">
+                            <div class="form-check col-sm-2" style="margin:auto 0;">
+                                <input class="form-check-input" type="checkbox" value="" id="checked-all">
+                                <label class="form-check-label" for="checked-all">
+                                    Chọn tất cả
+                                </label>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-select" id="actionOfTrash" aria-label="Default select example" required>
+                                    <option value="">--Chọn thao tác--</option>
+                                    <option value="1">Xóa vĩnh viễn</option>
+                                    <option value="2">Khôi phục</option>
+                                </select>
+                                <small class="text-danger" id="requiredSelect"></small>
+                            </div>
+                            <div class="col-3">
+                                <button class="form-control btn btn-primary btn-check-submit-back disabled" data-bs-toggle="modal" data-bs-target=".ModalDelete">Thực hiện</button>
+                            </div>
 
+                        </div>
                     </div>
-                    </div>
-                    
+
                     <thead>
                         <tr>
                             <th class="bfat">#</th>
@@ -114,7 +115,7 @@
                             <th>Tên cửa hàng</th>
                             <th>Giá cả</th>
                             <th>Trạng thái</th>
-                            <th class="bfat">Thao tác</th>
+                            
                         </tr>
                     </thead>
                     <tfoot>
@@ -126,7 +127,7 @@
                             <th>Tên cửa hàng</th>
                             <th>Giá cả</th>
                             <th>Trạng thái</th>
-                            <th class="bfat">Thao tác</th>
+                            
                         </tr>
                     </tfoot>
                     <tbody>
@@ -145,15 +146,33 @@
                                 <td><?php echo $value['Gia']; ?></td>
                                 <td><?php echo $value['TrangThai'];  ?></td>
                                 <td class="hide"><?php echo $value['MoTa']; ?></td>
-                                <td class="actions">
-                                    <a href="" title="Sửa" data-bs-toggle="modal" class="button-ma" id="button_<?php echo $value['IDMonAn']; ?>" data-bs-target="#myModalUpdate">Khôi phục</a>
-                                </td>
                             </tr>
                         <?php } ?>
                     </tbody>
                 </table>
-            </div>
+                </div>
         </div>
     </div>
+
+<!-- Modal -->
+<div>
+<div class="modal checkModal  fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông báo xóa.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn chắc chắn muốn xóa không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="button" id="exceptDelete" class="btn btn-danger" data-bs-dismiss="modal">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 </main>

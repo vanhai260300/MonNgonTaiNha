@@ -64,9 +64,18 @@ class AdMonAnController extends AdBaseController
         echo monanModel::moveTrash($getID);
         
     }
+    public function permanentlyDeleteAction(){
+        $getID = $_POST['allID'];
+        monanModel::deleteMonAn($getID);
+        echo "Đã xóa";
+    }
     public function RestoreMonAnAction(){
         $getID = $_POST['allID'];
-        echo monanModel::moveTrashRestore($getID);
+        echo "đã khôi phục";
+        monanModel::moveTrashRestore($getID);
+        
+        
+        
         
     }
     public function upLoadImage($file)

@@ -90,7 +90,7 @@ class monanModel extends \Core\Model
     public static function deleteMonAn($id) {
         $db = static::getDB();
         try {
-            $stmt = $db->prepare("DELETE FROM quantrivien WHERE IDAdmin = ?");
+            $stmt = $db->prepare("DELETE FROM monan WHERE IDMonAn = ?");
             return $stmt->execute([$id]);
         } catch (Exception $e) {return 0;}
         

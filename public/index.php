@@ -41,7 +41,7 @@ $router->add('/DoAn1/public/admin/them-MonAn', ['controller' => 'AdMonAnControll
 $router->add('/DoAn1/public/admin/thung-rac', ['controller' => 'AdMonAnController', 'action' => 'trashMonAn']);
 $router->add('/DoAn1/public/admin/deleteMonAn', ['controller' => 'AdMonAnController', 'action' => 'deleteMonAn']);
 $router->add('/DoAn1/public/admin/RestoreMonAn', ['controller' => 'AdMonAnController', 'action' => 'RestoreMonAn']);
-
+$router->add('/DoAn1/public/admin/permanentlyDelete', ['controller' => 'AdMonAnController', 'action' => 'permanentlyDelete']);
 //Admin login
 $router->add('/DoAn1/public/Admin/login', ['controller' => 'AdLoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/Admin/logout', ['controller' => 'AdLoginController', 'action' => 'logout']);
