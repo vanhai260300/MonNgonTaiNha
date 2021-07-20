@@ -104,11 +104,11 @@
                         <?php foreach ($args['getAllAd'] as $key => $value) { ?>
                             <tr id = "row_<?php echo $value['IDAdmin']; ?>">
                                 <td><?php echo $value['IDAdmin']; ?></td>
-                                <td><?php echo $value['TenAdmin']; ?></td>
-                                <td><?php echo $value['TenDangNhap']; ?></td>
+                                <td id="col2_<?php echo $value['IDAdmin'];?>"><?php echo $value['TenAdmin']; ?></td>
+                                <td id="col3_<?php echo $value['IDAdmin'];?>"><?php echo $value['TenDangNhap']; ?></td>
                                 <td><?php echo $value['MatKhau']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDAdmin']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDAdmin']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDAdmin']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
                                     <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDAdmin']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

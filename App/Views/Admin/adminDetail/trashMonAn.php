@@ -4,7 +4,7 @@
         <h1 class="mt-4">Món ăn đã xóa</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Món Ăn</li>
+            <li class="breadcrumb-item active"><a href="/DoAn1/public/Admin/monan">Món Ăn</a></li>
             <li class="breadcrumb-item active">Món Ăn đã xóa</li>
         </ol>
         <div class="card mb-4">

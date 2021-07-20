@@ -106,7 +106,7 @@ $(document).ready(function () {
       username: td.get(2).innerText
     };
     console.log(result);
-    sessionStorage.setItem("usernametam", result.username);
+    // sessionStorage.setItem("usernametam", result.username);
     $('#id-ud').val(result.id);
     $('#fullname-ud').val(result.fullname);
     $('#username-ud').val(result.username);
@@ -130,7 +130,6 @@ $(document).ready(function () {
       moTa: td.get(11).innerText,
     };
     console.log(result);
-    sessionStorage.setItem("usernametam", result.username);
     $('#id-ud').val(result.id);
     $('#tenmon-ud').val(result.tenmon);
     $('#danhmuc-ud').val(result.maDM);
@@ -159,9 +158,10 @@ function saveUpdate() {
     console.log('OKNha ' + responsive);
     if (responsive == 1) {
       result = 1;
-      let td = $('#button_' + id).closest('tr').find('td');
-      td.get(1).innerText = fullname;
-      td.get(2).innerText = username;
+      //let td = $('#button_' + id).closest('tr').find('td');
+      $('#row_' + id + ' td:nth-child(2)').text(fullname);
+      $('#row_' + id + ' td:nth-child(3)').text(username)
+      //td.get(2).innerText = username;
       $('#alertBox3').fadeIn(100);
       $('#alertBox3').delay(1000).slideUp(700);
     } else {
@@ -197,8 +197,6 @@ function checkUserName() {
         } else { $('#usernameNN').html("<p class = 'text-success' >Tên đăng nhập hợp lệ.</p>"); }
       });
     }
-
-
   }
   if ($('#username-add').val() == "") {
     $('#usernameNN-add').text("* Không được để trống.");
@@ -214,8 +212,20 @@ function checkUserName() {
 
   }
 }
+function updateAdmin(id) {
+  var fullname = $('#row_' + id + ' td:nth-child(2)').text();
+  var username = $('#row_' + id + ' td:nth-child(3)').text();
+  sessionStorage.setItem("usernametam", username);
+  $('#id-ud').val(id);
+  $('#fullname-ud').val(fullname);
+  $('#username-ud').val(username);
+  if ($('#fullname-ud').val() != "") { $('#fullnameNN').text(""); }
+  if ($('#username-ud').val() != "") { $('#usernameNN').text(""); }
+}
 function deleteADmin(id) {
-  if (confirm('bạn có muốn xóa tài khoản:' + id + '?')) {
+  console.log("test "+$('#row_' + id + ' td:nth-child(2)').text());
+  if (confirm('Bạn có muốn xóa tài khoản:' + id + '?')) {
+    
     $.post("deleteAdmin", { id: id }, function (e) {
       $('#row_' + id + '').remove();
     });
