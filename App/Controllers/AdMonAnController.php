@@ -36,6 +36,15 @@ class AdMonAnController extends AdBaseController
             $countTrash = monanModel::countTrash();
             View::render('Admin/index.php', ['page' => 'monan', 'listMonAn'=>$getAllMonAn,'listDanhMuc'=>$getDanhMuc,'listCuaHang' => $getCuaHang,'kq'=>$kq, 'countTrash'=>$countTrash]);
         }
+        if (isset($_POST['bt-save-ud']))
+        {
+            $kq = $this->updateMonAnAction();  
+            $getAllMonAn = monanModel::getAll();
+            $getDanhMuc = danhMucModel::getAll();
+            $getCuaHang = cuaHangModel::getAll();
+            $countTrash = monanModel::countTrash();
+            View::render('Admin/index.php', ['page' => 'monan', 'listMonAn'=>$getAllMonAn,'listDanhMuc'=>$getDanhMuc,'listCuaHang' => $getCuaHang,'kq'=>$kq, 'countTrash'=>$countTrash]);
+        }
         View::render('Admin/index.php', ['page' => 'monan', 'listMonAn'=>$getAllMonAn,'listDanhMuc'=>$getDanhMuc,'listCuaHang' => $getCuaHang,'countTrash'=>$countTrash]);
     }
     public function trashMonAnAction() { 
@@ -57,7 +66,18 @@ class AdMonAnController extends AdBaseController
             //header('Location:/DoAn1/public/admin/monan');
     }
     public function updateMonAnAction(){
-        return;
+        $id = $_POST['id-ud'];
+        $idCuaHang = $_POST['cuahang-ud'];
+        $idDanhMuc = $_POST['danhmuc-ud'];
+        $tenMon = $_POST['tenmon-ud'];
+        $gia = $_POST['gia-ud'];
+        $moTa = $_POST['mota-ud'];
+        $trangThai = $_POST['trangthai-ud'];
+        $anh1 = $this->upLoadImage($_FILES['anh1-ud']); 
+        $anh2 = $this->upLoadImage($_FILES['anh2-ud']); 
+        $anh3 = $this->upLoadImage($_FILES['anh3-ud']); 
+        return monanModel::updateMonan($id,$idCuaHang, $idDanhMuc, $tenMon,$gia, $anh1,$anh2,$anh3,$moTa,$trangThai);
+        
     }
     public function deleteMonAnAction(){
         $getID = $_POST['allID'];

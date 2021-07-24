@@ -3,7 +3,7 @@
     <div class="container-fluid px-4">
         <h1 class="mt-4">Quản lý món ăn</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/DoAn1/public/Admin/">Dashboard</a></li>
             <li class="breadcrumb-item active">Món Ăn</li>
         </ol>
         <div class="card mb-4">
@@ -28,7 +28,7 @@
                                 <use xlink:href="#info-fill" />
                             </svg>
                             <div>
-                                Thêm tài khoản thất bại.
+                                Thêm món ăn thất bại.
 
                             </div>
                         </div>
@@ -41,14 +41,18 @@
                                 <use xlink:href="#check-circle-fill" />
                             </svg>
                             <div>
-                                Thêm tài khoản thành công.
+                                Thêm món ăn thành công.
                             </div>
                         </div>
                     </div>
 
             <?php }
             } ?>
-            <div id="alertBox3" class="di-hide">
+            <?php if (isset($_POST['bt-save-ud'])) {
+                if ($args['kq'] == 1) {
+
+            ?>
+            <div id="alertBoxUDMonAn1" class="hide">
                 <div class="alert d-flex alert-success align-items-center" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
                         <use xlink:href="#check-circle-fill" />
@@ -58,7 +62,8 @@
                     </div>
                 </div>
             </div>
-            <div id="alertBox4" class="di-hide">
+            <?php } else { ?>
+            <div id="alertBoxUDMonAn2" class="hide">
                 <div id="alertBox" class="alert d-flex alert-primary align-items-center" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
                         <use xlink:href="#info-fill" />
@@ -68,6 +73,8 @@
                     </div>
                 </div>
             </div>
+            <?php }
+            } ?>
         </div>
         <div class="card mb-4">
             <div class="card-header">
@@ -100,7 +107,7 @@
                         <div class="col-3">
                             <button class="form-control btn btn-primary btn-check-submit disabled">Thực hiện</button>
                         </div>
-                        <div class="col-3"><a href="/DoAn1/public/Admin/thung-rac"><i class="fas fa-trash-alt"></i>(<strong id='countTrash'><?php echo $args['countTrash'];?></strong>)</a></div>
+                        <div class="col-3"><a class="trashIcon" href="/DoAn1/public/Admin/thung-rac"><i class="fas fa-trash-alt"></i>(<strong id='countTrash'><?php echo $args['countTrash'];?></strong>)</a></div>
                     </div>
                     
         </form>
@@ -146,7 +153,7 @@
                                 <td><?php echo $value['TrangThai'];  ?></td>
                                 <td class="hide"><?php echo $value['MoTa']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" data-bs-toggle="modal" class="button-ma" id="button_<?php echo $value['IDMonAn']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a title="Sửa" onclick="updateMonAn(<?php echo $value['IDMonAn']; ?>);" data-bs-toggle="modal" class="button-ma" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
                                     <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDMonAn']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
@@ -240,14 +247,14 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Cập nhật tài khoản Admin</h4>
+                    <h4 class="modal-title text-center">Cập nhật món ăn</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body ">
                     <!-- action="/DoAn1/public/admin/updatetAdmin" -->
-                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form method="post" action="/DoAn1/public/admin/monan" enctype="multipart/form-data" class="form-horizontal">
                         <div class="row form-group my-1">
                             <div class="col  col-md-2 "><label for="id-ud" class=" form-control-label">ID</label></div>
                             <div class="col-12 col-md-10"><input type="text" id="id-ud" name="id-ud" readonly class="form-control"></div>
@@ -307,7 +314,7 @@
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <!-- <button class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" data-bs-dismiss="modal">Lưu</button> -->
+                            <!-- <button class="btn btn-primary" onclick="saveUpdateMonAn();" id="bt-save-ud" name="bt-save-ud" data-bs-dismiss="modal">Lưu</button> -->
                             <input type="submit" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" value="Lưu">
                         </div>
                     </form>

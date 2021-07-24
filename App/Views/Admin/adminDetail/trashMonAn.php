@@ -83,7 +83,9 @@
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
+                    
                     <div class="container">
+                        <div><a href="/DoAn1/public/Admin/monan">Danh sách món ăn</a></div>
                         <div class="row py-3">
                             <div class="form-check col-sm-2" style="margin:auto 0;">
                                 <input class="form-check-input" type="checkbox" value="" id="checked-all">

@@ -42,6 +42,20 @@ $router->add('/DoAn1/public/admin/thung-rac', ['controller' => 'AdMonAnControlle
 $router->add('/DoAn1/public/admin/deleteMonAn', ['controller' => 'AdMonAnController', 'action' => 'deleteMonAn']);
 $router->add('/DoAn1/public/admin/RestoreMonAn', ['controller' => 'AdMonAnController', 'action' => 'RestoreMonAn']);
 $router->add('/DoAn1/public/admin/permanentlyDelete', ['controller' => 'AdMonAnController', 'action' => 'permanentlyDelete']);
+//Admin / Danh muc
+$router->add('/DoAn1/public/Admin/danh-muc', ['controller' => 'AdDanhMucController', 'action' => 'index']);
+//Admin / Trang thai don hang
+$router->add('/DoAn1/public/Admin/trang-thai', ['controller' => 'AdTrangThaiController', 'action' => 'index']);
+//Admin / tai khaon khach hang
+$router->add('/DoAn1/public/Admin/taikhoan-khachhang', ['controller' => 'AdKhachHangController', 'action' => 'index']);
+//Admin / tai khoan cua hang
+$router->add('/DoAn1/public/Admin/taikhoan-cuahang', ['controller' => 'AdChuCuaHangController', 'action' => 'index']);
+//Admin / Nhan vien giao hang
+$router->add('/DoAn1/public/Admin/nhan-vien-gh', ['controller' => 'AdNVGiaoHangController', 'action' => 'index']);
+//Admin / Hoa don
+$router->add('/DoAn1/public/Admin/hoa-don', ['controller' => 'AdHoaDonController', 'action' => 'index']);
+//Admin / Chi tiet hoa don
+$router->add('/DoAn1/public/Admin/chitiet-hoadon', ['controller' => 'AdTrangThaiController', 'action' => 'index']);
 //Admin login
 $router->add('/DoAn1/public/Admin/login', ['controller' => 'AdLoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/Admin/logout', ['controller' => 'AdLoginController', 'action' => 'logout']);

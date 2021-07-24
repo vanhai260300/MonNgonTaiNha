@@ -11274,3 +11274,8 @@ body {
 .bfat .dataTable-sorter::before, .bfat .dataTable-sorter::after{
   display: none;
 }
+.trashIcon {
+  font-size: 25px;
+    text-decoration: none;
+    color: #0d6efd;
+}

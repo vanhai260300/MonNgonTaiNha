@@ -3,6 +3,10 @@ $(document).ready(function () {
   $('#alertBox').delay(1000).slideUp(500);
   $('#alertBox2').removeClass('hide');
   $('#alertBox2').delay(1000).slideUp(500);
+  $('#alertBoxUDMonAn1').removeClass('hide');
+  $('#alertBoxUDMonAn1').delay(1000).slideUp(500);
+  $('#alertBoxUDMonAn2').removeClass('hide');
+  $('#alertBoxUDMonAn2').delay(1000).slideUp(500);
   //Check All 
   var checkAll = $("#checked-all");
   var checkItem = $('input[name="checkitems[]"]');
@@ -97,51 +101,48 @@ $(document).ready(function () {
 
   });
   // Tài Khaonr admin
-  $('.button').on('click', function () {
-    //console.log('Ok');
-    let td = $(this).closest('tr').find('td');
-    let result = {
-      id: td.get(0).innerText,
-      fullname: td.get(1).innerText,
-      username: td.get(2).innerText
-    };
-    console.log(result);
-    // sessionStorage.setItem("usernametam", result.username);
-    $('#id-ud').val(result.id);
-    $('#fullname-ud').val(result.fullname);
-    $('#username-ud').val(result.username);
-    if ($('#fullname-ud').val() != "") { $('#fullnameNN').text(""); }
-    if ($('#username-ud').val() != "") { $('#usernameNN').text(""); }
-  });
+  // $('.button').on('click', function () {
+  //   //console.log('Ok');
+  //   let td = $(this).closest('tr').find('td');
+  //   let result = {
+  //     id: td.get(0).innerText,
+  //     fullname: td.get(1).innerText,
+  //     username: td.get(2).innerText
+  //   };
+  //   console.log(result);
+  //   // sessionStorage.setItem("usernametam", result.username);
+  //   $('#id-ud').val(result.id);
+  //   $('#fullname-ud').val(result.fullname);
+  //   $('#username-ud').val(result.username);
+  //   if ($('#fullname-ud').val() != "") { $('#fullnameNN').text(""); }
+  //   if ($('#username-ud').val() != "") { $('#usernameNN').text(""); }
+  // });
   //Món Ăn
-  $('.button-ma').on('click', function () {
-    //console.log('Ok');
-    let td = $(this).closest('tr').find('td');
-    let result = {
-      id: td.get(0).innerText,
-      tenmon: td.get(1).innerText,
-      maDM: td.get(2).innerText,
-      maCH: td.get(4).innerText,
-      anh1: td.get(6).innerText,
-      anh2: td.get(7).innerText,
-      anh3: td.get(8).innerText,
-      gia: td.get(9).innerText,
-      trangThai: td.get(10).innerText,
-      moTa: td.get(11).innerText,
-    };
-    console.log(result);
-    $('#id-ud').val(result.id);
-    $('#tenmon-ud').val(result.tenmon);
-    $('#danhmuc-ud').val(result.maDM);
-    $('#cuahang-ud').val(result.maCH);
-    $('#gia-ud').val(result.gia);
-    $('#anh1-ud').val(result.anh1);
-    $('#anh2-ud').val(result.anh2);
-    $('#anh3-ud').val(result.anh3);
-    $('#mota-ud').val(result.moTa);
-    $('#trangthai-ud').val(result.trangThai);
-  });
-
+  // $('.button-ma').on('click', function () {
+  //   //console.log('Ok');
+  //   let td = $(this).closest('tr').find('td');
+  //   let result = {
+  //     id: td.get(1).innerText,
+  //     tenmon: td.get(2).innerText,
+  //     maDM: td.get(3).innerText,
+  //     maCH: td.get(5).innerText,
+  //     anh1: td.get(7).innerText,
+  //     anh2: td.get(8).innerText,
+  //     anh3: td.get(9).innerText,
+  //     gia: td.get(10).innerText,
+  //     trangThai: td.get(11).innerText,
+  //     moTa: td.get(12).innerText,
+  //   };
+  //   console.log(result);
+  //   $('#id-ud').val(result.id);
+  //   $('#tenmon-ud').val(result.tenmon);
+  //   $('#danhmuc-ud').val(result.maDM);
+  //   $('#cuahang-ud').val(result.maCH);
+  //   $('#gia-ud').val(result.gia);
+  //   $('#mota-ud').val(result.moTa);
+  //   $('#trangthai-ud').val(result.trangThai);
+  // });
+  
 
 });
 // $('#bt-save-ud').click(function(){
@@ -242,3 +243,40 @@ function checkRepassword() {
 }
 
 // ----------------- Xử lý Món ăn ------------------------------
+function updateMonAn(id){
+
+    id= $('#row_' + id + ' td:nth-child(2)').text();
+    tenmon=$('#row_' + id + ' td:nth-child(3)').text();
+    maDM=$('#row_' + id + ' td:nth-child(4)').text();
+    maCH=$('#row_' + id + ' td:nth-child(6)').text();
+    anh1=$('#row_' + id + ' td:nth-child(8)').text();
+    anh2=$('#row_' + id + ' td:nth-child(9)').text();
+    anh3=$('#row_' + id + ' td:nth-child(10)').text();
+    gia=$('#row_' + id + ' td:nth-child(11)').text();
+    trangThai=$('#row_' + id + ' td:nth-child(12)').text();
+    moTa=$('#row_' + id + ' td:nth-child(13)').text();
+
+  $('#id-ud').val(id);
+  $('#tenmon-ud').val(tenmon);
+  $('#danhmuc-ud').val(maDM);
+  $('#cuahang-ud').val(maCH);
+  $('#gia-ud').val(gia);
+  $('#mota-ud').val(moTa);
+  $('#trangthai-ud').val(trangThai);
+}
+function saveUpdateMonAn(){
+  id = $('#id-ud').val();
+  tenmon = $('#tenmon-ud').val();
+  maDM = $('#danhmuc-ud').val();
+  maCH = $('#cuahang-ud').val();
+  gia = $('#gia-ud').val();
+  moTa = $('#mota-ud').val();
+  trangThai = $('#trangthai-ud').val();
+  $('#row_' + id + ' td:nth-child(2)').text();
+  $('#row_' + id + ' td:nth-child(2)').text();
+  $('#row_' + id + ' td:nth-child(2)').text();
+  $('#row_' + id + ' td:nth-child(2)').text();
+  $('#row_' + id + ' td:nth-child(2)').text();
+  $('#row_' + id + ' td:nth-child(2)').text();
+
+}

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Exception;
 use PDO;
 
 /**
@@ -9,7 +10,7 @@ use PDO;
  *
  * PHP version 7.0
  */
-class KhachHangModel extends \Core\Model
+class NVGiaoHangModel extends \Core\Model
 {
 
     /**
@@ -19,8 +20,9 @@ class KhachHangModel extends \Core\Model
      */
     public static function getAll()
     {
-        $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM khachhang');
+        $db = static::getDb();
+        $stmt = $db->query("SELECT * FROM nvgiaohang");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     }
 }

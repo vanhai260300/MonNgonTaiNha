@@ -36,7 +36,7 @@ class monanModel extends \Core\Model
                             WHERE ma.deleteAt IS NOT NULL                           
                             ORDER BY ma.Gia ASC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    }   
     public static function moveTrash($id){
         $db = static::getDB();
         $stmt = $db -> query('UPDATE monan SET deleteAt = 0 WHERE IDMonAn = '.$id.'');
@@ -69,20 +69,29 @@ class monanModel extends \Core\Model
         }
         return $result;
     }
-    public static function updateMonAn($id,$fullname,$username)
+    public static function updateMonAn($id,$idCuaHang, $idDanhMuc, $tenMon,$gia, $anh1,$anh2,$anh3,$moTa,$trangThai)
     {
         $db = static::getDB();
         try {
-            if ($fullname == '' || $username == '')
-                return 0;
-            else {
-                $stmt = $db->prepare('UPDATE quantrivien SET TenMonAn = ?, TenDangNhap = ? WHERE IDAdmin = ?');
-                if($stmt->execute([$fullname,$username,$id])) 
+            $getImage = $db->query('SELECT Anh1,Anh2,Anh3 FROM monan WHERE IDMonAn='.$id.'');
+            $allImage = $getImage->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($allImage as $key => $value) {
+                if ($anh1 == ""){
+                    $anh1 = $value['Anh1'];
+                }
+                if ($anh2 == ""){
+                    $anh2 = $value['Anh2'];
+                }
+                if ($anh3 == ""){
+                    $anh3 = $value['Anh3'];
+                }
+            } 
+            $stmt = $db->prepare('UPDATE monan SET IDCuaHang = ?,IDDanhMuc = ?, TenMonAn = ?,Gia = ?,Anh1 = ?,Anh2 = ?, Anh3 = ?,MoTa = ?,TrangThai = ? WHERE IDMonAn = ?');
+                if($stmt->execute([$idCuaHang, $idDanhMuc, $tenMon,$gia, $anh1,$anh2,$anh3,$moTa,$trangThai,$id])) 
                     return 1;
                 else {
                     return 0;
-                }   
-            }
+                } 
         } catch (Exception $e) { return 0; }
         
         

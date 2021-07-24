@@ -1,10 +1,10 @@
 <main>
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Tables Admin</h1>
+        <h1 class="mt-4">Quản lý Hóa Đơn Đặt hàng</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="/DoAn1/public/Admin/">Dashboard</a></li>
-            <li class="breadcrumb-item active">Admin</li>
+            <li class="breadcrumb-item active">Nhân viên giao hàng</li>
         </ol>
         <div class="card mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -73,10 +73,9 @@
             <div class="card-header">
                 <div>
                     <i class="fas fa-table me-1"></i>
-                    Quản lý tài khoản Admin
+                    Quản lý Hóa Đơn Đặt hàng
                 </div>
                 <div>
-                    <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Tạo tài khoản <i class="fas fa-plus-circle"></i></a>
                 </div>
 
             </div>
@@ -84,32 +83,56 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Họ Tên</th>
-                            <th>Tên Đăng Nhập</th>
-                            <th>Mật khẩu</th>
+                        <th>ID</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tên NV Giao Hàng</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Phí giao</th>
+                            <th>Tổng tiền</th>
+                            <th>TG giao</th>
+                            <th>TG Nhận</th>
+                            <th>Địa chỉ</th>
+                            <th>Trạng thái</th>
                             <th>Thao tác</th>
+
+
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Họ Tên</th>
-                            <th>Tên Đăng Nhập</th>
-                            <th>Mật khẩu</th>
-                            <th>Thao tác</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tên NV Giao Hàng</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Phí giao</th>
+                            <th>Tổng tiền</th>
+                            <th>TG giao</th>
+                            <th>TG Nhận</th>
+                            <th>Địa chỉ</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>  
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach ($args['getAllAd'] as $key => $value) { ?>
-                            <tr id = "row_<?php echo $value['IDAdmin']; ?>">
-                                <td><?php echo $value['IDAdmin']; ?></td>
-                                <td ><?php echo $value['TenAdmin']; ?></td>
-                                <td ><?php echo $value['TenDangNhap']; ?></td>
-                                <td><?php echo $value['MatKhau']; ?></td>
+                        <?php foreach ($args['listHoaDon'] as $key => $value) { ?>
+                            <tr id = "row_<?php echo $value['IDHoaDon']; ?>">
+                                <td><?php echo $value['IDHoaDon']; ?></td>
+                                <td ><?php echo $value['TenKH']; ?></td>
+                                <td><?php echo $value['TenNV']; ?></td>
+                                <td ><?php echo $value['SDT']; ?></td>
+                                <td><?php echo $value['Email']; ?></td>
+                                <td ><?php echo $value['PhiGiaoHang']; ?></td>
+                                <td><?php echo $value['TongTien']; ?></td>
+                                <td ><?php echo $value['TGGiaoHang']; ?></td>
+                                <td><?php echo $value['TGNhanHang']; ?></td>
+                                <td><?php echo $value['DiaChiGiaoHang']; ?></td>
+                                <td ><?php echo $value['IDTrangThai']; ?></td>
+                                
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDAdmin']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDAdmin']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDAdmin']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDHoaDon']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDHoaDon']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDHoaDon']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>

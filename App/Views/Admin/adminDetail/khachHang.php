@@ -1,10 +1,10 @@
 <main>
 
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Tables Admin</h1>
+        <h1 class="mt-4">Quản lý Tài khoản Khách Hàng</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="/DoAn1/public/Admin/">Dashboard</a></li>
-            <li class="breadcrumb-item active">Admin</li>
+            <li class="breadcrumb-item active">Khách Hàng</li>
         </ol>
         <div class="card mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -73,7 +73,7 @@
             <div class="card-header">
                 <div>
                     <i class="fas fa-table me-1"></i>
-                    Quản lý tài khoản Admin
+                    Quản lý tài khoản Khách Hàng
                 </div>
                 <div>
                     <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Tạo tài khoản <i class="fas fa-plus-circle"></i></a>
@@ -85,31 +85,39 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Họ Tên</th>
-                            <th>Tên Đăng Nhập</th>
-                            <th>Mật khẩu</th>
+                            <th>Tên</th>
+                            <th>Tên ĐN</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Địa chỉ </th>
                             <th>Thao tác</th>
+
+
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Họ Tên</th>
-                            <th>Tên Đăng Nhập</th>
-                            <th>Mật khẩu</th>
-                            <th>Thao tác</th>
+                            <th>Tên</th>
+                            <th>Tên ĐN</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Địa chỉ </th>
+                            <th>Thao tác</th>  
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach ($args['getAllAd'] as $key => $value) { ?>
-                            <tr id = "row_<?php echo $value['IDAdmin']; ?>">
-                                <td><?php echo $value['IDAdmin']; ?></td>
-                                <td ><?php echo $value['TenAdmin']; ?></td>
-                                <td ><?php echo $value['TenDangNhap']; ?></td>
-                                <td><?php echo $value['MatKhau']; ?></td>
+                        <?php foreach ($args['listKhachHang'] as $key => $value) { ?>
+                            <tr id = "row_<?php echo $value['IDKhachHang']; ?>">
+                                <td><?php echo $value['IDKhachHang']; ?></td>
+                                <td ><?php echo $value['TenKH']; ?></td>
+                                <td><?php echo $value['TenDangNhap']; ?></td>
+                                <td ><?php echo $value['SDT']; ?></td>
+                                <td><?php echo $value['Email']; ?></td>
+                                <td><?php echo $value['DiaChi']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDAdmin']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDAdmin']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDAdmin']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDKhachHang']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDKhachHang']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDKhachHang']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -125,7 +133,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Tạo tài khoản Admin</h4>
+                    <h4 class="modal-title text-center">Tạo tài khoản Khách Hàng</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 
@@ -166,7 +174,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Cập nhật tài khoản Admin</h4>
+                    <h4 class="modal-title text-center">Cập nhật tài khoản Khách Hàng</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 

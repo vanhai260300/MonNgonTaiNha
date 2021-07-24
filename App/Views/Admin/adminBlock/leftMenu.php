@@ -12,19 +12,19 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
                                 TK Admin
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/Admin/taikhoan-khachhang">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 TK Khách Hàng
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/admin/nhan-vien-gh">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 TK NV Giao hàng
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/admin/taikhoan-cuahang">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-alt"></i></div>
                                 TK Chủ CH
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/admin/hoa-don">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-invoice"></i></i></div>
                                 Hóa Đơn ĐH
                             </a>
@@ -32,11 +32,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-utensils"></i></div>
                                 Món Ăn
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/admin/danh-muc">
                                 <div class="sb-nav-link-icon"><i class="fas fa-folder"></i></div>
                                 Danh Mục
                             </a>
-                            <a class="nav-link" href="/DoAn1/public/admin/accAdmin">
+                            <a class="nav-link" href="/DoAn1/public/admin/trang-thai">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Trạng Thái HĐ
                             </a>
