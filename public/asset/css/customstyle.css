@@ -1,0 +1,58 @@
+.product-name,.restaurant-wrap>div>div>span{
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.restaurant-title{
+    height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* order */
+.rest-descr>p{
+    height: 3rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+input[name="quantity"]{
+    color: red;
+    border-radius: 2px;
+    border: 1px solid  #eaebeb;
+    margin-bottom: 10px;
+}
+/* Register */
+textarea{
+    resize: none;
+    /* color: red; */
+}
+/* restaurent */
+.inner-page-hero{
+    min-height: 250px;
+}
+/* yourOder */
+.restaurants-page table>thead>tr>th:first-child{
+    border-left:1px solid red;
+}
+.restaurants-page table>thead>tr>th:last-child{
+    border-right:1px solid red;
+}
+.fa-check-circle:before {
+    /* content: "\f058"; */
+    margin-right: 12px ;
+}
+td[data-column="Action"]{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+table tbody>tr:nth-child(even){
+    background-color: white;
+}

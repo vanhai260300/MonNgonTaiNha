@@ -76,7 +76,7 @@
                     Quản lý tài khoản Admin
                 </div>
                 <div>
-                    <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Tạo tài khoản <i class="fas fa-plus-circle"></i></a>
+                    <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Thêm trạng thái<i class="fas fa-plus-circle"></i></a>
                 </div>
 
             </div>
@@ -102,8 +102,8 @@
                                 <td><?php echo $value['IDTrangThai']; ?></td>
                                 <td ><?php echo $value['TenTrangThai']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDTrangThai']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDTrangThai']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDTrangThai']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="" title="Sửa" onclick="updateTrangThai(<?php echo $value['IDTrangThai']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDTrangThai']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteTrangThai(<?php echo $value['IDTrangThai']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -119,7 +119,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Tạo tài khoản Admin</h4>
+                    <h4 class="modal-title text-center">Thêm trạng thái</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 
@@ -127,21 +127,10 @@
                 <div class="modal-body ">
                     <form action="/DoAn1/public/admin/accAdmin" method="post" enctype="multipart/form-data" class="form-horizontal">
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3 "><label for="fullname" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên" class="form-control"></div>
+                            <div class="col  col-md-3 "><label for="tenTrangThai" class=" form-control-label">Nhập trạng thái</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="tenTrangThai" name="tenTrangThai" placeholder="Nhập Trạng Thái" class="form-control"></div>
                         </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="username" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-add" name="username" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN-add"></small></div>
-                        </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="password" class=" form-control-label">Mật khẩu</label></div>
-                            <div class="col-12 col-md-9"><input type="password" id="password" name="password" placeholder="Nhập mật khẩu" class="form-control"></div>
-                        </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="repassword" class=" form-control-label">Nhập lại mật khẩu</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="checkRepassword();" type="password" id="repassword" name="repassword" placeholder="Nhập lại mât khẩu" class="form-control"><small class="text-danger" id="passwordNN"></small></div>
-                        </div>
+                
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -160,7 +149,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-center">Cập nhật tài khoản Admin</h4>
+                    <h4 class="modal-title text-center">Sửa trạng thái</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                 </div>
 
@@ -173,12 +162,8 @@
                             <div class="col-12 col-md-9"><input type="text" id="id-ud" name="id-ud" readonly class="form-control"></div>
                         </div>
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3 "><label for="fullname-ud" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"><small class="text-danger" id="fullnameNN"></small></div>
-                        </div>
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="username-ud" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN"></small></div>
+                            <div class="col  col-md-3 "><label for="TenTrangThai-ud" class=" form-control-label">Trạng Thái</label></div>
+                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="TenTrangThai-ud" name="TenTrangThai-ud" placeholder="Nhập Trạng Thái" class="form-control"><small class="text-danger" id="fullnameNN"></small></div>
                         </div>
 
                         <!-- Modal footer -->

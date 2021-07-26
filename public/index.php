@@ -27,6 +27,12 @@ $router = new Core\Router();
 
 // Add the routes CLIENT
 $router->add('/DoAn1/public/', ['controller' => 'Home', 'action' => 'index']);
+$router->add('/DoAn1/public/Home', ['controller' => 'Home', 'action' => 'home']);
+$router->add('/DoAn1/public/cua-hang', ['controller' => 'CuahangController', 'action' => 'index']);
+$router->add('/DoAn1/public/dang-nhap', ['controller' => 'LoginController', 'action' => 'index']);
+$router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);
+$router->add('/DoAn1/public/dat-hang', ['controller' => 'Home', 'action' => 'index']);
+$router->add('/DoAn1/public/thanh-toan', ['controller' => 'Home', 'action' => 'index']);
 
 //Routes ADMIN
 $router->add('/DoAn1/public/Admin', ['controller' => 'AdminController', 'action' => 'index']);

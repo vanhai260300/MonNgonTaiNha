@@ -116,8 +116,8 @@
                                 <td><?php echo $value['Email']; ?></td>
                                 <td><?php echo $value['DiaChi']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDKhachHang']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDKhachHang']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDKhachHang']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="" title="Sửa" onclick="updateKhachHang(<?php echo $value['IDKhachHang']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDKhachHang']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteKhachHang(<?php echo $value['IDKhachHang']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -139,14 +139,14 @@
 
                 <!-- Modal body -->
                 <div class="modal-body ">
-                    <form action="/DoAn1/public/admin/accAdmin" method="post" enctype="multipart/form-data" class="form-horizontal">
+                    <form action="/DoAn1/public/admin/taikhoan-khachhang" method="post" enctype="multipart/form-data" class="form-horizontal">
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3 "><label for="fullname" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên" class="form-control"></div>
+                            <div class="col  col-md-3 "><label for="fullname-add" class=" form-control-label">Họ tên</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="fullname-add" name="fullname-add" placeholder="Nhập họ tên" class="form-control"></div>
                         </div>
                         <div class="row form-group my-1">
-                            <div class="col  col-md-3"><label for="username" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-add" name="username" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN-add"></small></div>
+                            <div class="col  col-md-3"><label for="username-add" class=" form-control-label">Tên đăng nhập</label></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-add" name="username-add" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN-add"></small></div>
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="password" class=" form-control-label">Mật khẩu</label></div>
@@ -156,10 +156,22 @@
                             <div class="col  col-md-3"><label for="repassword" class=" form-control-label">Nhập lại mật khẩu</label></div>
                             <div class="col-12 col-md-9"><input onkeyup="checkRepassword();" type="password" id="repassword" name="repassword" placeholder="Nhập lại mât khẩu" class="form-control"><small class="text-danger" id="passwordNN"></small></div>
                         </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3 "><label for="SDT-add" class=" form-control-label">Số điện thoại</label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="SDT-add" name="SDT-add" placeholder="Nhập Số điện thoại" class="form-control"></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="Email-add" class=" form-control-label">Email</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="Email-add" name="Email-add" placeholder="Nhập Email" class="form-control"><small class="text-danger"></small></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="DiaChi" class=" form-control-label">Mật khẩu</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="DiaChi" name="DiaChi" placeholder="Nhập mật khẩu" class="form-control"></div>
+                        </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <input href="" type="submit" class="btn btn-primary" name="bt-save" value="Lưu">
+                            <input href="" type="submit" class="btn btn-primary" name="bt-save-add" value="Lưu">
                         </div>
 
                     </form>
@@ -181,26 +193,41 @@
                 <!-- Modal body -->
                 <div class="modal-body ">
                     <!-- action="/DoAn1/public/admin/updatetAdmin" -->
-                    <form method="post" enctype="multipart/form-data" class="form-horizontal">
-                        <div class="row form-group my-1">
-                            <div class="col  col-md-3 "><label for="id-ud" class=" form-control-label">ID</label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="id-ud" name="id-ud" readonly class="form-control"></div>
-                        </div>
+                    <form action="/DoAn1/public/admin/taikhoan-khachhang" method="post" enctype="multipart/form-data" class="form-horizontal">
                         <div class="row form-group my-1">
                             <div class="col  col-md-3 "><label for="fullname-ud" class=" form-control-label">Họ tên</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="notNull();" type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"><small class="text-danger" id="fullnameNN"></small></div>
+                            <div class="col-12 col-md-9"><input type="text" id="fullname-ud" name="fullname-ud" placeholder="Nhập họ tên" class="form-control"></div>
                         </div>
                         <div class="row form-group my-1">
                             <div class="col  col-md-3"><label for="username-ud" class=" form-control-label">Tên đăng nhập</label></div>
-                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN"></small></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkUserName();" type="text" id="username-ud" name="username-ud" placeholder="Nhập tên đăng nhập" class="form-control"><small class="text-danger" id="usernameNN-ud"></small></div>
                         </div>
-
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="password" class=" form-control-label">Mật khẩu</label></div>
+                            <div class="col-12 col-md-9"><input type="password" id="password" name="password" placeholder="Nhập mật khẩu" class="form-control"></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="repassword" class=" form-control-label">Nhập lại mật khẩu</label></div>
+                            <div class="col-12 col-md-9"><input onkeyup="checkRepassword();" type="password" id="repassword" name="repassword" placeholder="Nhập lại mât khẩu" class="form-control"><small class="text-danger" id="passwordNN"></small></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3 "><label for="SDT-ud" class=" form-control-label">Số điện thoại</label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="SDT-ud" name="SDT-ud" placeholder="Nhập Số điện thoại" class="form-control"></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="Email-ud" class=" form-control-label">Email</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="Email-ud" name="Email-ud" placeholder="Nhập Email" class="form-control"><small class="text-danger"></small></div>
+                        </div>
+                        <div class="row form-group my-1">
+                            <div class="col  col-md-3"><label for="DiaChi" class=" form-control-label">Mật khẩu</label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="DiaChi" name="DiaChi" placeholder="Nhập mật khẩu" class="form-control"></div>
+                        </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                            <button onclick="saveUpdate()" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" data-bs-dismiss="modal">Lưu</button>
-                            <!-- <input href="" type="submit" class="btn btn-primary" id="bt-save-ud" name="bt-save-ud" value="Lưu"> -->
+                            <input href="" type="submit" class="btn btn-primary" name="bt-save-ud" value="Lưu">
                         </div>
+
                     </form>
                 </div>
             </div>

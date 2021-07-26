@@ -154,7 +154,7 @@
                                 <td class="hide"><?php echo $value['MoTa']; ?></td>
                                 <td class="actions">
                                     <a title="Sửa" onclick="updateMonAn(<?php echo $value['IDMonAn']; ?>);" data-bs-toggle="modal" class="button-ma" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDMonAn']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteMonAn(<?php echo $value['IDMonAn']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>

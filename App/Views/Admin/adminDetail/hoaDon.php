@@ -131,8 +131,8 @@
                                 <td ><?php echo $value['IDTrangThai']; ?></td>
                                 
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateAdmin(<?php echo $value['IDHoaDon']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDHoaDon']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
-                                    <a class="bt-delete-red" onclick="deleteADmin(<?php echo $value['IDHoaDon']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="" title="Sửa" onclick="updateHoaDon(<?php echo $value['IDHoaDon']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDHoaDon']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <a class="bt-delete-red" onclick="deleteHoaDon(<?php echo $value['IDHoaDon']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>
