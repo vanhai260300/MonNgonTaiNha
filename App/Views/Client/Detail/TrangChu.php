@@ -23,7 +23,7 @@
                                 <path d="M202.494 386h22c5.799 0 10.5-4.701 10.5-10.5s-4.701-10.5-10.5-10.5h-22c-5.799 0-10.5 4.701-10.5 10.5s4.701 10.5 10.5 10.5z"></path>
                             </g>
                         </svg>
-                        <h4><span>1. </span>Chọn Nhà Hàng</h4>
+                        <h4><span>1. </span>Chọn Nhà Hàng / Món Ăn</h4>
                     </div>
                     <!-- end:Step -->
                     <div class="step-item step2">
@@ -183,7 +183,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <h3>Chọn nhà hàng</h3>
+                                <h3>Chọn nhà hàng / Món Ăn</h3>
                                 <p>Chúng tôi có rất nhiều nhà hàng để bạn lựa chọn.</p>
                             </div>
                         </div>

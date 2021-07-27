@@ -37,6 +37,41 @@ class monanModel extends \Core\Model
                             ORDER BY ma.Gia ASC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }   
+    public static function getMonAnPagi($page)
+    {
+        $db = static::getDB();
+        $stmt = $db->query('SELECT COUNT(IDMonAn) FROM   monan WHERE deleteAt IS NULL');
+        $totalRecords = current($stmt->fetch(PDO::FETCH_ASSOC));
+        $current_page = $page;
+        $limit = 6;
+        $totalPages = ceil($totalRecords / $limit);
+        // Giới hạn current_page trong khoảng 1 đến total_page
+        if ($current_page > $totalPages) {
+            $current_page = $totalPages;
+        } else if ($current_page < 1) {
+            $current_page = 1;
+        }
+        $start = ($current_page - 1) * $limit;
+        $stpr = $db->query('SELECT * FROM monan as ma  
+                            INNER JOIN (SELECT dm.IDDanhMuc,dm.TenDanhMuc FROM danhmucmonan as dm ) dam ON dam.IDDanhMuc = ma.IDDanhMuc
+                            INNER JOIN cuahang ch ON ma.IDCuaHang = ch.IDCuaHang 
+                            WHERE ma.deleteAt IS NULL                           
+                            ORDER BY ma.Gia ASC 
+                            LIMIT '.$start.', '.$limit.'');
+        $MonAn = $stpr->fetchAll(PDO::FETCH_ASSOC);
+        $paginatoinInfo = [
+            'MonAn' => $MonAn,
+            'totalPages' => $totalPages,
+            'current_page' => $current_page
+        ];
+        return $paginatoinInfo;
+    }
+    public static function getMonAnOfCuaHang($idCuaHang)
+    {
+        $db = static::getDB();
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCuaHang.' AND ma.IDCuaHang = ch.IDCuaHang');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public static function moveTrash($id){
         $db = static::getDB();
         $stmt = $db -> query('UPDATE monan SET deleteAt = 0 WHERE IDMonAn = '.$id.'');

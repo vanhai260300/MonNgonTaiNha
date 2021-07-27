@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\cuaHangModel;
+use App\Models\danhMucModel;
 use \Core\View;
 
 /**
@@ -19,6 +20,8 @@ class CuahangController extends \Core\Controller
      */
     public function indexAction()
     {
-        View::render('Client/index.php', ['page'=>'CuaHang']);
+        $getCuahang = cuaHangModel::getAll();
+        $danhMuc = danhMucModel::getAll();
+        View::render('Client/index.php', ['page'=>'CuaHang', 'listCuaHang'=>$getCuahang,'DanhMuc'=>$danhMuc]);
     }
 }

@@ -16,7 +16,7 @@
     <link href="/DoAn1/public/asset/css/animsition.min.css" rel="stylesheet">
     <link href="/DoAn1/public/asset/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link  href="/DoAn1/public/asset/css/style.css?v=1.1" rel="stylesheet">
+    <link  href="/DoAn1/public/asset/css/style.css?v=1.2" rel="stylesheet">
     <link rel="stylesheet" href="DoAn1/public/asset/css/customstyle.css">
 </head>
 

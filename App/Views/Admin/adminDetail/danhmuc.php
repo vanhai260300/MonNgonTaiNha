@@ -103,7 +103,7 @@
                             <tr id="row_<?php echo $value['IDDanhMuc']; ?>">
                                 <td><?php echo $value['IDDanhMuc']; ?></td>
                                 <td><?php echo $value['TenDanhMuc']; ?></td>
-                                <td><?php echo $value['MoTa']; ?></td>
+                                <td><?php echo $value['MoTaDM']; ?></td>
                                 <td class="actions">
                                     <a href="" title="Sửa" onclick="updateDanhMuc(<?php echo $value['IDDanhMuc']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDDanhMuc']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
                                     <a class="bt-delete-red" onclick="deleteDanhMuc(<?php echo $value['IDDanhMuc']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>

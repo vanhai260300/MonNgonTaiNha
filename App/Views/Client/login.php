@@ -290,16 +290,17 @@
         </div>
         <div class="form">
             <h2>Login to your account</h2>
-            <span style="color:red;"></span>
+            <span style="color:red;"><?php if(isset($_POST['login'])) { echo $args['loginResult'];} ?></span>
             <span style="color:green;"></span>
-            <form action="" method="post">
+            <form action="/DoAn1/public/dang-nhap" method="post">
                 <input type="text" placeholder="Username" name="username">
                 <input type="password" placeholder="Password" name="password">
-                <input type="submit" id="buttn" name="submit" value="login">
+                <input type="submit" id="login" name="login" value="login">
             </form>
+            <div><a href="/DoAn1/public/">Về trang chủ</a></div>
         </div>
 
-        <div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
+        <div class="cta">Not registered?<a href="/DoAn1/public/dang-ky" style="color:#f30;"> Create an account</a></div>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

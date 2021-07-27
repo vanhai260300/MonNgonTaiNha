@@ -2981,3 +2981,17 @@ a[aria-expanded=false] .fa-angle-down {
     padding: 0 5px;
     color: #3a3e47;
 }
+.pagination{
+    display: flex;
+    justify-content:center;
+}
+.pagination li a{
+    padding: 5px 10px;
+    margin: 0.5px;
+    border: 0.5px solid;
+}
+.product-name{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

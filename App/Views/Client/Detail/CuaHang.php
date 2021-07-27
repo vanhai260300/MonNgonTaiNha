@@ -43,24 +43,11 @@
                             </div>
                             <div class="widget-body">
                                 <ul class="tags">
-                                    <li> <a href="#" class="tag">
-                                            Pizza
-                                        </a> </li>
-                                    <li> <a href="#" class="tag">
-                                            Sendwich
-                                        </a> </li>
-                                    <li> <a href="#" class="tag">
-                                            Sendwich
-                                        </a> </li>
-                                    <li> <a href="#" class="tag">
-                                            Fish
-                                        </a> </li>
-                                    <li> <a href="#" class="tag">
-                                            Desert
-                                        </a> </li>
-                                    <li> <a href="#" class="tag">
-                                            Salad
-                                        </a> </li>
+                                <?php foreach ($args['DanhMuc'] as $key => $value) { ?>
+                                <li> 
+                                    <a href="#" class="tag"><?php echo $value['TenDanhMuc'];?></a> 
+                                </li>
+                                <?php }?>
                                 </ul>
                             </div>
                         </div>
@@ -69,17 +56,17 @@
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
                         <div class="bg-gray restaurant-entry">
                             <div class="row">
+                                <?php foreach ($args['listCuaHang'] as $key => $value){ ?>
                                 <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                                     <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=48"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad74ce37c383.jpg" alt="Food logo"></a>
+                                        <a class="img-fluid" href="<?php echo $value['IDCuaHang'];?>"> <img
+                                                src="/DoAn1/public/image/Res_img/<?php echo $value['Anh'];?>" alt="Food logo"></a>
                                     </div>
                                     <!-- end:Logo -->
                                     <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=48">Hari Burger</a></h5> <span> Palace, natwar
-                                            jalandhar <a href="#">...</a></span>
+                                        <h5><a href="<?php echo $value['IDCuaHang'];?>"><?php echo $value['TenCuaHang'];?></a></h5> <span> <?php echo $value['DiaChi'];?> <a href="#"></a></span>
                                         <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
+                                            <li class="list-inline-item"><i class="fa fa-check"></i> <?php echo $value['SDT'];?></li>
                                             <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
                                         </ul>
                                     </div>
@@ -92,159 +79,15 @@
                                             <div class="rating-block"> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=48"
+                                            <p> 245 Reviews</p> <a href="<?php echo $value['IDCuaHang'];?>"
                                                 class="btn theme-btn-dash">View Menu</a>
                                         </div>
                                     </div>
                                     <!-- end:right info -->
                                 </div>
-                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-                                    <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=49"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad74de005016.jpg" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=49">The Great Kabab Factory</a></h5>
-                                        <span>Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037 <a
-                                                href="#">...</a></span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                                        </ul>
-                                    </div>
-                                    <!-- end:Entry description -->
-                                </div>
+                                <?php }?>
 
-                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-                                    <div class="right-content bg-white">
-                                        <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=49"
-                                                class="btn theme-btn-dash">View Menu</a>
-                                        </div>
-                                    </div>
-                                    <!-- end:right info -->
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-                                    <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=50"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad74e5310ae4.jpg" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=50">Aarkay Vaishno Dhaba</a></h5> <span>Bhargav
-                                            Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003 <a
-                                                href="#">...</a></span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                                        </ul>
-                                    </div>
-                                    <!-- end:Entry description -->
-                                </div>
-
-                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-                                    <div class="right-content bg-white">
-                                        <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=50"
-                                                class="btn theme-btn-dash">View Menu</a>
-                                        </div>
-                                    </div>
-                                    <!-- end:right info -->
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-                                    <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=51"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad74ebf1d103.jpg" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=51">Martini</a></h5> <span>399 L Near Apple
-                                            Showroom, Model Town, <a href="#">...</a></span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                                        </ul>
-                                    </div>
-                                    <!-- end:Entry description -->
-                                </div>
-
-                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-                                    <div class="right-content bg-white">
-                                        <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=51"
-                                                class="btn theme-btn-dash">View Menu</a>
-                                        </div>
-                                    </div>
-                                    <!-- end:right info -->
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-                                    <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=52"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad756f1429e3.jpg" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=52">hudson</a></h5> <span>Opposite Lovely Sweets,
-                                            Nakodar Road, Jalandhar, Punjab 144001 <a href="#">...</a></span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                                        </ul>
-                                    </div>
-                                    <!-- end:Entry description -->
-                                </div>
-
-                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-                                    <div class="right-content bg-white">
-                                        <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=52"
-                                                class="btn theme-btn-dash">View Menu</a>
-                                        </div>
-                                    </div>
-                                    <!-- end:right info -->
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
-                                    <div class="entry-logo">
-                                        <a class="img-fluid" href="dishes.php?res_id=53"> <img
-                                                src="/DoAn1/public/image/Res_img/5ad79e7d01c5a.jpg" alt="Food logo"></a>
-                                    </div>
-                                    <!-- end:Logo -->
-                                    <div class="entry-dscr">
-                                        <h5><a href="dishes.php?res_id=53">kriyana store</a></h5> <span>near kalu gali
-                                            hotel india what everrrr. <a href="#">...</a></span>
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                            <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                                        </ul>
-                                    </div>
-                                    <!-- end:Entry description -->
-                                </div>
-
-                                <div class="col-sm-12 col-md-12 col-lg-4 text-xs-center">
-                                    <div class="right-content bg-white">
-                                        <div class="right-review">
-                                            <div class="rating-block"> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-                                                    class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="dishes.php?res_id=53"
-                                                class="btn theme-btn-dash">View Menu</a>
-                                        </div>
-                                    </div>
-                                    <!-- end:right info -->
-                                </div>
+                                
                             </div>
                             <!--end:row -->
                         </div>
