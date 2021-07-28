@@ -66,11 +66,31 @@ class monanModel extends \Core\Model
         ];
         return $paginatoinInfo;
     }
-    public static function getMonAnOfCuaHang($idCuaHang)
+    public static function getMonAnOfCuaHang($idMonAn)
     {
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCuaHang.' AND ma.IDCuaHang = ch.IDCuaHang');
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $getIDCH = $db->query('SELECT IDCuaHang FROM monan WHERE IDMonAn = '.$idMonAn.'');
+        $idCH = current($getIDCH->fetch(PDO::FETCH_ASSOC));
+        
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCH.' AND ma.IDCuaHang = ch.IDCuaHang');
+        $MonAnOfCuaHang =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $getInfoCH = $db->query('SELECT * FROM cuahang WHERE IDCuaHang='.$idCH.'');
+        $infoCH = $getInfoCH->fetchAll(PDO::FETCH_ASSOC);
+        return [
+            'MonAnCuaCuaHang' => $MonAnOfCuaHang,
+            'ThongTinCuaHang' =>$infoCH
+        ];
+    }
+    public static function getMonAnOfCuaHangByIDCuaHang($idCuahang){
+        $db = static::getDB();
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCuahang.' AND ma.IDCuaHang = ch.IDCuaHang');
+        $MonAnOfCuaHang =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $getInfoCH = $db->query('SELECT * FROM cuahang WHERE IDCuaHang='.$idCuahang.'');
+        $infoCH = $getInfoCH->fetchAll(PDO::FETCH_ASSOC);
+        return [
+            'MonAnCuaCuaHang' => $MonAnOfCuaHang,
+            'ThongTinCuaHang' =>$infoCH
+        ];
     }
     public static function moveTrash($id){
         $db = static::getDB();

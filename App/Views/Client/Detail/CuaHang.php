@@ -59,12 +59,12 @@
                                 <?php foreach ($args['listCuaHang'] as $key => $value){ ?>
                                 <div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                                     <div class="entry-logo">
-                                        <a class="img-fluid" href="<?php echo $value['IDCuaHang'];?>"> <img
+                                        <a class="img-fluid" href="/DoAn1/public/cua-hang/by/<?php echo $value['IDCuaHang'];?>"> <img
                                                 src="/DoAn1/public/image/Res_img/<?php echo $value['Anh'];?>" alt="Food logo"></a>
                                     </div>
                                     <!-- end:Logo -->
                                     <div class="entry-dscr">
-                                        <h5><a href="<?php echo $value['IDCuaHang'];?>"><?php echo $value['TenCuaHang'];?></a></h5> <span> <?php echo $value['DiaChi'];?> <a href="#"></a></span>
+                                        <h5><a href="/DoAn1/public/cua-hang/by/<?php echo $value['IDCuaHang'];?>"><?php echo $value['TenCuaHang'];?></a></h5> <span> <?php echo $value['DiaChi'];?> <a href="#"></a></span>
                                         <ul class="list-inline">
                                             <li class="list-inline-item"><i class="fa fa-check"></i> <?php echo $value['SDT'];?></li>
                                             <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>

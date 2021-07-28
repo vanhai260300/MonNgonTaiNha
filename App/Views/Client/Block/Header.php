@@ -9,7 +9,7 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/">TRANG CHỦ <span class="sr-only">(current)</span></a> </li>
                         <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/mon-an">MÓN ĂN<span class="sr-only"></span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/cua-hang">CỬA HÀNG<span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/ds-cua-hang">CỬA HÀNG<span class="sr-only"></span></a> </li>
 
                         <?php if (isset($_SESSION['username-client'])) {?>
                         <li class="nav-item"><a href="/DoAn1/public/dang-nhap" class="nav-link active">GIỎ HÀNG</a> </li>

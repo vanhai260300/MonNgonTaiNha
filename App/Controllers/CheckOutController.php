@@ -17,6 +17,14 @@ class CheckoutController extends \Core\Controller
      *
      * @return void
      */
+    public function __construct()
+    {
+        if(!isset($_SESSION['username-client']))
+        {
+            header("location:/DoAn1/public/dang-nhap");
+        }
+    }
+    
     public function indexAction()
     {
         View::render('Client/index.php', ['page'=>'ThanhToan']);
