@@ -33,7 +33,9 @@ $router->add('/DoAn1/public/cua-hang/{idmon:\d+}', ['controller' => 'CuahangCont
 $router->add('/DoAn1/public/cua-hang/by/{idcuahang:\d+}', ['controller' => 'CuahangController', 'action' => 'MonAnByIdCuaHang']);
 $router->add('/DoAn1/public/mon-an', ['controller' => 'MonAnController', 'action' => 'index']);
 $router->add('/DoAn1/public/mon-an/{id:\d+}', ['controller' => 'MonAnController', 'action' => 'index']);
-$router->add('/DoAn1/public/mon-an/{id:\d+}/{cate:\d+}', ['controller' => 'MonAnController', 'action' => 'index']);
+$router->add('/DoAn1/public/mon-an-loai', ['controller' => 'MonAnController', 'action' => 'LoaiMon']);
+$router->add('/DoAn1/public/mon-an-loai/{idcate:\d+}', ['controller' => 'MonAnController', 'action' => 'LoaiMon']);
+$router->add('/DoAn1/public/mon-an-loai/{idcate:\d+}/{id:\d+}', ['controller' => 'MonAnController', 'action' => 'LoaiMon']);
 $router->add('/DoAn1/public/dang-nhap', ['controller' => 'LoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/dang-xuat', ['controller' => 'LoginController', 'action' => 'logout']);
 $router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);

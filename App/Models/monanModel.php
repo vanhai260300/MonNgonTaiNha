@@ -66,6 +66,40 @@ class monanModel extends \Core\Model
         ];
         return $paginatoinInfo;
     }
+    public static function getMonAnTheoDMPagi($page,$idDM)
+    {
+        $db = static::getDB();
+        $stmt = $db->query('SELECT COUNT(IDMonAn) FROM   monan WHERE IDDanhMuc = '.$idDM.' AND deleteAt IS NULL');
+        $totalRecords = current($stmt->fetch(PDO::FETCH_ASSOC));
+        $current_page = $page;
+        $limit = 6;
+        $totalPages = ceil($totalRecords / $limit);
+        // Giới hạn current_page trong khoảng 1 đến total_page
+        if ($current_page > $totalPages) {
+            $current_page = $totalPages;
+        } else if ($current_page < 1) {
+            $current_page = 1;
+        }
+        $start = ($current_page - 1) * $limit;
+        if ($totalPages == 0)
+        {
+            $start = 1;
+            $limit = 1;
+        }
+        $stpr = $db->query('SELECT * FROM monan as ma  
+                            INNER JOIN (SELECT dm.IDDanhMuc,dm.TenDanhMuc FROM danhmucmonan as dm ) dam ON dam.IDDanhMuc = ma.IDDanhMuc
+                            INNER JOIN cuahang ch ON ma.IDCuaHang = ch.IDCuaHang 
+                            WHERE ma.IDDanhMuc = '.$idDM.' AND ma.deleteAt IS NULL                           
+                            ORDER BY ma.Gia ASC 
+                            LIMIT '.$start.', '.$limit.'');
+        $MonAn = $stpr->fetchAll(PDO::FETCH_ASSOC);
+        $paginatoinInfo = [
+            'MonAn' => $MonAn,
+            'totalPages' => $totalPages,
+            'current_page' => $current_page
+        ];
+        return $paginatoinInfo;
+    }
     public static function getMonAnOfCuaHang($idMonAn)
     {
         $db = static::getDB();

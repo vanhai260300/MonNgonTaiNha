@@ -45,7 +45,7 @@
                                 <ul class="tags">
                                 <?php foreach ($args['DanhMuc'] as $key => $value) { ?>
                                 <li> 
-                                    <a href="#" class="tag"><?php echo $value['TenDanhMuc'];?></a> 
+                                    <a href="/DoAn1/public/mon-an-loai/<?php echo $value['IDDanhMuc'];?>" class="tag"><?php echo $value['TenDanhMuc'];?></a> 
                                 </li>
                                 <?php }?>
                                 </ul>

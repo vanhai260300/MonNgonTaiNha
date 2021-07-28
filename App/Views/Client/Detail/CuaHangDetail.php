@@ -67,7 +67,7 @@
                     <div class="widget widget-cart">
                         <div class="widget-heading">
                             <h3 class="widget-title text-dark">
-                                Your Shopping Cart
+                                Giỏ Hàng
                             </h3>
 
 
@@ -160,7 +160,8 @@
                             <div class="food-item">
                                 <div class="row">
                                     <?php foreach ($args['MonAnCuaHang']['MonAnCuaCuaHang'] as $key => $value){?>
-                                    <div class="col-xs-12 col-sm-12 col-lg-8">
+                                        <div class = "col-sm-12">
+                                        <div class="col-xs-12 col-sm-12 col-lg-8">
                                         <form method="post" action="dishes.php?res_id=48&amp;action=add&amp;id=11">
                                             <div class="rest-logo pull-left">
                                                 <a class="restaurant-logo pull-left" href="#"><img
@@ -183,6 +184,8 @@
                                         <input type="submit" class="btn theme-btn" style="margin-left:40px;"
                                             value="Add to cart">
                                     </div>
+                                        </div>
+                                    
                                     <?php } ?>
                                 </div>
                                 <!-- end:row -->
