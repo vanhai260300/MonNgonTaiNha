@@ -34,9 +34,13 @@ class LoginController extends \Core\Controller
             } else if ($result == 0 ) {
                 $kq = "Mật khẩu không chính xác.";
             } else {
-                
-                header("location:/DoAn1/public");
+                foreach ($result as $key => $val) {
+                    $_SESSION['id-client'] = $val['IDKhachHang'];
+                }
                 $_SESSION['username-client'] = $username;
+                header("location:/DoAn1/public");
+                
+                
                 
             }
             
@@ -47,6 +51,7 @@ class LoginController extends \Core\Controller
     }
     public function logoutAction(){
         unset($_SESSION['username-client']);
+        unset($_SESSION['id-client']);
         header("location:/DoAn1/public");
     }
 }

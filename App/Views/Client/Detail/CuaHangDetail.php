@@ -77,45 +77,27 @@
                             <div class="widget-body">
 
 
-
+                                <?php foreach ($args['gioHang'] as $key => $value){?>
 
                                 <div class="title-row">
-                                    Bonefish<a href="dishes.php?res_id=48&amp;action=remove&amp;id=11">
+                                <?php echo $value['TenMonAn']; ?><a href="">
                                         <i class="fa fa-trash pull-right"></i></a>
                                 </div>
 
                                 <div class="form-group row no-gutter">
                                     <div class="col-xs-8">
-                                        <input type="text" class="form-control b-r-0" value="$55.77" readonly=""
+                                        <input type="text" class="form-control b-r-0" value="<?php echo $value['TongTien']; ?>" readonly=""
                                             id="exampleSelect1">
 
                                     </div>
                                     <div class="col-xs-4">
-                                        <input class="form-control" type="text" readonly="" value="2"
+                                        <input class="form-control" type="text" readonly="" value="<?php echo $value['SoLuong']; ?>"
                                             id="example-number-input">
                                     </div>
 
                                 </div>
 
-
-
-                                <div class="title-row">
-                                    Hard Rock Cafe<a href="dishes.php?res_id=48&amp;action=remove&amp;id=12">
-                                        <i class="fa fa-trash pull-right"></i></a>
-                                </div>
-
-                                <div class="form-group row no-gutter">
-                                    <div class="col-xs-8">
-                                        <input type="text" class="form-control b-r-0" value="$22.12" readonly=""
-                                            id="exampleSelect1">
-
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <input class="form-control" type="text" readonly="" value="1"
-                                            id="example-number-input">
-                                    </div>
-
-                                </div>
+                                    <?php } ?>
 
 
 

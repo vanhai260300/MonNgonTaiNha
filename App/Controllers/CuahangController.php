@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\cuaHangModel;
 use App\Models\danhMucModel;
 use App\Models\monanModel;
+use App\Models\hoaDonModel;
 use \Core\View;
 
 /**
@@ -30,11 +31,18 @@ class CuahangController extends \Core\Controller
         $params = $this -> route_params;
         if (isset($params['idmon']))
         {
-            $idMonAn = $params['idmon'];
+            if (!isset($_SESSION['id-client']))
+            {
+                header("location:/DoAn1/public/dang-nhap");
+            }  else {
+                $idMonAn = $params['idmon'];
             $MonAnOfCuaHang = monanModel::getMonAnOfCuaHang($idMonAn);
-            //var_dump($MonAnOfCuaHang); die();
-            View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHang]);
-        }
+            $gioHang = hoaDonModel::getChiTietHoaDonAll();
+            // var_dump($gioHang); die();
+            View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHang,'gioHang'=>$gioHang]);
+        
+            }
+            }
           
     }
     public function MonAnByIdCuaHangAction(){
@@ -42,10 +50,17 @@ class CuahangController extends \Core\Controller
         $params = $this -> route_params;
         if (isset($params['idcuahang']))
         {
-            $idcuahang = $params['idcuahang'];
-            $MonAnOfCuaHangByIDCuaHang = monanModel::getMonAnOfCuaHangByIDCuaHang($idcuahang);
-            //var_dump($MonAnOfCuaHangByIDCuaHang); die();
-            View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHangByIDCuaHang]);
+            if (!isset($_SESSION['id-client']))
+            {
+                header("location:/DoAn1/public/dang-nhap");
+            } else {
+                $idcuahang = $params['idcuahang'];
+                $MonAnOfCuaHangByIDCuaHang = monanModel::getMonAnOfCuaHangByIDCuaHang($idcuahang);
+                $gioHang = hoaDonModel::getChiTietHoaDonAll();
+                // var_dump($gioHang); die();
+                View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHangByIDCuaHang,'gioHang'=>$gioHang]);
+            }
+            
         }
     }
 }

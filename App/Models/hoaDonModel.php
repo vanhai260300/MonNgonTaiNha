@@ -28,4 +28,14 @@ class hoaDonModel extends \Core\Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
+    public static function getChiTietHoaDonAll()
+    {
+        $db = static::getDB();
+        $idKH = $_SESSION['id-client'];
+        $stmt = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang ='.$idKH.' AND IDNVGH = 0');
+        $idHoaDon = current($stmt->fetch(PDO::FETCH_ASSOC));
+        $stmtCTHD = $db->query('SELECT * FROM chitiethoadon as ct, monan as ma WHERE IDHoaDon = '.$idHoaDon.' AND ma.IDMonAn = ct.IDMonAn');
+        $chiTietHoaDon = $stmtCTHD->fetchAll(PDO::FETCH_ASSOC);
+        return $chiTietHoaDon;
+    }
 }

@@ -38,7 +38,7 @@ class KhachHangModel extends \Core\Model
                 if ($result == null) {
                     return 0;
                 } else
-                    return 1;
+                    return $result;
             }
         }
     }
