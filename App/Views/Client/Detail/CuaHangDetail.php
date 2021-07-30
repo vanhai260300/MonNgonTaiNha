@@ -17,7 +17,8 @@
     <div class="profile">
         <div class="container">
             <div class="row">
-                <?php foreach ($args['MonAnCuaHang']['ThongTinCuaHang'] as $key => $value) { $idCuaHang = $value['IDCuaHang'];?>
+                <?php foreach ($args['MonAnCuaHang']['ThongTinCuaHang'] as $key => $value) {
+                    $idCuaHang = $value['IDCuaHang']; ?>
                     <div class="col-xs-12 col-sm-12  col-md-4 col-lg-4 profile-img">
                         <div class="image-wrap">
                             <figure><img src="/DoAn1/public/image/Res_img/<?php echo $value['Anh']; ?>" alt="Restaurant logo"></figure>
@@ -83,13 +84,14 @@
                             </div>
 
                             <div class="form-group row no-gutter">
+                                <div class="col-xs-4">
+                                    <input class="form-control" type="text" readonly="" value="<?php echo $value['SoLuong']; ?>" id="example-number-input">
+                                </div>
                                 <div class="col-xs-8">
                                     <input type="text" class="form-control b-r-0" value="<?php echo $value['TongTien']; ?>" readonly="" id="exampleSelect1">
 
                                 </div>
-                                <div class="col-xs-4">
-                                    <input class="form-control" type="text" readonly="" value="<?php echo $value['SoLuong']; ?>" id="example-number-input">
-                                </div>
+
 
                             </div>
 
@@ -151,7 +153,7 @@
                                         </form>
                                     </div>
                                     <!-- end:col -->
-                                    <form action="/DoAn1/public/them-gio-hang" method="post" enctype="multipart/form-data">
+                                    <form action="/DoAn1/public/them-gio-hang" class="formEvent" method="post" enctype="multipart/form-data">
                                         <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
                                             <span class="price pull-left"><?php echo $value['Gia']; ?></span>
                                             <input type="text" name="quantity" style="margin-left:30px;" value="1" size="2">
@@ -160,7 +162,7 @@
                                             <input type="submit" class="btn theme-btn" style="margin-left:40px;" name="addToCart" value="Add to cart">
                                         </div>
                                     </form>
-                                    
+
                                 </div>
 
                             <?php } ?>

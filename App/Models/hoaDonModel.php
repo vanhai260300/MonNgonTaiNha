@@ -58,9 +58,44 @@ class hoaDonModel extends \Core\Model
             $stInsCTHD ->fetchAll(PDO::FETCH_ASSOC);
             return 1;
         } else {
-            $stDeleteCT = $db->query('DELETE FROM chitiethoadon WHERE IDHoaDon = 2 AND IDMonAn NOT IN (SELECT monan.IDMonAn FROM monan WHERE monan.IDCuaHang = 3)');
+            $getIDHoaDon = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
+            $getHoaDon = current($getIDHoaDon->fetch(PDO::FETCH_ASSOC));
+            $countMonAn = $db->query('SELECT COUNT(IDMonAn) FROM chitiethoadon WHERE IDHoaDon = '.$getHoaDon.' AND IDMonAn='.$idMonAN.'');
+            $slMon = current($countMonAn->fetch(PDO::FETCH_ASSOC));
+            if ($slMon == 0) {
+                $stInsCTHD = $db->query('INSERT INTO chitiethoadon (IDHoaDon, IDMonAn, SoLuong, TongTien, MoTa, GhiChu) VALUES ('.$getHoaDon.', '.$idMonAN.', '.$soLuong.', "", "", "") ');
+                $stInsCTHD ->fetchAll(PDO::FETCH_ASSOC);
+            } else {
+                $SoLuong = $db->query('SELECT SoLuong FROM chitiethoadon WHERE IDHoaDon = '.$getHoaDon.' AND IDMonAn='.$idMonAN.'');
+                $slMon = current($SoLuong->fetch(PDO::FETCH_ASSOC));
+                $stInsCTHD = $db->query('UPDATE chitiethoadon SET SoLuong = '.($slMon + $soLuong).' WHERE chitiethoadon.IDHoaDon = '.$getHoaDon.' AND chitiethoadon.IDMonAn = '.$idMonAN.'');
+                $stInsCTHD ->fetchAll(PDO::FETCH_ASSOC);
+            }
+            
+            $stDeleteCT = $db->query('DELETE FROM chitiethoadon WHERE IDHoaDon = '.$getHoaDon.' AND IDMonAn NOT IN (SELECT monan.IDMonAn FROM monan WHERE monan.IDCuaHang = '.$idCuaHang.')');
             $stDeleteCT->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $slMon;
+            
         }
         return;
+    }
+    public static function checkCuahang($idCuaHang)
+    {
+        $db = static::getDB();
+        $IDKhackHang = $_SESSION['id-client'];
+        try {
+            $getIDHoaDon = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
+            $getHoaDon = current($getIDHoaDon->fetch(PDO::FETCH_ASSOC));
+            $stDeleteCT = $db->query('SELECT * FROM chitiethoadon WHERE IDHoaDon = '.$getHoaDon.' AND IDMonAn NOT IN (SELECT monan.IDMonAn FROM monan WHERE monan.IDCuaHang = '.$idCuaHang.')');
+            $kqTim = $stDeleteCT->fetchAll(PDO::FETCH_ASSOC);
+            if (count($kqTim) == 0)
+            {
+                return 0;
+            } else return 1;
+        } catch(Exception $e) {
+            return 1;
+        }
+        
     }
 }

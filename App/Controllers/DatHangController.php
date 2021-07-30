@@ -27,9 +27,17 @@ class DatHangController extends \Core\Controller
             $idCuaHang = $_POST['idCuaHang'];
             $SoLuong = $_POST['quantity'];
             $kq=hoaDonModel::themVaoGiohang($idMonAn,$SoLuong,$idCuaHang); 
-            var_dump($kq); die();
+            // var_dump($kq); die();
+            header("Location:/DoAn1/public/cua-hang/by/".$idCuaHang."");
         }
         
+    }
+
+    public function checkKhacCuaHangAction()
+    {
+        $idch = $_POST['idch'];
+        $kq = hoaDonModel::checkCuahang($idch);
+        echo ($kq); 
     }
 
 }

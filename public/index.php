@@ -41,6 +41,7 @@ $router->add('/DoAn1/public/dang-xuat', ['controller' => 'LoginController', 'act
 $router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);
 //$router->add('/DoAn1/public/dat-hang', ['controller' => 'DatHangController', 'action' => 'index']);
 $router->add('/DoAn1/public/them-gio-hang', ['controller' => 'DatHangController', 'action' => 'index']);
+$router->add('/DoAn1/public/checkKhacCuaHang', ['controller' => 'DatHangController', 'action' => 'checkKhacCuaHang']);
 
 $router->add('/DoAn1/public/thanh-toan', ['controller' => 'CheckoutController', 'action' => 'index']);
 
