@@ -39,7 +39,9 @@ $router->add('/DoAn1/public/mon-an-loai/{idcate:\d+}/{id:\d+}', ['controller' =>
 $router->add('/DoAn1/public/dang-nhap', ['controller' => 'LoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/dang-xuat', ['controller' => 'LoginController', 'action' => 'logout']);
 $router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);
-$router->add('/DoAn1/public/dat-hang', ['controller' => 'DatHangController', 'action' => 'index']);
+//$router->add('/DoAn1/public/dat-hang', ['controller' => 'DatHangController', 'action' => 'index']);
+$router->add('/DoAn1/public/them-gio-hang', ['controller' => 'DatHangController', 'action' => 'index']);
+
 $router->add('/DoAn1/public/thanh-toan', ['controller' => 'CheckoutController', 'action' => 'index']);
 
 //Routes ADMIN
