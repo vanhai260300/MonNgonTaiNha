@@ -153,18 +153,17 @@
                                         </form>
                                     </div>
                                     <!-- end:col -->
-                                    <form action="/DoAn1/public/them-gio-hang" class="formEvent" method="post" enctype="multipart/form-data">
+                                    <!-- action="/DoAn1/public/them-gio-hang" -->
+                                    <div>
                                         <div class="col-xs-12 col-sm-12 col-lg-4 pull-right item-cart-info">
                                             <span class="price pull-left"><?php echo $value['Gia']; ?></span>
-                                            <input type="text" name="quantity" style="margin-left:30px;" value="1" size="2">
+                                            <input type="text" name="quantity_<?php echo $value['IDMonAn'];?>" style="margin-left:30px;" value="1" size="2">
                                             <input type="hidden" name="idCuaHang" style="margin-left:30px;" value="<?php echo $idCuaHang; ?>" size="2">
-                                            <input type="hidden" name="IDMonAn" style="margin-left:30px;" value="<?php echo $value['IDMonAn']; ?>" size="2">
-                                            <input type="submit" class="btn theme-btn" style="margin-left:40px;" name="addToCart" value="Add to cart">
+                                            <input type="hidden" name="IDMonAn_<?php echo $value['IDMonAn'];?>" style="margin-left:30px;" value="<?php echo $value['IDMonAn']; ?>" size="2">
+                                            <button onclick="addToCart(<?php echo $value['IDMonAn'];?>)" class="btn theme-btn" style="margin-left:40px;" name="addToCart" value="">Add to cart</button>
                                         </div>
-                                    </form>
-
+                                    </div>
                                 </div>
-
                             <?php } ?>
                         </div>
                         <!-- end:row -->

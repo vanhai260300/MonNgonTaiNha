@@ -21,15 +21,12 @@ class DatHangController extends \Core\Controller
      */
     public function indexAction()
     {
-        if (isset($_POST['addToCart']))
-        {
-            $idMonAn = $_POST['IDMonAn'];
+        $idMonAn = $_POST['IDMonAn'];
             $idCuaHang = $_POST['idCuaHang'];
             $SoLuong = $_POST['quantity'];
             $kq=hoaDonModel::themVaoGiohang($idMonAn,$SoLuong,$idCuaHang); 
             // var_dump($kq); die();
-            header("Location:/DoAn1/public/cua-hang/by/".$idCuaHang."");
-        }
+            echo $kq;
         
     }
 
