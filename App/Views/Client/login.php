@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>Đăng Nhập</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
@@ -281,7 +281,7 @@
     <!-- Button Mixin-->
     <!-- Pen Title-->
     <div class="pen-title">
-        <h1>Login Form</h1>
+        <h1>Đăng Nhập</h1>
     </div>
     <!-- Form Module-->
     <div class="module form-module">
@@ -289,7 +289,7 @@
 
         </div>
         <div class="form">
-            <h2>Login to your account</h2>
+            <h2>Đăng nhập tài khoản của bạn</h2>
             <span style="color:red;"><?php if(isset($_POST['login'])) { echo $args['loginResult'];} ?></span>
             <span style="color:green;"></span>
             <form action="/DoAn1/public/dang-nhap" method="post">
@@ -300,7 +300,7 @@
             <div><a href="/DoAn1/public/">Về trang chủ</a></div>
         </div>
 
-        <div class="cta">Not registered?<a href="/DoAn1/public/dang-ky" style="color:#f30;"> Create an account</a></div>
+        <div class="cta">Chưa đăng ký?<a href="/DoAn1/public/dang-ky" style="color:#f30;"> Tạo tài khoản</a></div>
     </div>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

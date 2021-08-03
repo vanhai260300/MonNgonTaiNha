@@ -25,6 +25,12 @@ class LoginController extends \Core\Controller
         {
             $username = $_POST['username'];
             $password = $_POST['password'];
+            if (isset($_COOKIE['username-client'])){
+                $username = $_COOKIE['username-client'];
+            }
+            if (isset($_COOKIE['password-client'])){
+                $password = $_COOKIE['password-client'];
+            }
             $result = KhachHangModel::login($username, $password);
             if ($result == -2)
             {
@@ -36,8 +42,13 @@ class LoginController extends \Core\Controller
             } else {
                 foreach ($result as $key => $val) {
                     $_SESSION['id-client'] = $val['IDKhachHang'];
+                    setcookie('id-client', $val['IDKhachHang'], time()+(60*60*24*30) );
+
                 }
                 $_SESSION['username-client'] = $username;
+                setcookie('username-client', $username, time()+(60*60*24*30) );
+                $_SESSION['password-client'] = $password;
+                setcookie('password-client', $password, time()+(60*60*24*30) );
                 header("location:/DoAn1/public");
                 
                 
@@ -47,11 +58,14 @@ class LoginController extends \Core\Controller
             
         }
         
-        View::render('Client/login.php', ['loginResult' => $kq]);
+        View::render('Client/login.php', ['loginResult' => $kq, 'title'=>"Đăng Nhập"]);
     }
     public function logoutAction(){
         unset($_SESSION['username-client']);
         unset($_SESSION['id-client']);
+        setcookie("username-client", "", time()-3600);
+        setcookie("id-client", "", time()-3600);
+        setcookie("password-client", "", time()-3600);
         header("location:/DoAn1/public");
     }
 }

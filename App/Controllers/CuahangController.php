@@ -24,7 +24,7 @@ class CuahangController extends \Core\Controller
     {
         $getCuahang = cuaHangModel::getAll();
         $danhMuc = danhMucModel::getAll();
-        View::render('Client/index.php', ['page'=>'CuaHang', 'listCuaHang'=>$getCuahang,'DanhMuc'=>$danhMuc]);
+        View::render('Client/index.php', ['page'=>'CuaHang', 'title'=>"Cửa Hàng", 'listCuaHang'=>$getCuahang,'DanhMuc'=>$danhMuc]);
     }
     public function monAnOfCuaHangAction(){
         $danhMuc = danhMucModel::getAll();
@@ -39,7 +39,7 @@ class CuahangController extends \Core\Controller
             $MonAnOfCuaHang = monanModel::getMonAnOfCuaHang($idMonAn);
             $gioHang = hoaDonModel::getChiTietHoaDonAll();
             // var_dump($gioHang); die();
-            View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHang,'gioHang'=>$gioHang]);
+            View::render('Client/index.php', ['page'=>'CuaHangDetail', 'title'=>"Cửa Hàng",'DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHang,'gioHang'=>$gioHang]);
         
             }
             }
@@ -58,7 +58,7 @@ class CuahangController extends \Core\Controller
                 $MonAnOfCuaHangByIDCuaHang = monanModel::getMonAnOfCuaHangByIDCuaHang($idcuahang);
                 $gioHang = hoaDonModel::getChiTietHoaDonAll();
                 // var_dump($gioHang); die();
-                View::render('Client/index.php', ['page'=>'CuaHangDetail','DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHangByIDCuaHang,'gioHang'=>$gioHang]);
+                View::render('Client/index.php', ['page'=>'CuaHangDetail', 'title'=>"Cửa Hàng",'DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHangByIDCuaHang,'gioHang'=>$gioHang]);
             }
             
         }

@@ -76,11 +76,11 @@
                     <div class="widget-body">
 
 
-                        <?php foreach ($args['gioHang'] as $key => $value) { ?>
-
+                        <?php foreach ($args['gioHang']['chitiethoadon'] as $key => $value) { ?>
+                            <div id="item-<?php echo $value['IDMonAn']; ?>-<?php echo $value['IDHoaDon']; ?>">
                             <div class="title-row">
-                                <?php echo $value['TenMonAn']; ?><a href="">
-                                    <i class="fa fa-trash pull-right"></i></a>
+                                <?php echo $value['TenMonAn']; ?><a onclick="DeleteItemCart(<?php echo $value['IDMonAn']; ?>,<?php echo $value['IDHoaDon']; ?>)">
+                                    <i  class="fa  fa-trash pull-right text-danger"></i></a>
                             </div>
 
                             <div class="form-group row no-gutter">
@@ -94,7 +94,7 @@
 
 
                             </div>
-
+                            </div>
                         <?php } ?>
 
 
@@ -108,10 +108,16 @@
 
                 <div class="widget-body">
                     <div class="price-wrap text-xs-center">
-                        <p>TOTAL</p>
-                        <h3 class="value"><strong>$133.66</strong></h3>
-                        <p>Free Shipping</p>
-                        <a href="checkout.php?res_id=48&amp;action=check" class="btn theme-btn btn-lg">Checkout</a>
+                    <?php foreach ($args['gioHang']['ThongTinHoaDon'] as $key => $value) { ?>
+                        
+                        <p>Tổng</p>
+                        <p class="value"><strong><?php echo $value['TongTien']; ?></strong></p>
+                        <p>Phí vận chuyển</p>
+                        <p><strong><?php echo $value['PhiGiaoHang']; ?></strong></p>
+                        <p>Tổng Tiền</p> 
+                        <h3 class="value"><strong><?php echo ($value['TongTien'] + $value['PhiGiaoHang']); ?></strong></h3>
+                        <a href="checkout.php?res_id=48&amp;action=check" class="btn theme-btn btn-lg">Thanh Toán</a>
+                        <?php } ?>
                     </div>
                 </div>
 

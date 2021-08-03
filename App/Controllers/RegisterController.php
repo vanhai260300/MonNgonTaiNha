@@ -19,6 +19,6 @@ class RegisterController extends \Core\Controller
      */
     public function indexAction()
     {
-        View::render('Client/index.php', ['page'=>'Register']);
+        View::render('Client/index.php', ['page'=>'Register', 'title'=>"Đăng Ký"]);
     }
 }

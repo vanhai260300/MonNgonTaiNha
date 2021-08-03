@@ -27,7 +27,7 @@ class MonAnController extends \Core\Controller
             $params['id'] = 1;
         $MonAnInPage = monanModel::getMonAnPagi($params['id']);
         $danhMuc = danhMucModel::getAll();
-        View::render('Client/index.php', ['page' => 'monan', 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc]);
+        View::render('Client/index.php', ['page' => 'monan', 'title'=>"Danh Sách Món Ăn", 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc]);
     }
     public function LoaiMonAction()
     {

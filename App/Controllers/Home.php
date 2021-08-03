@@ -19,6 +19,6 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-        View::render('Client/index.php', ['page'=>'TrangChu']);
+        View::render('Client/index.php', ['page'=>'TrangChu', 'title'=>"Trang Chủ Món Ngon Tại Nhà"]);
     }
 }

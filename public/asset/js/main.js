@@ -47,3 +47,17 @@ async function addcart(idMon) {
     });
 
 }
+function DeleteItemCart(idMon, idHoaDon){
+    
+    console.log('ID Mon '+idMon);
+    console.log('ID HoaDon '+idHoaDon);
+    if (confirm('Bạn có muốn xóa món này không?'))
+    {
+        $.post('/DoAn1/public/deleteItemCart',{ idMon: idMon, idHoaDon:idHoaDon}, function (re){
+            
+            $("#item-"+idMon+"-"+idHoaDon).remove();
+        });
+    }
+        
+        
+}

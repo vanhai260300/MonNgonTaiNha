@@ -41,7 +41,13 @@ class hoaDonModel extends \Core\Model
         
         $stmtCTHD = $db->query('SELECT * FROM chitiethoadon as ct, monan as ma WHERE IDHoaDon = '.$idHoaDon.' AND ma.IDMonAn = ct.IDMonAn');
         $chiTietHoaDon = $stmtCTHD->fetchAll(PDO::FETCH_ASSOC);
-        return $chiTietHoaDon;
+        $getHoaDon = $db->query('SELECT * FROM hoadondathang WHERE IDHoaDon = '.$idHoaDon.'');
+        $ThongTinHoaDon = $getHoaDon->fetchAll(PDO::FETCH_ASSOC);
+
+        return [
+            'chitiethoadon' => $chiTietHoaDon,
+            'ThongTinHoaDon' => $ThongTinHoaDon
+        ];
     }
     public static function themVaoGiohang($idMonAN,$soLuong,$idCuaHang)
     {
@@ -54,12 +60,14 @@ class hoaDonModel extends \Core\Model
             $stIns->fetchAll(PDO::FETCH_ASSOC);
             $getIDHoaDon = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
             $getHoaDon = current($getIDHoaDon->fetch(PDO::FETCH_ASSOC));
+            
             $stInsCTHD = $db->query('INSERT INTO chitiethoadon (IDHoaDon, IDMonAn, SoLuong, TongTien, MoTa, GhiChu) VALUES ('.$getHoaDon.', '.$idMonAN.', '.$soLuong.', "", "", "") ');
             $stInsCTHD ->fetchAll(PDO::FETCH_ASSOC);
             return 1;
         } else {
             $getIDHoaDon = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
             $getHoaDon = current($getIDHoaDon->fetch(PDO::FETCH_ASSOC));
+            
             $countMonAn = $db->query('SELECT COUNT(IDMonAn) FROM chitiethoadon WHERE IDHoaDon = '.$getHoaDon.' AND IDMonAn='.$idMonAN.'');
             $slMon = current($countMonAn->fetch(PDO::FETCH_ASSOC));
             if ($slMon == 0) {
@@ -97,5 +105,10 @@ class hoaDonModel extends \Core\Model
             return 1;
         }
         
+    }
+    public static function deleteItemCart($idMon,$idHoaDon){
+        $db = static::getDB();
+        $stmt = $db->query('DELETE FROM chitiethoadon WHERE chitiethoadon.IDHoaDon = '.$idHoaDon.' AND chitiethoadon.IDMonAn = '.$idMon.'');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

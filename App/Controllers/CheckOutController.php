@@ -27,6 +27,6 @@ class CheckoutController extends \Core\Controller
     
     public function indexAction()
     {
-        View::render('Client/index.php', ['page'=>'ThanhToan']);
+        View::render('Client/index.php', ['page'=>'ThanhToan', 'title'=>"Thanh Toán"]);
     }
 }

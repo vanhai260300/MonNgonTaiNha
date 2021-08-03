@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <title><?php echo $args['title'] ?></title>
     <!-- Bootstrap core CSS -->
     <link href="/DoAn1/public/asset/css/bootstrap.min.css" rel="stylesheet">
     <link href="/DoAn1/public/asset/css/font-awesome.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <script src="/DoAn1/public/asset/js/jquery.isotope.min.js"></script>
     <script src="/DoAn1/public/asset/js/headroom.js"></script>
     <script src="/DoAn1/public/asset/js/foodpicky.min.js"></script>
-    <script src="/DoAn1/public/asset/js/main.js?v=1.2"></script>
+    <script src="/DoAn1/public/asset/js/main.js?v=1.3"></script>
 
 
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

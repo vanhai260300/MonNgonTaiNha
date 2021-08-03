@@ -36,5 +36,13 @@ class DatHangController extends \Core\Controller
         $kq = hoaDonModel::checkCuahang($idch);
         echo ($kq); 
     }
+    public function DeleteItemCartAction()
+    {
+        
+        $idMonAn = $_POST['idMon'];
+        $idHoaDon = $_POST['idHoaDon'];
+        hoaDonModel::deleteItemCart($idMonAn,$idHoaDon);
+        
+    }
 
 }
