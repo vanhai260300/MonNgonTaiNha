@@ -39,6 +39,6 @@ class MonAnController extends \Core\Controller
             $params['id'] = 1;
         $MonAnInPage = monanModel::getMonAnTheoDMPagi($params['id'],$idDanhMuc);
         $danhMuc = danhMucModel::getAll();
-        View::render('Client/index.php', ['page' => 'monan', 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc,'MaDanhMuc'=>$idDanhMuc]);
+        View::render('Client/index.php', ['page' => 'monan', 'title'=>"Loại món", 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc,'MaDanhMuc'=>$idDanhMuc]);
     }
 }

@@ -27,9 +27,24 @@ class DatHangController extends \Core\Controller
             $kq=hoaDonModel::themVaoGiohang($idMonAn,$SoLuong,$idCuaHang); 
             // var_dump($kq); die();
             echo $kq;
+
         
     }
-
+    public function GioHangAction()
+    {
+        $gioHang= hoaDonModel::getChiTietHoaDonAll();
+        View::render('Client/index.php', ['page'=>'GioHang', 'title'=>"Giỏ Hàng", 'gioHang'=>$gioHang]);
+        
+    }
+    public function DonHangAction(){
+        View::render('Client/index.php', ['page'=>'DonHang', 'title'=>"Đơn Hàng của bạn"]);
+    }
+    public function capNhatHoaDonAction()
+    { 
+        $params = $this->route_params;
+        hoaDonModel::thanhToanHoaDon($params['idhd']);
+        header("Location:/DoAn1/public/hoa-don");
+    }
     public function checkKhacCuaHangAction()
     {
         $idch = $_POST['idch'];

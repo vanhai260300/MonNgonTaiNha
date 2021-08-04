@@ -1,4 +1,5 @@
-<!-- top Links -->
+<div class="page-wrapper">
+    <!-- top Links -->
 <div class="top-links">
     <div class="container">
         <ul class="row links">
@@ -111,12 +112,12 @@
                     <?php foreach ($args['gioHang']['ThongTinHoaDon'] as $key => $value) { ?>
                         
                         <p>Tổng</p>
-                        <p class="value"><strong><?php echo $value['TongTien']; ?></strong></p>
+                        <p class="value"><strong><?php echo number_format($value['TongTien']); ?></strong></p>
                         <p>Phí vận chuyển</p>
-                        <p><strong><?php echo $value['PhiGiaoHang']; ?></strong></p>
+                        <p><strong><?php echo number_format($value['PhiGiaoHang']); ?></strong></p>
                         <p>Tổng Tiền</p> 
-                        <h3 class="value"><strong><?php echo ($value['TongTien'] + $value['PhiGiaoHang']); ?></strong></h3>
-                        <a href="checkout.php?res_id=48&amp;action=check" class="btn theme-btn btn-lg">Thanh Toán</a>
+                        <h3 class="value"><strong><?php echo number_format($value['TongTien'] + $value['PhiGiaoHang']); ?></strong></h3>
+                        <a href="/DoAn1/public/thanh-toan" class="btn theme-btn btn-lg">Thanh Toán</a>
                         <?php } ?>
                     </div>
                 </div>
@@ -238,3 +239,4 @@
     <!-- end:row -->
 </div>
 <!-- end:Container -->
+</div>

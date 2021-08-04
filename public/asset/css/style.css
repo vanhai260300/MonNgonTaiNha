@@ -2995,3 +2995,177 @@ a[aria-expanded=false] .fa-angle-down {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.title-cart {
+    margin-bottom: 5vh
+}
+
+.card-cart {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+@media(max-width:767px) {
+    .card-cart {
+        margin: 3vh auto
+    }
+}
+
+.cart-items {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .cart-items {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.summary {
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65)
+}
+
+@media(max-width:767px) {
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem
+    }
+}
+
+.summary .col-2 {
+    padding: 0
+}
+
+.summary .col-10 {
+    padding: 0
+}
+
+.row {
+    margin: 0
+}
+
+.title-cart b {
+    font-size: 1.5rem
+}
+
+.main-Content {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%
+}
+
+.col-sm-2,
+.col-sm {
+    padding: 0 1vh
+}
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+  }
+a {
+    padding: 0 1vh
+}
+
+.close-cart {
+    margin-left: auto;
+    font-size: 0.7rem
+}
+
+.main-Content img {
+    width: 3.5rem
+}
+
+.back-to-shop {
+    margin-top: 4.5rem
+}
+
+.summary h5 {
+    margin-top: 4vh
+}
+
+.summary hr {
+    margin-top: 1.25rem
+}
+
+.summary form {
+    padding: 2vh 0
+}
+
+.summary select {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+.summary input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+.summary input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.summary .btn {
+    background-color: #ff3300;
+    border-color: #ff3300;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 2px;
+}
+
+.summary .btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+.summary .btn:hover {
+    color: white
+}
+.main-Content input{
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+.main-Content a,.btn-delt{
+    cursor: pointer;
+}
+
+
+.location {
+    color: #ff3300
+}
+._1G9Cv7{
+    height: 2px;
+    width: 100%;
+    background-position-x: -30px;
+    background-size: 116px 3px;
+    background-image: repeating-linear-gradient(45deg
+, rgb(111, 166, 214), rgb(111, 166, 214) 33px, transparent 0px, transparent 41px, rgb(241, 141, 155) 0px, rgb(241, 141, 155) 74px, transparent 0px, transparent 82px);
+}

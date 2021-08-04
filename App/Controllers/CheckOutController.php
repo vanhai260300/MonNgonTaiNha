@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\hoaDonModel;
+use App\Models\KhachHangModel;
 use \Core\View;
 
 /**
@@ -27,6 +28,9 @@ class CheckoutController extends \Core\Controller
     
     public function indexAction()
     {
-        View::render('Client/index.php', ['page'=>'ThanhToan', 'title'=>"Thanh Toán"]);
+        $gioHang= hoaDonModel::getChiTietHoaDonAll();
+        $thongTinKhachHang = KhachHangModel::getKhachhangByID();
+        // var_dump($thongTinKhachHang); die();
+        View::render('Client/index.php', ['page'=>'ThanhToan', 'title'=>"Thanh Toán",'gioHang'=>$gioHang,'thongTinKhachHang'=>$thongTinKhachHang]);
     }
 }

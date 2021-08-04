@@ -11,12 +11,14 @@
     <link rel="icon" href="#">
     <title><?php echo $args['title'] ?></title>
     <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/DoAn1/public/asset/css/bootstrap.min.css" rel="stylesheet">
     <link href="/DoAn1/public/asset/css/font-awesome.min.css" rel="stylesheet">
     <link href="/DoAn1/public/asset/css/animsition.min.css" rel="stylesheet">
     <link href="/DoAn1/public/asset/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link  href="/DoAn1/public/asset/css/style.css?v=1.2" rel="stylesheet">
+    <link  href="/DoAn1/public/asset/css/style.css?v=1.7" rel="stylesheet">
     <link rel="stylesheet" href="DoAn1/public/asset/css/customstyle.css">
 </head>
 
@@ -39,7 +41,7 @@
     <script src="/DoAn1/public/asset/js/jquery.isotope.min.js"></script>
     <script src="/DoAn1/public/asset/js/headroom.js"></script>
     <script src="/DoAn1/public/asset/js/foodpicky.min.js"></script>
-    <script src="/DoAn1/public/asset/js/main.js?v=1.3"></script>
+    <script src="/DoAn1/public/asset/js/main.js?v=1.4"></script>
 
 
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

@@ -23,6 +23,12 @@ class KhachHangModel extends \Core\Model
         $stmt = $db->query('SELECT * FROM khachhang');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function getKhachhangByID(){
+        $db = static::getDB();
+        $idKhachhang = $_SESSION['id-client'];
+        $stmt = $db->query('SELECT * FROM khachhang WHERE IDKhachHang='.$idKhachhang.'');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public static function login($username, $password)
     {
         $db = static::getDB();

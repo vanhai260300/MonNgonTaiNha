@@ -26,7 +26,7 @@ async function addcart(idMon) {
         response = JSON.parse(re);
         console.log(response);
         console.log("2");
-        if (response == 0) {
+        if (response == 0 || response == 2) {
             $.post('/DoAn1/public/them-gio-hang', { idCuaHang: idch,IDMonAn: idMonAn,quantity: soluong }, function (re){
                 window.location.reload(true);
                 console.log(re);

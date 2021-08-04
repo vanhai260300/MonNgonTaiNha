@@ -41,10 +41,14 @@ $router->add('/DoAn1/public/dang-xuat', ['controller' => 'LoginController', 'act
 $router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);
 //$router->add('/DoAn1/public/dat-hang', ['controller' => 'DatHangController', 'action' => 'index']);
 $router->add('/DoAn1/public/them-gio-hang', ['controller' => 'DatHangController', 'action' => 'index']);
+$router->add('/DoAn1/public/gio-hang', ['controller' => 'DatHangController', 'action' => 'GioHang']);
 $router->add('/DoAn1/public/deleteItemCart', ['controller' => 'DatHangController', 'action' => 'DeleteItemCart']);
 $router->add('/DoAn1/public/checkKhacCuaHang', ['controller' => 'DatHangController', 'action' => 'checkKhacCuaHang']);
 
+
 $router->add('/DoAn1/public/thanh-toan', ['controller' => 'CheckoutController', 'action' => 'index']);
+$router->add('/DoAn1/public/hoa-don', ['controller' => 'DatHangController', 'action' => 'DonHang']);
+$router->add('/DoAn1/public/hoa-don/{idhd:\d+}', ['controller' => 'DatHangController', 'action' => 'capNhatHoaDon']);
 
 //Routes ADMIN
 $router->add('/DoAn1/public/Admin', ['controller' => 'AdminController', 'action' => 'index']);

@@ -43,10 +43,12 @@ class hoaDonModel extends \Core\Model
         $chiTietHoaDon = $stmtCTHD->fetchAll(PDO::FETCH_ASSOC);
         $getHoaDon = $db->query('SELECT * FROM hoadondathang WHERE IDHoaDon = '.$idHoaDon.'');
         $ThongTinHoaDon = $getHoaDon->fetchAll(PDO::FETCH_ASSOC);
-
+        $countHoaDon = $db->query('SELECT count(IDHoaDon) FROM chitiethoadon WHERE IDHoaDon ='.$idHoaDon.'');
+        $slgMon = current($countHoaDon->fetch(PDO::FETCH_ASSOC));
         return [
             'chitiethoadon' => $chiTietHoaDon,
-            'ThongTinHoaDon' => $ThongTinHoaDon
+            'ThongTinHoaDon' => $ThongTinHoaDon,
+            'countMonAn' => $slgMon
         ];
     }
     public static function themVaoGiohang($idMonAN,$soLuong,$idCuaHang)
@@ -102,9 +104,15 @@ class hoaDonModel extends \Core\Model
                 return 0;
             } else return 1;
         } catch(Exception $e) {
-            return 1;
+            return 2;
         }
         
+    }
+    public static function thanhToanHoaDon($idHoaDon)
+    {
+        $db = static::getDB(); 
+        $stmt = $db->query('UPDATE hoadondathang SET IDTrangThai = 2, IDNVGH = 1 WHERE IDHoaDon = '.$idHoaDon.'');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public static function deleteItemCart($idMon,$idHoaDon){
         $db = static::getDB();
