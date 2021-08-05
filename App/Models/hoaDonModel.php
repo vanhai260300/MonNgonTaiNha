@@ -114,6 +114,14 @@ class hoaDonModel extends \Core\Model
         $stmt = $db->query('UPDATE hoadondathang SET IDTrangThai = 2, IDNVGH = 1 WHERE IDHoaDon = '.$idHoaDon.'');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function getHoaDonKH()
+    {
+        $db = static::getDB();
+        $IDKhackHang = $_SESSION['id-client'];
+        $getHoaDon = $db->query('SELECT * FROM hoadondathang as hd, trangthaihd as tt,khachhang as kh WHERE hd.IDKhackHang = '.$IDKhackHang.'
+        AND hd.IDNVGH <> 0 AND hd.IDTrangThai <> 0 AND hd.IDTrangThai=tt.IDTrangThai AND hd.IDKhackHang=kh.IDKhachHang ORDER BY hd.TGGiaoHang ASC');
+        return $getHoaDon->fetchAll(PDO::FETCH_ASSOC);
+    }
     public static function deleteItemCart($idMon,$idHoaDon){
         $db = static::getDB();
         $stmt = $db->query('DELETE FROM chitiethoadon WHERE chitiethoadon.IDHoaDon = '.$idHoaDon.' AND chitiethoadon.IDMonAn = '.$idMon.'');

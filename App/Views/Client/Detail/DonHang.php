@@ -27,7 +27,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    <th>Đơn hàng</th>
+                                    
                                         <th>Người nhận</th>
                                         <th>Tổng tiền</th>
                                         <th>TG Giao</th>
@@ -38,19 +38,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($args['HoaDonKhachHang'] as $key => $value) { ?>
                                     <tr>
-                                        <td > 1</td>
-                                        <td> Nguyễn Văn Hải</td>
-                                        <td>200.000</td>
-                                        <td>2018-04-19 02:51:50</td>
-                                        <td>2018-04-19 02:51:50</td>
+                                        
+                                        
+                                        <td> <?php echo $value['TenKH']; ?></td>
+                                        <td><?php echo number_format($value['TongTien'] + $value['PhiGiaoHang']); ?></td>
+                                        <td><?php echo $value['TGGiaoHang']; ?></td>
+                                        <td><?php echo $value['TGNhanHang']; ?></td>
                                         <td data-column="status">
-                                            <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true">Delivered</span></button>
+                                            <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true"><?php echo $value['TenTrangThai']; ?></span></button>
                                         </td>
                                         <td> <a href="#" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
                                         </td>
-
+                                        
                                     </tr>
+                                    <?php }?>
                                 </tbody>
                             </table>
                         </div>

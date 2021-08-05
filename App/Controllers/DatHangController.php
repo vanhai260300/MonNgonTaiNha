@@ -19,6 +19,13 @@ class DatHangController extends \Core\Controller
      *
      * @return void
      */
+    // public function __construct()
+    // {
+    //     if(!isset($_SESSION['username-client']))
+    //     {
+    //         header("location:/DoAn1/public/dang-nhap");
+    //     }
+    // }
     public function indexAction()
     {
         $idMonAn = $_POST['IDMonAn'];
@@ -37,11 +44,14 @@ class DatHangController extends \Core\Controller
         
     }
     public function DonHangAction(){
-        View::render('Client/index.php', ['page'=>'DonHang', 'title'=>"Đơn Hàng của bạn"]);
+        $getHoaDon = hoaDonModel::getHoaDonKH();
+        // var_dump($getHoaDon); die();
+        View::render('Client/index.php', ['page'=>'DonHang', 'title'=>"Đơn Hàng của bạn", 'HoaDonKhachHang'=>$getHoaDon]);
     }
     public function capNhatHoaDonAction()
     { 
         $params = $this->route_params;
+        //var_dump($params); die;
         hoaDonModel::thanhToanHoaDon($params['idhd']);
         header("Location:/DoAn1/public/hoa-don");
     }

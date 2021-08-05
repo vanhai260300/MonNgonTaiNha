@@ -13,7 +13,7 @@
 
                         <?php if (isset($_SESSION['username-client'])) {?>
                         <li class="nav-item"><a href="/DoAn1/public/gio-hang" class="nav-link active">GIỎ HÀNG</a> </li>
-                        <li class="nav-item"><a href="/DoAn1/public/don-hang" class="nav-link active">ĐƠN HÀNG</a> </li>
+                        <li class="nav-item"><a href="/DoAn1/public/hoa-don" class="nav-link active">ĐƠN HÀNG</a> </li>
                         <li class="nav-item"><a href="/DoAn1/public/dang-xuat" class="nav-link active">ĐĂNG XUẤT</a> </li>
                         
                         <?php } else {?>
