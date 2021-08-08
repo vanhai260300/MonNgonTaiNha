@@ -58,7 +58,7 @@ class LoginController extends \Core\Controller
             
         }
         
-        View::render('Client/login.php', ['loginResult' => $kq, 'title'=>"Đăng Nhập"]);
+        View::render('Client/login.php', ['loginResult' => $kq, 'title'=>"Đăng Nhập",'action'=>'/DoAn1/public/dang-nhap']);
     }
     public function logoutAction(){
         unset($_SESSION['username-client']);

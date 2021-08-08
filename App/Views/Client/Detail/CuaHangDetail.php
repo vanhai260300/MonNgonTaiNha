@@ -14,7 +14,9 @@
 </div>
 <!-- end:Top links -->
 <!-- start: Inner page hero -->
-<section class="inner-page-hero bg-image" data-image-src="/DoAn1/public/image/img/dish.jpeg" style="background: url(&quot;/DoAn1/public/image/img/dish.jpeg&quot;) center center / cover no-repeat;">
+<section class="inner-page-hero bg-image" data-image-src="/DoAn1/public/image/img/dish.jpeg" style="
+    background-image: url('/DoAn1/public/image/img/dish.jpeg') #25282b center center / cover no-repeat; 
+    background-blend-mode: soft-light;">
     <div class="profile">
         <div class="container">
             <div class="row">

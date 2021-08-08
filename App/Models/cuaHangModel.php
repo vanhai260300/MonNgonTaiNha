@@ -25,52 +25,32 @@ class cuaHangModel extends \Core\Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function insertAdmin($fullname, $username, $password, $repassword)
+    public static function login($username, $password)
     {
         $db = static::getDB();
-        $result = false;
-        if ($fullname == '' || $password == '' || $repassword == '' || $username == "")
-            $result = false;
+        if ($username == "" || $password == "")
+            return -2;
         else {
-            try {
-                if ($password != $repassword) {
-                    $result = false;
-                } else {
-                    $stmt = $db->query('INSERT INTO quantrivien (IDAdmin, TenAdmin, TenDangNhap, MatKhau) 
-                                    VALUES (NULL, "' . $fullname . '", "' . $username . '", "' . $password . '")');
-                    $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    $result = true;
-                }
-            } catch (Exception $e) {
-                $result = false;
+            $useCheck = static::getUserName($username);
+            if ($useCheck == 0)
+                return -1;
+            else {
+                $stmt = $db->query('SELECT * FROM cuahang WHERE TenDangNhap = "' . $username . '" AND MatKhau = "' . $password . '"');
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if ($result == null) {
+                    return 0;
+                } else
+                    return $result;
             }
         }
-        return $result;
     }
-    public static function updateAdmin($id,$fullname,$username)
+    public static function getUserName($username)
     {
         $db = static::getDB();
-        try {
-            if ($fullname == '' || $username == '')
-                return 0;
-            else {
-                $stmt = $db->prepare('UPDATE quantrivien SET TenAdmin = ?, TenDangNhap = ? WHERE IDAdmin = ?');
-                if($stmt->execute([$fullname,$username,$id])) 
-                    return 1;
-                else {
-                    return 0;
-                }   
-            }
-        } catch (Exception $e) { return 0; }
-        
-        
-    }
-    public static function deleteAdmin($id) {
-        $db = static::getDB();
-        try {
-            $stmt = $db->prepare("DELETE FROM quantrivien WHERE IDAdmin = ?");
-            return $stmt->execute([$id]);
-        } catch (Exception $e) {return 0;}
-        
+        $stmt = $db->query('SELECT * FROM cuahang WHERE TenDangNhap = "' . $username . '"');
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($result == null) {
+            return 0;
+        } else return 1;
     }
 }

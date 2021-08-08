@@ -49,7 +49,10 @@ $router->add('/DoAn1/public/checkKhacCuaHang', ['controller' => 'DatHangControll
 $router->add('/DoAn1/public/thanh-toan', ['controller' => 'CheckoutController', 'action' => 'index']);
 $router->add('/DoAn1/public/hoa-don', ['controller' => 'DatHangController', 'action' => 'DonHang']);
 $router->add('/DoAn1/public/hoa-don/{idhd:\d+}', ['controller' => 'DatHangController', 'action' => 'capNhatHoaDon']);
-
+//Routers Chu Cua hang
+$router->add('/DoAn1/public/dang-nhap-cch', ['controller' => 'CCHLoginController', 'action' => 'index']);
+$router->add('/DoAn1/public/ql-mon-an', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'index']);
+$router->add('/DoAn1/public/dang-xuat-cch', ['controller' => 'CCHLoginController', 'action' => 'logout']);
 //Routes ADMIN
 $router->add('/DoAn1/public/Admin', ['controller' => 'AdminController', 'action' => 'index']);
 $router->add('/DoAn1/public/Admin/accAdmin', ['controller' => 'AdminController', 'action' => 'accAdmin']);

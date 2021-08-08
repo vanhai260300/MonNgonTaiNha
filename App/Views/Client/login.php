@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Đăng Nhập</title>
+    <title><?php if (isset($args['title'])) echo $args['title'];?></title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
@@ -281,7 +281,7 @@
     <!-- Button Mixin-->
     <!-- Pen Title-->
     <div class="pen-title">
-        <h1>Đăng Nhập</h1>
+        <h1>Đăng Nhập <?php if (isset($args['dangNhapCCH'])) echo $args['dangNhapCCH'];?></h1>
     </div>
     <!-- Form Module-->
     <div class="module form-module">
@@ -292,7 +292,7 @@
             <h2>Đăng nhập tài khoản của bạn</h2>
             <span style="color:red;"><?php if(isset($_POST['login'])) { echo $args['loginResult'];} ?></span>
             <span style="color:green;"></span>
-            <form action="/DoAn1/public/dang-nhap" method="post">
+            <form action="<?php echo $args['action'] ?>" method="post">
                 <input type="text" placeholder="Username" name="username">
                 <input type="password" placeholder="Password" name="password">
                 <input type="submit" id="login" name="login" value="login">
