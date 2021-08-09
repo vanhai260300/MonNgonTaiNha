@@ -54,7 +54,7 @@
         <div class="container">
             <div class="title text-xs-center m-b-30">
                 <h2>Món ăn phổ biến trong tháng</h2>
-                <p class="lead">The easiest way to your favourite food</p>
+                <p class="lead">Cách đơn giản nhất đến món ăn yêu thích của bạn</p>
             </div>
             <div class="row">
 
@@ -70,7 +70,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=48">Bonefish</a></h5>
                             <div class="product-name">Three ounces of lightly seasoned fresh tilapia </div>
-                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -85,7 +85,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=48">Hard Rock Cafe</a></h5>
                             <div class="product-name">A mix of chopped lettuces, shredded cheese, chicken cubes</div>
-                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -100,7 +100,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=49">Uno Pizzeria &amp; Grill</a></h5>
                             <div class="product-name">Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)</div>
-                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -115,7 +115,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=48">Bonefish</a></h5>
                             <div class="product-name">Three ounces of lightly seasoned fresh tilapia </div>
-                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -130,7 +130,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=48">Hard Rock Cafe</a></h5>
                             <div class="product-name">A mix of chopped lettuces, shredded cheese, chicken cubes</div>
-                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -145,7 +145,7 @@
                         <div class="content">
                             <h5><a href="dishes.php?res_id=49">Uno Pizzeria &amp; Grill</a></h5>
                             <div class="product-name">Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)</div>
-                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>

@@ -1204,9 +1204,9 @@ button.close {
     background: 0 0;
     border: 0;
     -webkit-appearance: none;
-    right: -15px;
+    right: 0;
     position: absolute;
-    top: -15px;
+    top: 0;
     background-color: #f30;
     opacity: 1;
     width: 30px;
@@ -2007,7 +2007,7 @@ footer li a {
     float: left;
     margin-top: 0;
     margin-bottom: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .widget-heading .widget-title .btn {
@@ -3169,4 +3169,16 @@ a {
     background-size: 116px 3px;
     background-image: repeating-linear-gradient(45deg
 , rgb(111, 166, 214), rgb(111, 166, 214) 33px, transparent 0px, transparent 41px, rgb(241, 141, 155) 0px, rgb(241, 141, 155) 74px, transparent 0px, transparent 82px);
+}
+.food-item-wrap .product-name2 {
+    margin-bottom: 0;
+}
+.product-name2, .restaurant-wrap>div>div>span {
+    height: 2rem !important;
+}
+.label-color {
+    color: #000;
+}
+.modal-header .close {
+    margin-top: 0;
 }

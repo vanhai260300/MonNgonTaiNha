@@ -61,12 +61,12 @@
                                         <div class="figure-wrap bg-image" data-image-src="/DoAn1/public/image/Res_img/dishes/<?php echo $value['Anh1'];?>" style="background: url(&quot;/DoAn1/public/image/Res_img/dishes/5ad7582e2ec9c.jpg&quot;) center center / cover no-repeat;">
                                             <div class="distance"><i class="fa fa-pin"></i>1240m</div>
                                             <div class="rating pull-left"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <div class="review pull-right"><a href="#">198 reviews</a> </div>
+                                            <div class="review pull-right"><a href="#">198 Đánh giá</a> </div>
                                         </div>
                                         <div class="content">
                                             <h5><a href="/DoAn1/public/cua-hang/<?php echo $value['IDMonAn'];?>"><?php echo $value['TenMonAn'];?></a></h5>
                                             <div class="product-name"><?php echo $value['DiaChi'];?></div>
-                                            <div class="price-btn-block"> <span class="price"><?php echo number_format($value['Gia']) ;?> VND</span> <a href="/DoAn1/public/cua-hang/<?php echo $value['IDMonAn'];?>" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                                            <div class="price-btn-block"> <span class="price"><?php echo number_format($value['Gia']) ;?> VND</span> <a href="/DoAn1/public/cua-hang/<?php echo $value['IDMonAn'];?>" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                                         </div>
                                     </a>
                                     
