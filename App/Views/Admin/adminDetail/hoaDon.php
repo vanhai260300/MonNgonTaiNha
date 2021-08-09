@@ -121,8 +121,8 @@
                                 <td><?php echo $value['IDHoaDon']; ?></td>
                                 <td ><?php echo $value['TenKH']; ?></td>
                                 <td><?php echo $value['TenNV']; ?></td>
-                                <td ><?php echo $value['SDT']; ?></td>
-                                <td><?php echo $value['Email']; ?></td>
+                                <td ><?php echo $value['SDTN']; ?></td>
+                                <td><?php echo $value['EmailN']; ?></td>
                                 <td ><?php echo $value['PhiGiaoHang']; ?></td>
                                 <td><?php echo $value['TongTien']; ?></td>
                                 <td ><?php echo $value['TGGiaoHang']; ?></td>

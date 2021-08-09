@@ -9,7 +9,8 @@
                     <ul class="nav navbar-nav">
                         <?php if (isset($_SESSION['username-chuCuaHang'])) { ?>
                             <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/ql-mon-an">QUẢN LÝ MÓN ĂN<span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/mon-an">ĐƠN ĐẶT HÀNG<span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/don-hang-cua-cua-hang">ĐƠN ĐẶT HÀNG<span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="#"><i class='fa fa-user' style='font-size:20px'></i> <?php echo $_SESSION['username-chuCuaHang']; ?><span class="sr-only"></span></a> </li>
                             <li class="nav-item"><a href="/DoAn1/public/dang-xuat-cch" class="nav-link active">ĐĂNG XUẤT</a> </li>
                         <?php } else {?>
                         <li class="nav-item"> <a class="nav-link active" href="/DoAn1/public/">TRANG CHỦ <span class="sr-only">(current)</span></a> </li>

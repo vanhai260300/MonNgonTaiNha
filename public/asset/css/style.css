@@ -2199,7 +2199,7 @@ a.more-link {
 }
 
 .menu-widget .food-item:first-of-type {
-    border-top: 1px solid #eaebeb;
+    /* border-top: 1px solid #eaebeb; */
 }
 
 .menu-widget .food-item:last-of-type {

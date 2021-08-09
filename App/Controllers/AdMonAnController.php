@@ -103,7 +103,7 @@ class AdMonAnController extends AdBaseController
         $img_url = "";
         if (isset($file)) {
             if ($file['error'] == 0) {
-                move_uploaded_file($file['tmp_name'], '../public/image/' . $file['name']);
+                move_uploaded_file($file['tmp_name'], '../public/image/Res_img/dishes/' . $file['name']);
                 $img_url = $file['name'];
             } else {
                 return false;

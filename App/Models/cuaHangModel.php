@@ -24,7 +24,11 @@ class cuaHangModel extends \Core\Model
         $stmt = $db->query('SELECT * FROM cuahang');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    public static function getTTCuaHang($idCuaHang){
+        $db = static::getDB();
+        $stmt = $db->query('SELECT * FROM cuahang WHERE IDCuaHang = ' . $idCuaHang.'');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     public static function login($username, $password)
     {
         $db = static::getDB();

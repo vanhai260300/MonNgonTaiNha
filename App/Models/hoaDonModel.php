@@ -58,7 +58,7 @@ class hoaDonModel extends \Core\Model
         $stIDHoaDon = $db->query('SELECT COUNT(IDKhackHang) FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
         $countHoaDon = current($stIDHoaDon->fetch(PDO::FETCH_ASSOC));
         if ($countHoaDon == 0){
-            $stIns = $db->query('INSERT INTO hoadondathang ( IDKhackHang, IDNVGH, IDTrangThai) VALUES ('.$IDKhackHang.', 0, 0)');
+            $stIns = $db->query('INSERT INTO hoadondathang ( IDKhackHang, IDNVGH,PhiGiaoHang, IDTrangThai) VALUES ('.$IDKhackHang.', 0,15000, 0)');
             $stIns->fetchAll(PDO::FETCH_ASSOC);
             $getIDHoaDon = $db->query('SELECT IDHoaDon FROM hoadondathang WHERE IDKhackHang = '.$IDKhackHang.' AND IDNVGH = 0 AND IDTrangThai = 0 ');
             $getHoaDon = current($getIDHoaDon->fetch(PDO::FETCH_ASSOC));
@@ -125,6 +125,12 @@ class hoaDonModel extends \Core\Model
     public static function deleteItemCart($idMon,$idHoaDon){
         $db = static::getDB();
         $stmt = $db->query('DELETE FROM chitiethoadon WHERE chitiethoadon.IDHoaDon = '.$idHoaDon.' AND chitiethoadon.IDMonAn = '.$idMon.'');
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function DonHangCuaCuaHang($idCuahang)
+    {
+        $db = static::getDB();
+        $stmt = $db->query('SELECT * FROM hoadondathang, khachhang,trangthaihd WHERE trangthaihd.IDTrangThai=hoadondathang.IDTrangThai AND khachhang.IDKhachHang = hoadondathang.IDKhackHang AND IDHoaDon IN (SELECT IDHoaDon FROM chitiethoadon WHERE IDMonAn IN (SELECT IDMonAn FROM monan WHERE monan.IDCuaHang = '.$idCuahang.' )) ORDER BY hoadondathang.IDHoaDon DESC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

@@ -1,6 +1,8 @@
 $(document).ready(function () {
     console.log("OK");
-
+    $("#closecc").click(function () {
+        $("#home-main").css("paddingRight", "0px");
+    })
 
 });
 // $("input[name='addToCart']").click(function(e){
@@ -12,7 +14,7 @@ async function addToCart(idMon){
     
 }
 // $("input[name='addToCart']").click(function (e) {
-    
+ 
 // });
 async function addcart(idMon) {
     idch = $("input[name='idCuaHang']").val();
@@ -60,4 +62,25 @@ function DeleteItemCart(idMon, idHoaDon){
     }
         
         
+}
+function updateMonAn(id){
+    // console.log(id);
+    
+    tenmon = $('.row_' + id + ' h5 a').text();
+    $('#id-ud').val(id);
+    console.log(tenmon);
+    $('#tenmon-ud').val(tenmon);
+    maDM = $('.row_' + id + ' #IDDanhMuc').val();
+    $('#danhmuc-ud').val(maDM);
+    gia = $('.row_' + id + ' .price').text();
+    console.log(gia);
+    gia=gia.replace(/\,/g,''); // 1125, but a string, so convert it to number
+    gia=parseInt(gia,10);
+    
+    $('#Gia-ud').val(gia);
+    moTa = $('.row_' + id + ' .moTa').text();
+    TrangThai = $('.row_' + id + ' #TrangThai').val();
+    console.log(moTa);
+  $('#mota-ud').val(moTa);
+  $('#TrangThai-ud').val(TrangThai);
 }

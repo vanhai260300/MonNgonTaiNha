@@ -106,7 +106,7 @@ class monanModel extends \Core\Model
         $getIDCH = $db->query('SELECT IDCuaHang FROM monan WHERE IDMonAn = '.$idMonAn.'');
         $idCH = current($getIDCH->fetch(PDO::FETCH_ASSOC));
         
-        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCH.' AND ma.IDCuaHang = ch.IDCuaHang');
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCH.' AND ma.IDCuaHang = ch.IDCuaHang  ');
         $MonAnOfCuaHang =  $stmt->fetchAll(PDO::FETCH_ASSOC);
         $getInfoCH = $db->query('SELECT * FROM cuahang WHERE IDCuaHang='.$idCH.'');
         $infoCH = $getInfoCH->fetchAll(PDO::FETCH_ASSOC);
@@ -117,7 +117,7 @@ class monanModel extends \Core\Model
     }
     public static function getMonAnOfCuaHangByIDCuaHang($idCuahang){
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch WHERE ma.IDCuaHang = '.$idCuahang.' AND ma.IDCuaHang = ch.IDCuaHang');
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch, danhmucmonan as dm WHERE ma.IDCuaHang = '.$idCuahang.' AND ma.IDCuaHang = ch.IDCuaHang AND dm.IDDanhMuc = ma.IDDanhMuc AND ma.deleteAt IS NULL');
         $MonAnOfCuaHang =  $stmt->fetchAll(PDO::FETCH_ASSOC);
         $getInfoCH = $db->query('SELECT * FROM cuahang WHERE IDCuaHang='.$idCuahang.'');
         $infoCH = $getInfoCH->fetchAll(PDO::FETCH_ASSOC);

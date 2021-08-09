@@ -52,6 +52,8 @@ $router->add('/DoAn1/public/hoa-don/{idhd:\d+}', ['controller' => 'DatHangContro
 //Routers Chu Cua hang
 $router->add('/DoAn1/public/dang-nhap-cch', ['controller' => 'CCHLoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/ql-mon-an', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'index']);
+$router->add('/DoAn1/public/delete-mon-an/{idmon:\d+}', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'DeleteMon']);
+$router->add('/DoAn1/public/don-hang-cua-cua-hang', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'DonHangCuaCuaHang']);
 $router->add('/DoAn1/public/dang-xuat-cch', ['controller' => 'CCHLoginController', 'action' => 'logout']);
 //Routes ADMIN
 $router->add('/DoAn1/public/Admin', ['controller' => 'AdminController', 'action' => 'index']);

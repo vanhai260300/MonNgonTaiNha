@@ -20,12 +20,12 @@
     <link href="/DoAn1/public/asset/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-    <link  href="/DoAn1/public/asset/css/style.css?v=2.2" rel="stylesheet">
+    <link  href="/DoAn1/public/asset/css/style.css?v=2.3" rel="stylesheet">
     <link rel="stylesheet" href="DoAn1/public/asset/css/customstyle.css?v=1.1">
     
 </head>
 
-<body class="home" style="padding-right: 0px !important;">
+<body class="home" id="home-main" style="padding-right: 0px !important;">
 
     <?php include '../App/Views/Client/Block/Header.php'; ?>
     <main>
@@ -47,7 +47,7 @@
     <script src="/DoAn1/public/asset/js/jquery.isotope.min.js"></script>
     <script src="/DoAn1/public/asset/js/headroom.js"></script>
     <script src="/DoAn1/public/asset/js/foodpicky.min.js"></script>
-    <script src="/DoAn1/public/asset/js/main.js?v=1.4"></script>
+    <script src="/DoAn1/public/asset/js/main.js?v=1.6"></script>
 
 
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
