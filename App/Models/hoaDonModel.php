@@ -130,7 +130,7 @@ class hoaDonModel extends \Core\Model
     public static function DonHangCuaCuaHang($idCuahang)
     {
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM hoadondathang, khachhang,trangthaihd WHERE trangthaihd.IDTrangThai=hoadondathang.IDTrangThai AND khachhang.IDKhachHang = hoadondathang.IDKhackHang AND IDHoaDon IN (SELECT IDHoaDon FROM chitiethoadon WHERE IDMonAn IN (SELECT IDMonAn FROM monan WHERE monan.IDCuaHang = '.$idCuahang.' )) ORDER BY hoadondathang.IDHoaDon DESC');
+        $stmt = $db->query('SELECT * FROM hoadondathang, khachhang,trangthaihd WHERE hoadondathang.IDTrangThai <> 0 AND trangthaihd.IDTrangThai=hoadondathang.IDTrangThai AND khachhang.IDKhachHang = hoadondathang.IDKhackHang AND IDHoaDon IN (SELECT IDHoaDon FROM chitiethoadon WHERE IDMonAn IN (SELECT IDMonAn FROM monan WHERE monan.IDCuaHang = '.$idCuahang.' )) ORDER BY hoadondathang.IDHoaDon DESC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

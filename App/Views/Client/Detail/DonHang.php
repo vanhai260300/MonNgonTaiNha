@@ -47,7 +47,7 @@
                                         <td><?php echo $value['TGGiaoHang']; ?></td>
                                         <td><?php echo $value['TGNhanHang']; ?></td>
                                         <td data-column="status">
-                                            <button type="button" class="btn btn-success"><span class="fa fa-check-circle" aria-hidden="true"><?php echo $value['TenTrangThai']; ?></span></button>
+                                            <p type="button"><span class="" aria-hidden="true"><?php echo $value['TenTrangThai']; ?></span></p>
                                         </td>
                                         <td> <a href="#" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
                                         </td>

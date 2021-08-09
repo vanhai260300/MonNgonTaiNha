@@ -77,9 +77,15 @@
                                             <td><?php echo $value['TenKH']; ?></td>
                                             <td><?php echo $value['DiaChi']; ?></td>
                                             <td><?php echo $value['TGGiaoHang']; ?></td>
-                                            <td><?php echo $value['TenTrangThai']; ?></td>
+                                            <td>
+                                                <select class="form-control" name="" id="">
+                                                    <option value="<?php echo $value['IDTrangThai']; ?>"><?php echo $value['TenTrangThai']; ?></option>
+                                                    <!-- <option value="1">Hủy</option> -->
+                                                </select>
+                                                
+                                            </td>
                                             <td><?php echo number_format($value['TongTien']+$value['PhiGiaoHang']); ?></td>
-                                            <td>Xóa</td>
+                                            <td><a class="text-danger" href="#">Xóa</a> <a class="text-primary" href="#">Chi Tiết</a></td>
                                         </tr>
                                     <?php } ?>
 
