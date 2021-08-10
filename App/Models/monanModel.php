@@ -37,7 +37,7 @@ class monanModel extends \Core\Model
                             ORDER BY ma.Gia ASC');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }   
-    public static function getMonAnPagi($page)
+    public static function getMonAnPagi($page,$tenMon)
     {
         $db = static::getDB();
         $stmt = $db->query('SELECT COUNT(IDMonAn) FROM   monan WHERE deleteAt IS NULL');
@@ -55,7 +55,7 @@ class monanModel extends \Core\Model
         $stpr = $db->query('SELECT * FROM monan as ma  
                             INNER JOIN (SELECT dm.IDDanhMuc,dm.TenDanhMuc FROM danhmucmonan as dm ) dam ON dam.IDDanhMuc = ma.IDDanhMuc
                             INNER JOIN cuahang ch ON ma.IDCuaHang = ch.IDCuaHang 
-                            WHERE ma.deleteAt IS NULL                           
+                            WHERE ma.deleteAt IS NULL  AND TenMonAn LIKE "%'.$tenMon.'%"                         
                             ORDER BY ma.Gia ASC 
                             LIMIT '.$start.', '.$limit.'');
         $MonAn = $stpr->fetchAll(PDO::FETCH_ASSOC);
@@ -115,9 +115,9 @@ class monanModel extends \Core\Model
             'ThongTinCuaHang' =>$infoCH
         ];
     }
-    public static function getMonAnOfCuaHangByIDCuaHang($idCuahang){
+    public static function getMonAnOfCuaHangByIDCuaHang($idCuahang,$timMonAn){
         $db = static::getDB();
-        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch, danhmucmonan as dm WHERE ma.IDCuaHang = '.$idCuahang.' AND ma.IDCuaHang = ch.IDCuaHang AND dm.IDDanhMuc = ma.IDDanhMuc AND ma.deleteAt IS NULL');
+        $stmt = $db->query('SELECT * FROM monan as ma, cuahang as ch, danhmucmonan as dm WHERE ma.TenMonAn LIKE "%'.$timMonAn.'%" AND ma.IDCuaHang = '.$idCuahang.' AND ma.IDCuaHang = ch.IDCuaHang AND dm.IDDanhMuc = ma.IDDanhMuc AND ma.deleteAt IS NULL');
         $MonAnOfCuaHang =  $stmt->fetchAll(PDO::FETCH_ASSOC);
         $getInfoCH = $db->query('SELECT * FROM cuahang WHERE IDCuaHang='.$idCuahang.'');
         $infoCH = $getInfoCH->fetchAll(PDO::FETCH_ASSOC);

@@ -20,6 +20,7 @@
                         <?php if (isset($_SESSION['username-client'])) {?>
                         <li class="nav-item"><a href="/DoAn1/public/gio-hang" class="nav-link active">GIỎ HÀNG</a> </li>
                         <li class="nav-item"><a href="/DoAn1/public/hoa-don" class="nav-link active">ĐƠN HÀNG</a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="#"><i class='fa fa-user' style='font-size:20px'></i> <?php echo $_SESSION['username-client']; ?><span class="sr-only"></span></a> </li>
                         <li class="nav-item"><a href="/DoAn1/public/dang-xuat" class="nav-link active">ĐĂNG XUẤT</a> </li>
                         
                         <?php } else if (!isset($_SESSION['username-chuCuaHang'])) {?>

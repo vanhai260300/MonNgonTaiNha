@@ -25,4 +25,11 @@ class trangThaiModel extends \Core\Model
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
+    public static function getTrangThai()
+    {
+        $db = static::getDb();
+        $stmt = $db->query("SELECT * FROM trangthaihd WHERE IDTrangThai <> 0");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    }
 }

@@ -4,7 +4,7 @@
             <ul class="row links">
 
                 <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn món</a></li>
-                <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="dishes.php?res_id=48">Đặt hàng</a></li>
+                <li class="col-xs-12 col-sm-4 link-item "><span>2</span><a href="#">Đặt hàng</a></li>
                 <li class="col-xs-12 col-sm-4 link-item active"><span>3</span><a href="#">Thanh toán</a></li>
             </ul>
         </div>
@@ -22,7 +22,10 @@
                 </div>
 
                 <div class="border-top col-sm-12">
-                <?php foreach ($args['gioHang']['chitiethoadon'] as $key => $value) { ?>
+                <?php foreach ($args['gioHang']['chitiethoadon'] as $key => $value) { 
+                    
+                    ?>
+                    
                     <div class="main-Content align-items-center row border-bottom">
                         <div class="col-sm-2"><img class="img-fluid" src="/DoAn1/public/image/Res_img/dishes/<?php echo $value['Anh1']; ?>"></div>
                         <div class="col-sm-5">

@@ -39,9 +39,12 @@ $router->add('/DoAn1/public/mon-an-loai/{idcate:\d+}/{id:\d+}', ['controller' =>
 $router->add('/DoAn1/public/dang-nhap', ['controller' => 'LoginController', 'action' => 'index']);
 $router->add('/DoAn1/public/dang-xuat', ['controller' => 'LoginController', 'action' => 'logout']);
 $router->add('/DoAn1/public/dang-ky', ['controller' => 'RegisterController', 'action' => 'index']);
+$router->add('/DoAn1/public/checkUNKH', ['controller' => 'RegisterController', 'action' => 'checkUsserName']);
 //$router->add('/DoAn1/public/dat-hang', ['controller' => 'DatHangController', 'action' => 'index']);
 $router->add('/DoAn1/public/them-gio-hang', ['controller' => 'DatHangController', 'action' => 'index']);
 $router->add('/DoAn1/public/gio-hang', ['controller' => 'DatHangController', 'action' => 'GioHang']);
+$router->add('/DoAn1/public/chi-tiet-don-hang', ['controller' => 'DatHangController', 'action' => 'ChiTietDonHang']);
+$router->add('/DoAn1/public/chi-tiet-don-hang/{iddh:\d+}', ['controller' => 'DatHangController', 'action' => 'ChiTietDonHang']);
 $router->add('/DoAn1/public/deleteItemCart', ['controller' => 'DatHangController', 'action' => 'DeleteItemCart']);
 $router->add('/DoAn1/public/checkKhacCuaHang', ['controller' => 'DatHangController', 'action' => 'checkKhacCuaHang']);
 
@@ -54,6 +57,7 @@ $router->add('/DoAn1/public/dang-nhap-cch', ['controller' => 'CCHLoginController
 $router->add('/DoAn1/public/ql-mon-an', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'index']);
 $router->add('/DoAn1/public/delete-mon-an/{idmon:\d+}', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'DeleteMon']);
 $router->add('/DoAn1/public/don-hang-cua-cua-hang', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'DonHangCuaCuaHang']);
+$router->add('/DoAn1/public/ud-status', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'UdStatus']);
 $router->add('/DoAn1/public/dang-xuat-cch', ['controller' => 'CCHLoginController', 'action' => 'logout']);
 //Routes ADMIN
 $router->add('/DoAn1/public/Admin', ['controller' => 'AdminController', 'action' => 'index']);

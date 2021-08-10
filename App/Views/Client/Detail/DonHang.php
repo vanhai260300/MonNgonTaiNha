@@ -27,7 +27,7 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                    
+
                                         <th>Người nhận</th>
                                         <th>Tổng tiền</th>
                                         <th>TG Giao</th>
@@ -38,22 +38,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($args['HoaDonKhachHang'] as $key => $value) { ?>
-                                    <tr>
-                                        
-                                        
-                                        <td> <?php echo $value['TenKH']; ?></td>
-                                        <td><?php echo number_format($value['TongTien'] + $value['PhiGiaoHang']); ?></td>
-                                        <td><?php echo $value['TGGiaoHang']; ?></td>
-                                        <td><?php echo $value['TGNhanHang']; ?></td>
-                                        <td data-column="status">
-                                            <p type="button"><span class="" aria-hidden="true"><?php echo $value['TenTrangThai']; ?></span></p>
-                                        </td>
-                                        <td> <a href="#" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a>
-                                        </td>
-                                        
-                                    </tr>
-                                    <?php }?>
+                                    <?php foreach ($args['HoaDonKhachHang'] as $key => $value) { ?>
+                                        <tr>
+
+
+                                            <td> <?php echo $value['TenKH']; ?></td>
+                                            <td><?php echo number_format($value['TongTien'] + $value['PhiGiaoHang']); ?></td>
+                                            <td><?php echo $value['TGGiaoHang']; ?></td>
+                                            <td><?php echo $value['TGNhanHang']; ?></td>
+                                            <td data-column="status">
+                                                <p type="button"><span class="" aria-hidden="true"><?php echo $value['TenTrangThai']; ?></span></p>
+                                            </td>
+                                            <td> <?php if ($value['IDTrangThai'] == 1 || $value['IDTrangThai'] == 5) {
+                                                        echo "<a></a>";
+                                                    } else {
+                                                    ?>
+                                                    <a href="#" onclick="huyDonhang(<?php echo $value['IDHoaDon']; ?>,<?php echo $value['IDTrangThai']; ?>);">Hủy</a>
+                                                <?php } ?>
+                                                <a href="/DoAn1/public/chi-tiet-don-hang/<?php echo $value['IDHoaDon'];?>" class="text-primary">Chi Tiết</a>
+                                            </td>
+
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>

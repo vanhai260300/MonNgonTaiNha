@@ -22,12 +22,19 @@ class MonAnController extends \Core\Controller
     public function indexAction()
     {
         $params = $this->route_params;
+        $tenMon = "";
         //var_dump($params); die();
         if (empty($params['id']))
             $params['id'] = 1;
-        $MonAnInPage = monanModel::getMonAnPagi($params['id']);
+        if (isset($_POST['searchString']))
+        {
+            $tenMon = $_POST['searchTenMon'];
+            
+        }
+        
+        $MonAnInPage = monanModel::getMonAnPagi($params['id'],$tenMon);
         $danhMuc = danhMucModel::getAll();
-        View::render('Client/index.php', ['page' => 'monan', 'title'=>"Danh Sách Món Ăn", 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc]);
+        View::render('Client/index.php', ['page' => 'monan', 'title'=>"Danh Sách Món Ăn", 'MonAnInPage' => $MonAnInPage, 'DanhMuc' => $danhMuc,'TuTimKiem'=>$tenMon]);
     }
     public function LoaiMonAction()
     {

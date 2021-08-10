@@ -38,10 +38,24 @@ class hoaDonModel extends \Core\Model
         } catch (Exception $e) {
             $idHoaDon = 0;
         }
-        
+        return static::getChiTietHoaDonByIdHD($idHoaDon);
+        // $stmtCTHD = $db->query('SELECT * FROM chitiethoadon as ct, monan as ma WHERE IDHoaDon = '.$idHoaDon.' AND ma.IDMonAn = ct.IDMonAn');
+        // $chiTietHoaDon = $stmtCTHD->fetchAll(PDO::FETCH_ASSOC);
+        // $getHoaDon = $db->query('SELECT * FROM hoadondathang WHERE IDHoaDon = '.$idHoaDon.'');
+        // $ThongTinHoaDon = $getHoaDon->fetchAll(PDO::FETCH_ASSOC);
+        // $countHoaDon = $db->query('SELECT count(IDHoaDon) FROM chitiethoadon WHERE IDHoaDon ='.$idHoaDon.'');
+        // $slgMon = current($countHoaDon->fetch(PDO::FETCH_ASSOC));
+        // return [
+        //     'chitiethoadon' => $chiTietHoaDon,
+        //     'ThongTinHoaDon' => $ThongTinHoaDon,
+        //     'countMonAn' => $slgMon
+        // ];
+    }
+    public static function getChiTietHoaDonByIdHD($idHoaDon) {
+        $db = static::getDB();
         $stmtCTHD = $db->query('SELECT * FROM chitiethoadon as ct, monan as ma WHERE IDHoaDon = '.$idHoaDon.' AND ma.IDMonAn = ct.IDMonAn');
         $chiTietHoaDon = $stmtCTHD->fetchAll(PDO::FETCH_ASSOC);
-        $getHoaDon = $db->query('SELECT * FROM hoadondathang WHERE IDHoaDon = '.$idHoaDon.'');
+        $getHoaDon = $db->query('SELECT * FROM hoadondathang ,khachhang ,trangthaihd WHERE trangthaihd.IDTrangThai=hoadondathang.IDTrangThai AND khachhang.IDKhachHang = hoadondathang.IDKhackHang AND  hoadondathang.IDHoaDon = '.$idHoaDon.' ');
         $ThongTinHoaDon = $getHoaDon->fetchAll(PDO::FETCH_ASSOC);
         $countHoaDon = $db->query('SELECT count(IDHoaDon) FROM chitiethoadon WHERE IDHoaDon ='.$idHoaDon.'');
         $slgMon = current($countHoaDon->fetch(PDO::FETCH_ASSOC));
@@ -111,8 +125,20 @@ class hoaDonModel extends \Core\Model
     public static function thanhToanHoaDon($idHoaDon)
     {
         $db = static::getDB(); 
-        $stmt = $db->query('UPDATE hoadondathang SET IDTrangThai = 2, IDNVGH = 1 WHERE IDHoaDon = '.$idHoaDon.'');
+        $dateTime = date("Y-m-d h:i:s");
+        $stmt = $db->query('UPDATE hoadondathang SET IDTrangThai = 2,TGGiaoHang = "'.$dateTime.'", IDNVGH = 1 WHERE IDHoaDon = '.$idHoaDon.'');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function updateStatus($idHoaDon, $idTrangThai)
+    {
+        try {
+            $db = static::getDB(); 
+            $stmt = $db->query('UPDATE hoadondathang SET IDTrangThai = '.$idTrangThai.' WHERE IDHoaDon = '.$idHoaDon.'');
+             $stmt->fetchAll(PDO::FETCH_ASSOC);
+             return 1;
+        } catch (Exception $e) {
+            return 0;
+        }    
     }
     public static function getHoaDonKH()
     {

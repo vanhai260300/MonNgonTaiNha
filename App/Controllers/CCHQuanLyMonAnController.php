@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\monanModel;
-use App\Models\cuaHangModel;
+use App\Models\trangThaiModel;
 use App\Models\danhMucModel;
 use App\Models\hoaDonModel;
 use \Core\View;
@@ -27,25 +27,31 @@ class CCHQuanLyMonAnController extends \Core\Controller
         $idCuaHang = "";
         if (isset($_SESSION['id-chuCuaHang'])) {
             $idCuaHang = $_SESSION['id-chuCuaHang'];
-            $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang);
+            $timMonAn = "";
+            if (isset($_POST['searchString']))
+            {
+                $timMonAn =  $_POST['searchTenMon'];
+            }
+            $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,$timMonAn);
             $getDanhMuc = danhMucModel::getAll();
             //var_dump($getAllMonAn);die();
+            
             if (isset($_POST['bt-save-add'])) {
                 $kq = $this->insertMonAnAction();
-                $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang);
+                $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,$timMonAn);
                 $getDanhMuc = danhMucModel::getAll();
                 // var_dump($kq);die();
-                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc]);
+                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
             }
             if (isset($_POST['bt-save-ud'])) {
                 $kq = $this->updateMonAnAction();
-                $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang);
+                $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,$timMonAn);
                 $getDanhMuc = danhMucModel::getAll();
                 // var_dump($kq);die();
-                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc]);
+                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
             }
 
-            View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc]);
+            View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
         } else {
             header("Location:/DoAn1/public/");
         }
@@ -55,14 +61,21 @@ class CCHQuanLyMonAnController extends \Core\Controller
         $idCuaHang = "";
         if (isset($_SESSION['id-chuCuaHang'])) {
             $idCuaHang = $_SESSION['id-chuCuaHang'];
-            $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang);
+            $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,"");
             $getDonhangCuaHang = hoaDonModel::DonHangCuaCuaHang($idCuaHang);
             // var_dump($getDonhangCuaHang);die();
-            View::render('Client/index.php', ['page' => 'DonHangCuaCuaHang', 'title' => "Quản Đơn Hàng", 'listMonAnCuaHang' => $getAllMonAn, 'DonHangCuaCuaHang' => $getDonhangCuaHang]);
+            $getTrangThai = trangThaiModel::getTrangThai();
+            View::render('Client/index.php', ['page' => 'DonHangCuaCuaHang', 'title' => "Quản Đơn Hàng", 'listMonAnCuaHang' => $getAllMonAn, 'DonHangCuaCuaHang' => $getDonhangCuaHang, 'listTrangThai' => $getTrangThai]);
         } else {
             header("Location:/DoAn1/public/");
         }
         
+    }
+    public function UdStatusAction() 
+    {
+        $idHoaDon = $_POST['idHoaDon'];
+        $idTrangThai = $_POST['status'];
+        echo hoaDonModel::updateStatus($idHoaDon,$idTrangThai);
     }
     public function insertMonAnAction()
     {

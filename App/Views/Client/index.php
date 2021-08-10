@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="/DoAn1/public/image/iconlogo.png">
     <title><?php echo $args['title'] ?></title>
     <!-- Bootstrap core CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
@@ -20,7 +21,7 @@
     <link href="/DoAn1/public/asset/css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-    <link  href="/DoAn1/public/asset/css/style.css?v=2.3" rel="stylesheet">
+    <link  href="/DoAn1/public/asset/css/style.css?v=2.4" rel="stylesheet">
     <link rel="stylesheet" href="DoAn1/public/asset/css/customstyle.css?v=1.1">
     
 </head>
@@ -33,7 +34,7 @@
     </main>
     
     <?php include '../App/Views/Client/Block/Footer.php'; ?>
-
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -47,7 +48,7 @@
     <script src="/DoAn1/public/asset/js/jquery.isotope.min.js"></script>
     <script src="/DoAn1/public/asset/js/headroom.js"></script>
     <script src="/DoAn1/public/asset/js/foodpicky.min.js"></script>
-    <script src="/DoAn1/public/asset/js/main.js?v=1.6"></script>
+    <script src="/DoAn1/public/asset/js/main.js?v=1.7"></script>
 
 
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

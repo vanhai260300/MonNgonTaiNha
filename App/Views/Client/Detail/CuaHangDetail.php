@@ -4,11 +4,9 @@
     <div class="container">
         <ul class="row links">
 
-            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Choose
-                    Restaurant</a></li>
-            <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php?res_id=48">Pick
-                    Your favorite food</a></li>
-            <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Order and Pay online</a></li>
+            <li class="col-xs-12 col-sm-4 link-item"><span>1</span><a href="restaurants.php">Chọn món</a></li>
+            <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="#">Đặt hàng</a></li>
+            <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Thanh toán</a></li>
         </ul>
     </div>
 </div>

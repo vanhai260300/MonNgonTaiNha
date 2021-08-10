@@ -36,7 +36,8 @@
                             <!-- /widget heading -->
                             <div class="widget-heading">
                                 <h3 class="widget-title text-dark">
-                                    Popular tags
+                                Danh Mục Món Ăn
+
                                 </h3>
                                 <div class="clearfix"></div>
                             </div>
@@ -78,8 +79,8 @@
                                             <div class="rating-block"> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i> <i class="fa fa-star"></i> <i
                                                     class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                            <p> 245 Reviews</p> <a href="<?php echo $value['IDCuaHang'];?>"
-                                                class="btn theme-btn-dash">View Menu</a>
+                                            <p> 245 Đánh giá</p> <a href="/DoAn1/public/cua-hang/by/<?php echo $value['IDCuaHang'];?>"
+                                                class="btn theme-btn-dash">Xem MENU</a>
                                         </div>
                                     </div>
                                     <!-- end:right info -->

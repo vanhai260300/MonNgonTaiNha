@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Exception;
 use PDO;
 
 /**
@@ -47,6 +48,30 @@ class KhachHangModel extends \Core\Model
                     return $result;
             }
         }
+    }
+    public static function insertKhachhang($fullName,$username,$password,$repassword,$email,$phone,$address)
+    {
+        $db = static::getDB();
+        try {
+            if ($fullName == "" || $username == "" || $password == "" || $repassword=="" || $email=="" || $phone=="" || $address=="")
+            {
+                return 0;
+            } else {
+                if ($password == $repassword)
+                {
+                    $stmt = $db->query('INSERT INTO khachhang (TenKH, TenDangNhap, MatKhau, SDT, Email, DiaChi) VALUES ( "'.$fullName.'", "'.$username.'", "'.$password.'", "'.$phone.'", "'.$email.'","'.$address.'")');
+                    $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+            
+            
+        } catch(Exception $e) {
+            return 0;
+        }
+        
     }
     public static function getUserName($username)
     {

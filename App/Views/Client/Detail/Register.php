@@ -1,136 +1,101 @@
 <div class="page-wrapper">
-        <div class="breadcrumb">
-            <div class="container">
-                <ul>
-                    <li><a href="#" class="active">
-                            <span style="color:red;"></span>
-                            <span style="color:green;">
-                            </span>
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">
+                        <span style="color:red;"></span>
+                        <span style="color:green;">
+                        </span>
 
-                        </a></li>
+                    </a></li>
 
-                </ul>
+            </ul>
+        </div>
+    </div>
+    <section class="contact-page inner-page">
+        <div class="container">
+            <div class="row">
+                <!-- REGISTER -->
+                <div class="col-md-8">
+                    <div class="widget">
+                        <div class="widget-body">
+
+                            <form action="/DoAn1/public/dang-ky" method="post">
+                                <div class="row">
+                                    <?php if (isset($_POST['register']))
+                                    { if ($args['KetQuaDK'] == 1){
+                                        echo '<div class="alert alert-primary text-success" role="alert">
+                                        Đăng ký thành công!
+                                    </div>';
+                                    } else if ($args['KetQuaDK'] == 0 ){
+                                        echo '<div class="alert alert-primary text-danger" role="alert">
+                                        Đăng ký thất bại!
+                                    </div>';
+                                    } else { echo "";} }?>
+                                    
+                                    
+                                    <div>
+                                        <h2 class="text-center" style="text-align: center;">ĐĂNG KÝ TÀI KHOẢN</h2>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="fullname">Họ Tên</label>
+                                        <input class="form-control" type="text" name="fullname" id="fullname" placeholder="Nhập họ tên">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="usernameKH">Tên Đăng Nhập</label>
+                                        <input onkeyup="CheckUsserName();" class="form-control" type="text" name="username" id="usernameKH" placeholder="Nhập Tên Đăng Nhập"> <small class="tontaiUN"></small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="password">Mật Khẩu</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Nhập mật khẩu">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="repassword">Nhập Lại Mật Khẩu</label>
+                                        <input onkeyup="checkRepassword();" type="password" class="form-control" name="repassword" id="repassword" placeholder="Nhập lại mật khẩu"><small class="checkpass"></small>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="Email">Email</label>
+                                        <input type="text" class="form-control" name="email" id="Email" aria-describedby="emailHelp" placeholder="Nhập Email">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="phone">Số Điện Thoại</label>
+                                        <input class="form-control" type="number" name="phone" id="phone" placeholder="Nhập số điện thoại">
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+                                        <label for="address">Địa Chỉ Giao Hàng</label>
+                                        <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <p> <input type="submit" value="ĐĂNG KÝ" name="register" class="btn theme-btn"> </p>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- end: Widget -->
+                    </div>
+                    <!-- /REGISTER -->
+                </div>
+                <!-- WHY? -->
+                <div class="col-md-4">
+                    <h4>Đăng ký là nhanh chóng, dễ dàng và miễn phí.</h4>
+                    <p>Sau khi đăng ký, bạn có thể:</p>
+                    <hr>
+                    <img src="http://placehold.it/400x300" alt="" class="img-fluid">
+                    <p></p>
+
+                    <!-- end:Panel -->
+                    <h4 class="m-t-20">Liên hệ Hỗ trợ khách hàng</h4>
+                    <p>Nếu bạn đang tìm kiếm thêm trợ giúp hoặc có câu hỏi cần hỏi, vui lòng</p>
+                    <p> <a href="#" class="btn theme-btn m-t-15">Liên Hệ</a> </p>
+                </div>
+                <!-- /WHY? -->
             </div>
         </div>
-        <section class="contact-page inner-page">
-            <div class="container">
-                <div class="row">
-                    <!-- REGISTER -->
-                    <div class="col-md-8">
-                        <div class="widget">
-                            <div class="widget-body">
-
-                                <form action="" method="post">
-                                    <div class="row">
-                                        <div class="form-group col-sm-12">
-                                            <label for="exampleInputEmail1">User-Name</label>
-                                            <input class="form-control" type="text" name="username"
-                                                id="example-text-input" placeholder="UserName">
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputEmail1">First Name</label>
-                                            <input class="form-control" type="text" name="firstname"
-                                                id="example-text-input" placeholder="First Name">
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputEmail1">Last Name</label>
-                                            <input class="form-control" type="text" name="lastname"
-                                                id="example-text-input-2" placeholder="Last Name">
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="text" class="form-control" name="email" id="exampleInputEmail1"
-                                                aria-describedby="emailHelp" placeholder="Enter email"> <small
-                                                id="emailHelp" class="form-text text-muted">We"ll never share your email
-                                                with anyone else.</small>
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputEmail1">Phone number</label>
-                                            <input class="form-control" type="text" name="phone"
-                                                id="example-tel-input-3" placeholder="Phone"> <small
-                                                class="form-text text-muted">We"ll never share your email with anyone
-                                                else.</small>
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" name="password"
-                                                id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="form-group col-sm-6">
-                                            <label for="exampleInputPassword1">Repeat password</label>
-                                            <input type="password" class="form-control" name="cpassword"
-                                                id="exampleInputPassword2" placeholder="Password">
-                                        </div>
-                                        <div class="form-group col-sm-12">
-                                            <label for="exampleTextarea">Delivery Address</label>
-                                            <textarea class="form-control" id="exampleTextarea" name="address"
-                                                rows="3"></textarea>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p> <input type="submit" value="Register" name="submit"
-                                                    class="btn theme-btn"> </p>
-                                        </div>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <!-- end: Widget -->
-                        </div>
-                        <!-- /REGISTER -->
-                    </div>
-                    <!-- WHY? -->
-                    <div class="col-md-4">
-                        <h4>Registration is fast, easy, and free.</h4>
-                        <p>Once you"re registered, you can:</p>
-                        <hr>
-                        <img src="http://placehold.it/400x300" alt="" class="img-fluid">
-                        <p></p>
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse"
-                                        class="panel-toggle collapsed" href="#faq1" aria-expanded="false"><i
-                                            class="ti-info-alt" aria-hidden="true"></i>Can I viverra sit amet quam eget
-                                        lacinia?</a></h4>
-                            </div>
-                            <div class="panel-collapse collapse" id="faq1" aria-expanded="false" role="article"
-                                style="height: 0px;">
-                                <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                                    rutrum ut erat a ultricies. Phasellus non auctor nisi, id aliquet lectus. Vestibulum
-                                    libero eros, aliquet at tempus ut, scelerisque sit amet nunc. Vivamus id porta
-                                    neque, in pulvinar ipsum. Vestibulum sit amet quam sem. Pellentesque accumsan
-                                    consequat venenatis. Pellentesque sit amet justo dictum, interdum odio non, dictum
-                                    nisi. Fusce sit amet turpis eget nibh elementum sagittis. Nunc consequat lacinia
-                                    purus, in consequat neque consequat id. </div>
-                            </div>
-                        </div>
-                        <!-- end:panel -->
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a data-parent="#accordion" data-toggle="collapse"
-                                        class="panel-toggle" href="#faq2" aria-expanded="true"><i class="ti-info-alt"
-                                            aria-hidden="true"></i>Can I viverra sit amet quam eget lacinia?</a></h4>
-                            </div>
-                            <div class="panel-collapse collapse" id="faq2" aria-expanded="true" role="article">
-                                <div class="panel-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                                    rutrum ut erat a ultricies. Phasellus non auctor nisi, id aliquet lectus. Vestibulum
-                                    libero eros, aliquet at tempus ut, scelerisque sit amet nunc. Vivamus id porta
-                                    neque, in pulvinar ipsum. Vestibulum sit amet quam sem. Pellentesque accumsan
-                                    consequat venenatis. Pellentesque sit amet justo dictum, interdum odio non, dictum
-                                    nisi. Fusce sit amet turpis eget nibh elementum sagittis. Nunc consequat lacinia
-                                    purus, in consequat neque consequat id. </div>
-                            </div>
-                        </div>
-                        <!-- end:Panel -->
-                        <h4 class="m-t-20">Contact Customer Support</h4>
-                        <p> If you"re looking for more help or have a question to ask, please </p>
-                        <p> <a href="contact.html" class="btn theme-btn m-t-15">contact us</a> </p>
-                    </div>
-                    <!-- /WHY? -->
-                </div>
-            </div>
-        </section>
-    </div>
+    </section>
+</div>

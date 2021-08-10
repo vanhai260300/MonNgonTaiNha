@@ -78,9 +78,11 @@
                                             <td><?php echo $value['DiaChi']; ?></td>
                                             <td><?php echo $value['TGGiaoHang']; ?></td>
                                             <td>
-                                                <select class="form-control" name="" id="">
+                                                <select <?php if($value['IDTrangThai'] == 5 || $value['IDTrangThai'] == 1) echo "disabled";?> onchange="ChangeStatus(<?php echo $value['IDHoaDon']; ?>);" class="form-control statusud" name="statusud" id="statusud_<?php echo $value['IDHoaDon']; ?>">
                                                     <option value="<?php echo $value['IDTrangThai']; ?>"><?php echo $value['TenTrangThai']; ?></option>
-                                                    <!-- <option value="1">Hủy</option> -->
+                                                    <?php foreach ($args['listTrangThai'] as $key1 => $value1) { ?>
+                                                    <option value="<?php echo $value1['IDTrangThai']; ?>"><?php echo $value1['TenTrangThai']; ?></option>
+                                                    <?php } ?>
                                                 </select>
                                                 
                                             </td>
@@ -103,4 +105,7 @@
         </div>
         <!-- end:row -->
     </div>
+</div>
+<div class="alert alert-success position-fixed" role="alert">
+    Cập nhật trạng thái thành công.
 </div>

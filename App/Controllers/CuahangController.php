@@ -55,7 +55,7 @@ class CuahangController extends \Core\Controller
                 header("location:/DoAn1/public/dang-nhap");
             } else {
                 $idcuahang = $params['idcuahang'];
-                $MonAnOfCuaHangByIDCuaHang = monanModel::getMonAnOfCuaHangByIDCuaHang($idcuahang);
+                $MonAnOfCuaHangByIDCuaHang = monanModel::getMonAnOfCuaHangByIDCuaHang($idcuahang,"");
                 $gioHang = hoaDonModel::getChiTietHoaDonAll();
                 // var_dump($gioHang); die();
                 View::render('Client/index.php', ['page'=>'CuaHangDetail', 'title'=>"Cửa Hàng",'DanhMuc'=>$danhMuc, 'MonAnCuaHang'=>$MonAnOfCuaHangByIDCuaHang,'gioHang'=>$gioHang]);
@@ -63,4 +63,5 @@ class CuahangController extends \Core\Controller
             
         }
     }
+    
 }

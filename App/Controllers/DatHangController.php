@@ -52,7 +52,8 @@ class DatHangController extends \Core\Controller
     { 
         $params = $this->route_params;
         //var_dump($params); die;
-        hoaDonModel::thanhToanHoaDon($params['idhd']);
+        $kq = hoaDonModel::thanhToanHoaDon($params['idhd']);
+        // var_dump($kq); die;
         header("Location:/DoAn1/public/hoa-don");
     }
     public function checkKhacCuaHangAction()
@@ -68,6 +69,13 @@ class DatHangController extends \Core\Controller
         $idHoaDon = $_POST['idHoaDon'];
         hoaDonModel::deleteItemCart($idMonAn,$idHoaDon);
         
+    }
+    public function ChiTietDonHangAction()
+    {
+        $params  = $this->route_params;
+        $chiTietHoaDon =  hoaDonModel::getChiTietHoaDonByIdHD($params['iddh']);
+        // var_dump($chiTietHoaDon); die();
+        View::render('Client/index.php', ['page'=>'chiTietDonHang', 'title'=>"Chi tiết hóa đơn",'chiTietHoaDon' => $chiTietHoaDon]);
     }
 
 }

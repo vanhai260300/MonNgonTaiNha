@@ -53,6 +53,16 @@
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
                     <div class="bg-gray restaurant-entry">
+                    <form action="/DoAn1/public/mon-an" method="post" enctype="multipart/form-data" class="py-2">
+                            <div class="input-group row">
+                                <div class="col-md-4">
+                                    <input type="search" class="form-control rounded" name = "searchTenMon" placeholder="Nhập Tên Món" aria-label="Search" value="<?php if (isset($args['TuTimKiem'])) echo $args['TuTimKiem'];?>" aria-describedby="search-addon" />
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="submit" name="searchString" value="Tìm Kiếm" class="btn btn-outline-primary">
+                                </div>
+                            </div>
+                        </form>
                         <div class="row">
                             <?php foreach ($args['MonAnInPage']['MonAn'] as $key => $value){?>
                             <div class="col-xs-12 col-sm-6 col-md-4 food-item">
@@ -82,6 +92,7 @@
                                     <nav>
                                         <ul class="pagination">
                                             <?php
+                                            
                                             if (isset($args['MaDanhMuc'])) {
                                                 if ($args['MonAnInPage']['current_page'] > 1 && $args['MonAnInPage']['totalPages'] > 1) {
                                                     echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an-loai/'.$args["MaDanhMuc"].'/' . ($args['MonAnInPage']['current_page'] - 1) . '" ><span aria-hidden="true">«</span></a></li>  ';
@@ -93,15 +104,20 @@
                                                     echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an-loai/'.$args["MaDanhMuc"].'/' . ($args['MonAnInPage']['current_page'] + 1) . '" ><span aria-hidden="true">»</span></a></li>  ';
                                                 }
                                             } else {
-                                                if ($args['MonAnInPage']['current_page'] > 1 && $args['MonAnInPage']['totalPages'] > 1) {
-                                                    echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an/' . ($args['MonAnInPage']['current_page'] - 1) . '" ><span aria-hidden="true">«</span></a></li>  ';
+                                                if ($args['TuTimKiem'] == "") {
+                                                    if ($args['MonAnInPage']['current_page'] > 1 && $args['MonAnInPage']['totalPages'] > 1) {
+                                                        echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an/' . ($args['MonAnInPage']['current_page'] - 1) . '" ><span aria-hidden="true">«</span></a></li>  ';
+                                                    }
+                                                    for ($i = 1; $i <= $args['MonAnInPage']['totalPages']; $i++) {
+                                                        echo '<li><a href="/DoAn1/public/mon-an/' . $i . '">' . $i . '</a></li>';
+                                                    }
+                                                    if ($args['MonAnInPage']['current_page'] < $args['MonAnInPage']['totalPages'] && $args['MonAnInPage']['totalPages'] > 1) {
+                                                        echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an/' . ($args['MonAnInPage']['current_page'] + 1) . '" ><span aria-hidden="true">»</span></a></li>  ';
+                                                    }
+                                                } else {
+                                                    echo "";
                                                 }
-                                                for ($i = 1; $i <= $args['MonAnInPage']['totalPages']; $i++) {
-                                                    echo '<li><a href="/DoAn1/public/mon-an/' . $i . '">' . $i . '</a></li>';
-                                                }
-                                                if ($args['MonAnInPage']['current_page'] < $args['MonAnInPage']['totalPages'] && $args['MonAnInPage']['totalPages'] > 1) {
-                                                    echo '<li><a aria-label="Previous" href="/DoAn1/public/mon-an/' . ($args['MonAnInPage']['current_page'] + 1) . '" ><span aria-hidden="true">»</span></a></li>  ';
-                                                }
+                                                
                                             }
                                             
                                             ?>

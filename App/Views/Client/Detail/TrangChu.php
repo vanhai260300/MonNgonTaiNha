@@ -68,9 +68,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=48">Bonefish</a></h5>
+                            <h5><a href="#">Bonefish</a></h5>
                             <div class="product-name">Three ounces of lightly seasoned fresh tilapia </div>
-                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -83,9 +83,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=48">Hard Rock Cafe</a></h5>
+                            <h5><a href="#">Hard Rock Cafe</a></h5>
                             <div class="product-name">A mix of chopped lettuces, shredded cheese, chicken cubes</div>
-                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -98,9 +98,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=49">Uno Pizzeria &amp; Grill</a></h5>
+                            <h5><a href="#">Uno Pizzeria &amp; Grill</a></h5>
                             <div class="product-name">Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)</div>
-                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -113,9 +113,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=48">Bonefish</a></h5>
+                            <h5><a href="#">Bonefish</a></h5>
                             <div class="product-name">Three ounces of lightly seasoned fresh tilapia </div>
-                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$55.77</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -128,9 +128,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=48">Hard Rock Cafe</a></h5>
+                            <h5><a href="#">Hard Rock Cafe</a></h5>
                             <div class="product-name">A mix of chopped lettuces, shredded cheese, chicken cubes</div>
-                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="dishes.php?res_id=48" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$22.12</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -143,9 +143,9 @@
                             <div class="review pull-right"><a href="#">198 reviews</a> </div>
                         </div>
                         <div class="content">
-                            <h5><a href="dishes.php?res_id=49">Uno Pizzeria &amp; Grill</a></h5>
+                            <h5><a href="#">Uno Pizzeria &amp; Grill</a></h5>
                             <div class="product-name">Kids can choose their pasta shape, type of sauce, favorite veggies (like broccoli or mushrooms)</div>
-                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="dishes.php?res_id=49" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
+                            <div class="price-btn-block"> <span class="price">$12.35</span> <a href="#" class="btn theme-btn-dash pull-right">Đặt món</a> </div>
                         </div>
 
                     </div>
@@ -258,11 +258,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=48"> <img src="/DoAn1/public/image/Res_img/5ad74ce37c383.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad74ce37c383.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=48">Hari Burger</a></h5> <span> Palace, natwar jalandhar</span>
+                                    <h5 class="restaurant-title"><a href="#">Hari Burger</a></h5> <span> Palace, natwar jalandhar</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
@@ -285,11 +285,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=49"> <img src="/DoAn1/public/image/Res_img/5ad74de005016.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad74de005016.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=49">The Great Kabab Factory </a></h5> <span>Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037</span>
+                                    <h5 class="restaurant-title"><a href="#">The Great Kabab Factory </a></h5> <span>Radisson Blu Plaza Hotel, Delhi Airport, NH-8, New Delhi, 110037</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
@@ -312,11 +312,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=50"> <img src="/DoAn1/public/image/Res_img/5ad74e5310ae4.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad74e5310ae4.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=50">Aarkay Vaishno Dhaba</a></h5> <span>Bhargav Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003</span>
+                                    <h5 class="restaurant-title"><a href="#">Aarkay Vaishno Dhaba</a></h5> <span>Bhargav Nagar, Jalandhar - Nakodar Rd, Jalandhar, Punjab 144003</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
@@ -339,11 +339,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=51"> <img src="/DoAn1/public/image/Res_img/5ad74ebf1d103.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad74ebf1d103.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=51">Martini</a></h5> <span>399 L Near Apple Showroom, Model Town,</span>
+                                    <h5 class="restaurant-title"><a href="#">Martini</a></h5> <span>399 L Near Apple Showroom, Model Town,</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
@@ -366,11 +366,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=52"> <img src="/DoAn1/public/image/Res_img/5ad756f1429e3.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad756f1429e3.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=52">hudson</a></h5> <span>Opposite Lovely Sweets, Nakodar Road, Jalandhar, Punjab 144001</span>
+                                    <h5 class="restaurant-title"><a href="#">hudson</a></h5> <span>Opposite Lovely Sweets, Nakodar Road, Jalandhar, Punjab 144001</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
@@ -393,11 +393,11 @@
                         <div class="restaurant-wrap">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-                                    <a class="restaurant-logo" href="dishes.php?res_id=53"> <img src="/DoAn1/public/image/Res_img/5ad79e7d01c5a.jpg" alt="Restaurant logo"> </a>
+                                    <a class="restaurant-logo" href="#"> <img src="/DoAn1/public/image/Res_img/5ad79e7d01c5a.jpg" alt="Restaurant logo"> </a>
                                 </div>
                                 <!--end:col -->
                                 <div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-                                    <h5 class="restaurant-title"><a href="dishes.php?res_id=53">kriyana store</a></h5> <span>near kalu gali hotel india what everrrr.</span>
+                                    <h5 class="restaurant-title"><a href="#">kriyana store</a></h5> <span>near kalu gali hotel india what everrrr.</span>
                                     <div class="bottom-part">
                                         <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
                                         <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
