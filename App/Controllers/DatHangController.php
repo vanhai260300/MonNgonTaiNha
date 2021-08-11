@@ -39,14 +39,26 @@ class DatHangController extends \Core\Controller
     }
     public function GioHangAction()
     {
-        $gioHang= hoaDonModel::getChiTietHoaDonAll();
-        View::render('Client/index.php', ['page'=>'GioHang', 'title'=>"Giỏ Hàng", 'gioHang'=>$gioHang]);
+        if(!isset($_SESSION['username-client']))
+        {
+            header("location:/DoAn1/public/dang-nhap");
+        } else {
+            $gioHang= hoaDonModel::getChiTietHoaDonAll();
+            View::render('Client/index.php', ['page'=>'GioHang', 'title'=>"Giỏ Hàng", 'gioHang'=>$gioHang]);
+        }
+        
         
     }
     public function DonHangAction(){
-        $getHoaDon = hoaDonModel::getHoaDonKH();
-        // var_dump($getHoaDon); die();
-        View::render('Client/index.php', ['page'=>'DonHang', 'title'=>"Đơn Hàng của bạn", 'HoaDonKhachHang'=>$getHoaDon]);
+        if(!isset($_SESSION['username-client']))
+        {
+            header("location:/DoAn1/public/dang-nhap");
+        } else {
+            $getHoaDon = hoaDonModel::getHoaDonKH();
+            // var_dump($getHoaDon); die();
+            View::render('Client/index.php', ['page'=>'DonHang', 'title'=>"Đơn Hàng của bạn", 'HoaDonKhachHang'=>$getHoaDon]);
+        }
+        
     }
     public function capNhatHoaDonAction()
     { 
@@ -72,10 +84,16 @@ class DatHangController extends \Core\Controller
     }
     public function ChiTietDonHangAction()
     {
-        $params  = $this->route_params;
-        $chiTietHoaDon =  hoaDonModel::getChiTietHoaDonByIdHD($params['iddh']);
-        // var_dump($chiTietHoaDon); die();
-        View::render('Client/index.php', ['page'=>'chiTietDonHang', 'title'=>"Chi tiết hóa đơn",'chiTietHoaDon' => $chiTietHoaDon]);
+        if(!isset($_SESSION['username-client']))
+        {
+            header("location:/DoAn1/public/dang-nhap");
+        } else {
+            $params  = $this->route_params;
+            $chiTietHoaDon =  hoaDonModel::getChiTietHoaDonByIdHD($params['iddh']);
+            // var_dump($chiTietHoaDon); die();
+            View::render('Client/index.php', ['page'=>'chiTietDonHang', 'title'=>"Chi tiết hóa đơn",'chiTietHoaDon' => $chiTietHoaDon]);
+        }
+        
     }
 
 }

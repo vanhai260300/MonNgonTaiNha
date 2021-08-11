@@ -45,6 +45,7 @@ $router->add('/DoAn1/public/them-gio-hang', ['controller' => 'DatHangController'
 $router->add('/DoAn1/public/gio-hang', ['controller' => 'DatHangController', 'action' => 'GioHang']);
 $router->add('/DoAn1/public/chi-tiet-don-hang', ['controller' => 'DatHangController', 'action' => 'ChiTietDonHang']);
 $router->add('/DoAn1/public/chi-tiet-don-hang/{iddh:\d+}', ['controller' => 'DatHangController', 'action' => 'ChiTietDonHang']);
+$router->add('/DoAn1/public/cch-chi-tiet-don-hang/{iddh:\d+}', ['controller' => 'CCHQuanLyMonAnController', 'action' => 'ChiTietDonHang']);
 $router->add('/DoAn1/public/deleteItemCart', ['controller' => 'DatHangController', 'action' => 'DeleteItemCart']);
 $router->add('/DoAn1/public/checkKhacCuaHang', ['controller' => 'DatHangController', 'action' => 'checkKhacCuaHang']);
 

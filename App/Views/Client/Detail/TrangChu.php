@@ -5,14 +5,14 @@
                 <h1>Order Delivery &amp; Take-Out </h1>
                 <h5 class="font-white space-xs">Tìm nhà hàng, món đặc biệt và phiếu giảm giá miễn phí</h5>
                 <div class="banner-form">
-                    <form class="form-inline">
+                    <form action="/DoAn1/public/mon-an" method="post" enctype="multipart/form-data" class="form-inline">
                         <div class="form-group">
-                            <label class="sr-only" for="exampleInputAmount">Bạn muốn ....</label>
+                            <label class="sr-only" for="timKiem">Bạn muốn ....</label>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" id="exampleInputAmount" placeholder="I would like to eat....">
+                                <input type="text" name="searchTenMon" class="form-control form-control-lg" id="timKiem" placeholder="Bạn muốn tìm món ...">
                             </div>
                         </div>
-                        <button onclick="location.href='restaurants.html'" type="button" class="btn theme-btn btn-lg">Search food</button>
+                        <input type="submit" class="btn theme-btn btn-lg" name="searchString" value="Tìm Kiếm">
                     </form>
                 </div>
                 <div class="steps">

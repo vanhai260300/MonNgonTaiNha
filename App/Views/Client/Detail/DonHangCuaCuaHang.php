@@ -87,7 +87,7 @@
                                                 
                                             </td>
                                             <td><?php echo number_format($value['TongTien']+$value['PhiGiaoHang']); ?></td>
-                                            <td><a class="text-danger" href="#">Xóa</a> <a class="text-primary" href="#">Chi Tiết</a></td>
+                                            <td><a class="text-danger" href="#">Xóa</a> <a class="text-primary" href="/DoAn1/public/cch-chi-tiet-don-hang/<?php echo $value['IDHoaDon']; ?>">Chi Tiết</a></td>
                                         </tr>
                                     <?php } ?>
 

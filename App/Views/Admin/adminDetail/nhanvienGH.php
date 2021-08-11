@@ -75,9 +75,9 @@
                     <i class="fas fa-table me-1"></i>
                     Quản lý tài khoản nhân viên giao hàng
                 </div>
-                <div>
+                <!-- <div>
                     <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Tạo tài khoản <i class="fas fa-plus-circle"></i></a>
-                </div>
+                </div> -->
 
             </div>
             <div class="card-body">
@@ -122,7 +122,7 @@
                                 <td><?php echo $value['DiaChi']; ?></td>
                                 <td ><?php echo $value['CMND']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateNVGiaoHang(<?php echo $value['IDNVGH']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDNVGH']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <!-- <a href="" title="Sửa" onclick="updateNVGiaoHang(<?php echo $value['IDNVGH']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDNVGH']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a> -->
                                     <a class="bt-delete-red" onclick="deleteNVGiaoHang(<?php echo $value['IDNVGH']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

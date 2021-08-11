@@ -41,19 +41,21 @@ class CCHQuanLyMonAnController extends \Core\Controller
                 $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,$timMonAn);
                 $getDanhMuc = danhMucModel::getAll();
                 // var_dump($kq);die();
-                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
+                header("Location:/DoAn1/public/ql-mon-an");
+                // View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
             }
             if (isset($_POST['bt-save-ud'])) {
                 $kq = $this->updateMonAnAction();
                 $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($idCuaHang,$timMonAn);
                 $getDanhMuc = danhMucModel::getAll();
                 // var_dump($kq);die();
-                View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
+                header("Location:/DoAn1/public/ql-mon-an");
+                // View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
             }
 
             View::render('Client/index.php', ['page' => 'QuanLyMonAn', 'title' => "Quản Lý Món Ăn", 'listMonAnCuaHang' => $getAllMonAn, 'listDanhMuc' => $getDanhMuc,'TuTimKiem'=>$timMonAn]);
         } else {
-            header("Location:/DoAn1/public/");
+            header("Location:/DoAn1/public/dang-nhap-cch");
         }
     }
     public function DonHangCuaCuaHangAction()
@@ -67,7 +69,7 @@ class CCHQuanLyMonAnController extends \Core\Controller
             $getTrangThai = trangThaiModel::getTrangThai();
             View::render('Client/index.php', ['page' => 'DonHangCuaCuaHang', 'title' => "Quản Đơn Hàng", 'listMonAnCuaHang' => $getAllMonAn, 'DonHangCuaCuaHang' => $getDonhangCuaHang, 'listTrangThai' => $getTrangThai]);
         } else {
-            header("Location:/DoAn1/public/");
+            header("Location:/DoAn1/public/dang-nhap-cch");
         }
         
     }
@@ -76,6 +78,20 @@ class CCHQuanLyMonAnController extends \Core\Controller
         $idHoaDon = $_POST['idHoaDon'];
         $idTrangThai = $_POST['status'];
         echo hoaDonModel::updateStatus($idHoaDon,$idTrangThai);
+    }
+    public function ChiTietDonHangAction()
+    {
+        if(!isset($_SESSION['id-chuCuaHang']))
+        {
+            header("location:/DoAn1/public/dang-nhap-cch");
+        } else {
+            $params  = $this->route_params;
+            $getAllMonAn = monanModel::getMonAnOfCuaHangByIDCuaHang($_SESSION['id-chuCuaHang'],"");
+            $chiTietHoaDon =  hoaDonModel::getChiTietHoaDonByIdHD($params['iddh']);
+            // var_dump($chiTietHoaDon); die();
+            View::render('Client/index.php', ['page'=>'chiTietDonHang', 'title'=>"Chi tiết hóa đơn",'chiTietHoaDon' => $chiTietHoaDon, 'listMonAnCuaHang' => $getAllMonAn]);
+        }
+        
     }
     public function insertMonAnAction()
     {

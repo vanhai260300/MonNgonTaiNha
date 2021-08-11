@@ -75,9 +75,9 @@
                     <i class="fas fa-table me-1"></i>
                     Quản lý tài khoản Khách Hàng
                 </div>
-                <div>
+                <!-- <div>
                     <a class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModalAdd">Tạo tài khoản <i class="fas fa-plus-circle"></i></a>
-                </div>
+                </div> -->
 
             </div>
             <div class="card-body">
@@ -116,7 +116,7 @@
                                 <td><?php echo $value['Email']; ?></td>
                                 <td><?php echo $value['DiaChi']; ?></td>
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateKhachHang(<?php echo $value['IDKhachHang']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDKhachHang']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <!-- <a href="" title="Sửa" onclick="updateKhachHang(<?php echo $value['IDKhachHang']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDKhachHang']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a> -->
                                     <a class="bt-delete-red" onclick="deleteKhachHang(<?php echo $value['IDKhachHang']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
@@ -132,10 +132,10 @@
             <div class="modal-content">
 
                 <!-- Modal Header -->
-                <div class="modal-header">
+                <!-- <div class="modal-header">
                     <h4 class="modal-title text-center">Tạo tài khoản Khách Hàng</h4>
                     <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
-                </div>
+                </div> -->
 
                 <!-- Modal body -->
                 <div class="modal-body ">

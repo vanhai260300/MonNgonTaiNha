@@ -18,19 +18,19 @@ class CheckoutController extends \Core\Controller
      *
      * @return void
      */
-    public function __construct()
+    
+    
+    public function indexAction()
     {
         if(!isset($_SESSION['username-client']))
         {
             header("location:/DoAn1/public/dang-nhap");
+        } else {
+            $gioHang= hoaDonModel::getChiTietHoaDonAll();
+            $thongTinKhachHang = KhachHangModel::getKhachhangByID();
+            // var_dump($thongTinKhachHang); die();
+            View::render('Client/index.php', ['page'=>'ThanhToan', 'title'=>"Thanh Toán",'gioHang'=>$gioHang,'thongTinKhachHang'=>$thongTinKhachHang]);
         }
-    }
-    
-    public function indexAction()
-    {
-        $gioHang= hoaDonModel::getChiTietHoaDonAll();
-        $thongTinKhachHang = KhachHangModel::getKhachhangByID();
-        // var_dump($thongTinKhachHang); die();
-        View::render('Client/index.php', ['page'=>'ThanhToan', 'title'=>"Thanh Toán",'gioHang'=>$gioHang,'thongTinKhachHang'=>$thongTinKhachHang]);
+        
     }
 }

@@ -86,12 +86,12 @@
                         <th>ID</th>
                             <th>Tên khách hàng</th>
                             <th>Tên NV Giao Hàng</th>
-                            <th>SĐT</th>
-                            <th>Email</th>
+                            <!-- <th>SĐT</th> -->
+                            <!-- <th>Email</th> -->
                             <th>Phí giao</th>
                             <th>Tổng tiền</th>
                             <th>TG giao</th>
-                            <th>TG Nhận</th>
+                            <!-- <th>TG Nhận</th> -->
                             <th>Địa chỉ</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>
@@ -104,12 +104,12 @@
                             <th>ID</th>
                             <th>Tên khách hàng</th>
                             <th>Tên NV Giao Hàng</th>
-                            <th>SĐT</th>
-                            <th>Email</th>
+                            <!-- <th>SĐT</th> -->
+                            <!-- <th>Email</th> -->
                             <th>Phí giao</th>
                             <th>Tổng tiền</th>
                             <th>TG giao</th>
-                            <th>TG Nhận</th>
+                            <!-- <th>TG Nhận</th> -->
                             <th>Địa chỉ</th>
                             <th>Trạng thái</th>
                             <th>Thao tác</th>  
@@ -121,17 +121,17 @@
                                 <td><?php echo $value['IDHoaDon']; ?></td>
                                 <td ><?php echo $value['TenKH']; ?></td>
                                 <td><?php echo $value['TenNV']; ?></td>
-                                <td ><?php echo $value['SDTN']; ?></td>
-                                <td><?php echo $value['EmailN']; ?></td>
+                                
+                                
                                 <td ><?php echo $value['PhiGiaoHang']; ?></td>
                                 <td><?php echo $value['TongTien']; ?></td>
                                 <td ><?php echo $value['TGGiaoHang']; ?></td>
-                                <td><?php echo $value['TGNhanHang']; ?></td>
+                                
                                 <td><?php echo $value['DiaChiGiaoHang']; ?></td>
                                 <td ><?php echo $value['IDTrangThai']; ?></td>
                                 
                                 <td class="actions">
-                                    <a href="" title="Sửa" onclick="updateHoaDon(<?php echo $value['IDHoaDon']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDHoaDon']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a>
+                                    <!-- <a href="" title="Sửa" onclick="updateHoaDon(<?php echo $value['IDHoaDon']; ?>);" data-bs-toggle="modal" class="button" id="button_<?php echo $value['IDHoaDon']; ?>" data-bs-target="#myModalUpdate"><i class="fas fa-edit"></i></a> -->
                                     <a class="bt-delete-red" onclick="deleteHoaDon(<?php echo $value['IDHoaDon']; ?>)" title="Xóa"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>

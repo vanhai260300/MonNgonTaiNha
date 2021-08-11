@@ -1,4 +1,43 @@
 <div class="page-wrapper">
+<section class="inner-page-hero bg-image" data-image-src="/DoAn1/public/image/img/dish.jpeg" style="
+    background-image: url('/DoAn1/public/image/img/dish.jpeg') #25282b center center / cover no-repeat; 
+    background-blend-mode: soft-light;">
+        <div class="profile">
+            <div class="container">
+                <div class="row">
+                    <?php if (isset($_SESSION['id-chuCuaHang'])) { foreach ($args['listMonAnCuaHang']['ThongTinCuaHang'] as $key => $value) { ?>
+                        <div class="col-xs-12 col-sm-12  col-md-4 col-lg-3 col-lg-4 profile-img">
+                            <div class="image-wrap">
+                                <figure><img src="/DoAn1/public/image/Res_img/<?php echo $value['Anh']; ?>" alt="Restaurant logo"></figure>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
+                            <div class="pull-left right-text white-txt">
+                                <h6><a href="#"><?php echo $value['TenCuaHang']; ?></a></h6>
+                                <p> <?php echo $value['DiaChi']; ?></p>
+                                <ul class="nav nav-inline">
+                                    <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Min 20,000</a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-phone"></i>
+                                            <?php echo $value['SDT']; ?></a> </li>
+                                    <li class="nav-item ratings">
+                                        <a class="nav-link" href="#"> <span>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </span> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <?php }} ?>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container">
         <div class="container">
             <div>

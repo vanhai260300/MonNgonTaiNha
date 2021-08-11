@@ -167,7 +167,7 @@
                                             <input type="text" name="quantity_<?php echo $value['IDMonAn'];?>" style="margin-left:30px;" value="1" size="2">
                                             <input type="hidden" name="idCuaHang" style="margin-left:30px;" value="<?php echo $idCuaHang; ?>" size="2">
                                             <input type="hidden" name="IDMonAn_<?php echo $value['IDMonAn'];?>" style="margin-left:30px;" value="<?php echo $value['IDMonAn']; ?>" size="2">
-                                            <button onclick="addToCart(<?php echo $value['IDMonAn'];?>)" class="btn theme-btn" style="margin-left:40px;" name="addToCart" value="">Add to cart</button>
+                                            <button onclick="addToCart(<?php echo $value['IDMonAn'];?>)" class="btn theme-btn" style="margin-left:40px;" name="addToCart" value="">Thêm vào giỏ</button>
                                         </div>
                                     </div>
                                 </div>

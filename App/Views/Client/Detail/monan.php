@@ -56,7 +56,7 @@
                     <form action="/DoAn1/public/mon-an" method="post" enctype="multipart/form-data" class="py-2">
                             <div class="input-group row">
                                 <div class="col-md-4">
-                                    <input type="search" class="form-control rounded" name = "searchTenMon" placeholder="Nhập Tên Món" aria-label="Search" value="<?php if (isset($args['TuTimKiem'])) echo $args['TuTimKiem'];?>" aria-describedby="search-addon" />
+                                    <input type="text" class="form-control rounded" name = "searchTenMon" placeholder="Nhập Tên Món" aria-label="Search" value="<?php if (isset($args['TuTimKiem'])) echo $args['TuTimKiem'];?>" aria-describedby="search-addon" />
                                 </div>
                                 <div class="col-md-2">
                                     <input type="submit" name="searchString" value="Tìm Kiếm" class="btn btn-outline-primary">

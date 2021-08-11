@@ -128,12 +128,14 @@ function CheckUsserName()
         console.log(re);
         if (re == 1)
         {
+            $('.tontaiUN').removeClass('text-success');
             $('.tontaiUN').addClass('text-danger');
             $('.tontaiUN').text("* Tên đăng nhập đã tồn tại.");
         } else {
             if (unkh == "") {
                 $('.tontaiUN').text("");
             } else {
+                $('.tontaiUN').removeClass('text-danger');
                 $('.tontaiUN').addClass('text-success');
                 $('.tontaiUN').text("* Tên đăng nhập hợp lệ.");
             }   
@@ -146,9 +148,11 @@ function checkRepassword() {
     repass = $("#repassword").val();
     console.log(repass);
     if (repass == pass) {
+        $('.checkpass').removeClass('text-danger');
         $('.checkpass').addClass('text-success');
         $(".checkpass").text("* Mật khẩu hợp lệ");
     } else {
+        $('.checkpass').removeClass('text-success');
         $('.checkpass').addClass('text-danger');
         $(".checkpass").text("* Mật khẩu không khớp");
     }
