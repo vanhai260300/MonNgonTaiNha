@@ -33,7 +33,7 @@
         <?php include '../App/Views/Client/Detail/'.$args['page'].'.php'; ?>
     </main>
     
-    <?php //include '../App/Views/Client/Block/Footer.php'; ?>
+    <?php include '../App/Views/Client/Block/Footer.php'; ?>
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
