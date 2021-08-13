@@ -130,7 +130,7 @@ function CheckUsserName()
         {
             $('.tontaiUN').removeClass('text-success');
             $('.tontaiUN').addClass('text-danger');
-            $('.tontaiUN').text("* Tên đăng nhập đã tồn tại.");
+            $('.tontaiUN').text("* Tên đăng nhập không hợp lệ.");
         } else {
             if (unkh == "") {
                 $('.tontaiUN').text("");

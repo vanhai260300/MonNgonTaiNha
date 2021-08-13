@@ -48,7 +48,7 @@
     <script src="/DoAn1/public/asset/js/jquery.isotope.min.js"></script>
     <script src="/DoAn1/public/asset/js/headroom.js"></script>
     <script src="/DoAn1/public/asset/js/foodpicky.min.js"></script>
-    <script src="/DoAn1/public/asset/js/main.js?v=1.8"></script>
+    <script src="/DoAn1/public/asset/js/main.js?v=1.9"></script>
 
 
     <div id="eJOY__extension_root" class="eJOY__extension_root_class" style="all: unset;"></div><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>

@@ -24,10 +24,20 @@ class RegisterController extends \Core\Controller
         if (isset($_POST['register']))
         {
             $repon = $this->DangKyKhachHang();
-            View::render('Client/index.php', ['page'=>'Register', 'title'=>"Đăng Ký",'KetQuaDK'=>$repon]);
+            if ($repon == 1)
+            {
+                header('Location:/DoAn1/public/verifi');
+            } else {
+                View::render('Client/index.php', ['page'=>'Register', 'title'=>"Đăng Ký",'KetQuaDK'=>$repon]);
+            }
+            
         }
         View::render('Client/index.php', ['page'=>'Register', 'title'=>"Đăng Ký",'KetQuaDK'=>$repon]);
 
+    }
+    public function pageVerificationAction()
+    {
+        View::render('Client/pageVerifi.php', []);
     }
     public function DangKyKhachHang(){
         $fullName = $_POST['fullname'];
@@ -42,5 +52,10 @@ class RegisterController extends \Core\Controller
     public function checkUsserNameAction (){
         $usernameKH = $_POST['usernameKH'];
         echo KhachHangModel::getUserName($usernameKH);
+    }
+    public function xacThucEmailAction () { 
+        $params = $this->route_params;
+        $res = KhachHangModel::verification($params['vkey']);
+        echo "Tài khoản đả được xác thực <a href='/DoAn1/public/dang-nhap'>Đăng nhập ngay</a>";
     }
 }
